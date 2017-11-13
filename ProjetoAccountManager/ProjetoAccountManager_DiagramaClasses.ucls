@@ -4,7 +4,7 @@
   <class id="1" language="java" name="br.ufrpe.account_manager.negocio.beans.Pessoa" project="ProjetoAccountManager" 
     file="/ProjetoAccountManager/src/br/ufrpe/account_manager/negocio/beans/Pessoa.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="81" width="183" x="145" y="46"/>    
+    <position height="-1" width="-1" x="414" y="74"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
