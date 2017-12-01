@@ -14,13 +14,13 @@ public class  Pessoa {
 
 	public Pessoa(String nome, String cpf, String email, String senha, String logradouro, Date nascimento, String tel) {
 		super();
-		this.nome = nome;
-		this.cpf = cpf;
-		this.email = email;
-		this.senha = senha;
-		this.logradouro = logradouro;
-		this.nascimento = nascimento;
-		this.tel = tel;
+		this.setNome(nome);
+		this.setCpf(cpf);
+		this.setEmail(email);
+		this.setSenha(senha);
+		this.setLogradouro(logradouro);
+		this.setNascimento(nascimento);
+		this.setTel(tel);
 	}
 
 	public String getNome() {
