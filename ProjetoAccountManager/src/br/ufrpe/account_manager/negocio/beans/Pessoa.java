@@ -10,6 +10,7 @@ public class  Pessoa {
 
 	 private String nome;
 	 @Id
+	 @GeneratedValue
 	 private String cpf;
 	 private long id;
 	 private String email;
