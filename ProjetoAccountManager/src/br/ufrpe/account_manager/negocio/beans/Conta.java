@@ -2,8 +2,16 @@ package br.ufrpe.account_manager.negocio.beans;
 
 import java.sql.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Conta {
 
+	@Id
+	@GeneratedValue
+	private long id;
 	private String nome;
 	private String descricao;
 	private Date dataVencimento;
@@ -15,7 +23,7 @@ public class Conta {
 		this.setDescricao(descricao);
 		this.setDataVencimento(dataVencimento);
 		this.setValor(valor);
-		
+		this.setId(valor);
 	}
 
 	public String getNome() {
@@ -49,5 +57,14 @@ public class Conta {
 	public void setValor(int valor) {
 		this.valor = valor;
 	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+	
 	
 }

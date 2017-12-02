@@ -2,10 +2,16 @@ package br.ufrpe.account_manager.negocio.beans;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class  Pessoa {
 
 	 private String nome;
+	 @Id
 	 private String cpf;
+	 private long id;
 	 private String email;
 	 private String senha;
 	 private String logradouro;
@@ -21,6 +27,7 @@ public class  Pessoa {
 		this.setLogradouro(logradouro);
 		this.setNascimento(nascimento);
 		this.setTel(tel);
+		this.setId(id);
 	}
 
 	public String getNome() {
@@ -77,6 +84,14 @@ public class  Pessoa {
 
 	public void setTel(String tel) {
 		this.tel = tel;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
 	}
 	
 	

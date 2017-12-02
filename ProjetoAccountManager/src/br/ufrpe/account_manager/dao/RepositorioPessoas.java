@@ -2,7 +2,6 @@ package br.ufrpe.account_manager.dao;
 
 import java.util.ArrayList;
 
-import br.ufrpe.account_manager.negocio.beans.Conta;
 import br.ufrpe.account_manager.negocio.beans.Pessoa;
 
 public class RepositorioPessoas implements IRepositorio<Pessoa, String>{
