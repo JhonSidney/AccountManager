@@ -2,27 +2,5 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="C:/Users/lsidr/Documents/Projetos eclipse/AccountManager/ProjetoAccountManager/antlr-2.7.7.jar"/>
-	<classpathentry kind="lib" path="C:/Users/lsidr/Documents/Projetos eclipse/AccountManager/ProjetoAccountManager/classmate-1.3.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/lsidr/Documents/Projetos eclipse/AccountManager/ProjetoAccountManager/dom4j-1.6.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/lsidr/Documents/Projetos eclipse/AccountManager/ProjetoAccountManager/hibernate-commons-annotations-5.0.1.Final.jar"/>
-	<classpathentry kind="lib" path="C:/Users/lsidr/Documents/Projetos eclipse/AccountManager/ProjetoAccountManager/hibernate-core-5.2.12.Final.jar"/>
-	<classpathentry kind="lib" path="C:/Users/lsidr/Documents/Projetos eclipse/AccountManager/ProjetoAccountManager/hibernate-jpa-2.1-api-1.0.0.Final.jar"/>
-	<classpathentry kind="lib" path="C:/Users/lsidr/Documents/Projetos eclipse/AccountManager/ProjetoAccountManager/hibernate-jpamodelgen-5.2.12.Final.jar"/>
-	<classpathentry kind="lib" path="C:/Users/lsidr/Documents/Projetos eclipse/AccountManager/ProjetoAccountManager/jandex-2.0.3.Final.jar"/>
-	<classpathentry kind="lib" path="C:/Users/lsidr/Documents/Projetos eclipse/AccountManager/ProjetoAccountManager/javassist-3.20.0-GA.jar"/>
-	<classpathentry kind="lib" path="C:/Users/lsidr/Documents/Projetos eclipse/AccountManager/ProjetoAccountManager/jboss-logging-3.3.0.Final.jar"/>
-	<classpathentry kind="lib" path="C:/Users/lsidr/Documents/Projetos eclipse/AccountManager/ProjetoAccountManager/jboss-transaction-api_1.2_spec-1.0.1.Final.jar"/>
-	<classpathentry kind="lib" path="C:/Users/lsidr/Documents/Projetos eclipse/AccountManager/ProjetoAccountManager/lib/antlr-2.7.7.jar"/>
-	<classpathentry kind="lib" path="C:/Users/lsidr/Documents/Projetos eclipse/AccountManager/ProjetoAccountManager/lib/classmate-1.3.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/lsidr/Documents/Projetos eclipse/AccountManager/ProjetoAccountManager/lib/dom4j-1.6.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/lsidr/Documents/Projetos eclipse/AccountManager/ProjetoAccountManager/lib/hibernate-commons-annotations-5.0.1.Final.jar"/>
-	<classpathentry kind="lib" path="C:/Users/lsidr/Documents/Projetos eclipse/AccountManager/ProjetoAccountManager/lib/hibernate-core-5.2.12.Final.jar"/>
-	<classpathentry kind="lib" path="C:/Users/lsidr/Documents/Projetos eclipse/AccountManager/ProjetoAccountManager/lib/hibernate-jpa-2.1-api-1.0.0.Final.jar"/>
-	<classpathentry kind="lib" path="C:/Users/lsidr/Documents/Projetos eclipse/AccountManager/ProjetoAccountManager/lib/hibernate-jpamodelgen-5.2.12.Final.jar"/>
-	<classpathentry kind="lib" path="C:/Users/lsidr/Documents/Projetos eclipse/AccountManager/ProjetoAccountManager/lib/jandex-2.0.3.Final.jar"/>
-	<classpathentry kind="lib" path="C:/Users/lsidr/Documents/Projetos eclipse/AccountManager/ProjetoAccountManager/lib/javassist-3.20.0-GA.jar"/>
-	<classpathentry kind="lib" path="C:/Users/lsidr/Documents/Projetos eclipse/AccountManager/ProjetoAccountManager/lib/jboss-logging-3.3.0.Final.jar"/>
-	<classpathentry kind="lib" path="C:/Users/lsidr/Documents/Projetos eclipse/AccountManager/ProjetoAccountManager/lib/jboss-transaction-api_1.2_spec-1.0.1.Final.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
