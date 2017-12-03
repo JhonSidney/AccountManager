@@ -7,7 +7,7 @@ package br.ufrpe.account_manager;
  * @author sidne
  *
  */
-public class PrincipalTeste {
+public class ClasseDeTeste {
 
 	/**
 	 * @param args
@@ -15,8 +15,6 @@ public class PrincipalTeste {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		System.out.println("hello world!");
-		
 	}
 
 }
