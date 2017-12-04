@@ -4,13 +4,13 @@ import java.util.Date;
 
 public class  Pessoa {
 
-	String nome;
-	String cpf;
-	String email;
-	String senha;
-	String logradouro;
-	Date nascimento;
-	String tel;
+	public String nome;
+	public String cpf;
+	public String email;
+	public String senha;
+	public String logradouro;
+	public Date nascimento;
+	public String tel;
 
 	public Pessoa(String nome, String cpf, String email, String senha, String logradouro, Date nascimento, String tel) {
 		super();
