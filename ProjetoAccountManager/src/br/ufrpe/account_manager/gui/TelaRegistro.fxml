@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="634.0" prefWidth="1016.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane prefHeight="632.0" prefWidth="1016.0" />
+      <ImageView fitHeight="634.0" fitWidth="1018.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../../Desktop/pictures/RegistroLogin.jpg" />
+         </image>
+      </ImageView>
+      <Button layoutX="743.0" layoutY="575.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="84.0" text="ENVIAR" />
+      <Button layoutX="857.0" layoutY="576.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="84.0" text="CANCELAR" />
+      <Label layoutX="165.0" layoutY="54.0" text="REGISTRO DE USUARIO ">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="308.0" layoutY="184.0" text="NOME">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="500.0" layoutY="172.0" text="SOBRENOME">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="308.0" layoutY="252.0" text="CPF">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <TextField layoutX="306.0" layoutY="207.0" />
+      <TextField layoutX="525.0" layoutY="207.0" />
+      <TextField layoutX="307.0" layoutY="273.0" prefHeight="25.0" prefWidth="361.0" />
+   </children>
+</AnchorPane>

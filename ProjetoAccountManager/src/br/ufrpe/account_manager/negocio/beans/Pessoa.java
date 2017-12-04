@@ -11,6 +11,7 @@ public class  Pessoa {
 	 private String nome;
 	 @Id
 	 private String cpf;
+	 private double salario;
 	 private long id;
 	 private String email;
 	 private String senha;
@@ -28,10 +29,19 @@ public class  Pessoa {
 		this.setNascimento(nascimento);
 		this.setTel(tel);
 		this.setId(id);
+		this.setSalario(salario);
 	}
 
 	public String getNome() {
 		return nome;
+	}
+
+	public double getSalario() {
+		return salario;
+	}
+
+	public void setSalario(double salario) {
+		this.salario = salario;
 	}
 
 	public void setNome(String nome) {
