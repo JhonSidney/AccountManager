@@ -8,16 +8,16 @@ import javafx.scene.control.TextField;
 public class TelaRegistroController {
 
 	@FXML
-	private Button TREGISTRO_BT_CANCELAR;
+	private Button TRegistro_BT_Cancelar;
 	@FXML
-	private Button TREGISTRO_BT_ENVIAR;
+	private Button TRegistro_BT_Enviar;
 	@FXML
-	private TextField TREGISTRO_TF_NOME;
+	private TextField TRegistro_TF_Nome;
 	@FXML
-	private TextField TREGISTRO_TF_SOBRENOME;
+	private TextField TRegistro_TF_Sobrenome;
 	@FXML
-	private TextField TREGISTRO_TF_CPF;
+	private TextField TRegistro_TF_CPF;
 	@FXML
-	private PasswordField TREGISTRO_PF_SENHA;
+	private PasswordField TRegistro_PF_Senha;
 
 }

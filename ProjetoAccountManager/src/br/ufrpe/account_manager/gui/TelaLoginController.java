@@ -16,15 +16,15 @@ import javafx.stage.Stage;
 public class TelaLoginController {
 
 	@FXML
-	private Button TLOGIN_BT_ACESSAR;
+	private Button TLogin_BT_Acessar;
 	@FXML
-	private TextField TLOGIN_TF_USUARIO; //NOME DA CENA_TEXTFIELD_USUARIO| nome de usuário
+	private TextField TLogin_TF_Usuario; //NOME DA CENA_TEXTFIELD_USUARIO| nome de usuário
 	@FXML
-	private PasswordField TLOGIN_PF_SENHA;
+	private PasswordField TLogin_PF_Senha;
 	@FXML
-	private Label TLOGIN_LB_REGISTRO;// Ainda nao é registrado?
+	private Label TLogin_LB_Registro;// Ainda nao é registrado?
 	@FXML
-	private Label TLOGIN_LB_AJUDA;// Precisa de Ajuda?
+	private Label TLogin_LB_EsqueciSenha;// Precisa de Ajuda?
 	
 	private Principal principal; //Classe que inicia as cenas
 	SistemaAccountManager fachada = SistemaAccountManager.getInstance(); //instancia da fachada
