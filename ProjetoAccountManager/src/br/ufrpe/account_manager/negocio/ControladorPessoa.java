@@ -6,6 +6,7 @@ import br.ufrpe.account_manager.exception.NegocioException;
 import br.ufrpe.account_manager.negocio.beans.Pessoa;
 
 public class ControladorPessoa {
+	
 
 	private IRepositorio<Pessoa, String> repositorio;
 	private static ControladorPessoa instance;
