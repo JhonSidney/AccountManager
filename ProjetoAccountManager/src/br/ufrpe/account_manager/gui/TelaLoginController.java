@@ -43,7 +43,7 @@ public class TelaLoginController {
 	public void acessarLogin(ActionEvent event) throws NegocioException {
 
 		try {
-			if (this.fachada.efetuarLogin(TLogin_TF_Usuario.getText(), TLogin_LB_EsqueciSenha.getText()) == 1) {
+			if (this.fachada.efetuarLogin(TLogin_TF_Usuario.getText(), TLogin_PF_Senha.getText()) == 1) {
 				Parent root;
 				Stage stage;
 
