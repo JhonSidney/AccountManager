@@ -42,19 +42,19 @@ public class TelaLoginController {
 	public void acessarLogin(ActionEvent event) throws NegocioException {
 
 		try {
-			 if (this.fachada.efetuarLogin(TLOGIN_TF_USUARIO.getText(), TLOGIN_PF_SENHA.getText()) == 1) {
+			 if (this.fachada.efetuarLogin(TLogin_TF_Usuario.getText(), TLogin_PF_Senha.getText()) == 1) {
 				Parent root;
 				Stage stage;
 
-				stage = (Stage) TLOGIN_BT_ACESSAR.getScene().getWindow();
+				stage = (Stage) TLogin_BT_Acessar.getScene().getWindow();
 				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/TelaMenuPrincipal.fxml"));
 				Scene scene = new Scene(root);
 				stage.setScene(scene);
-			}else if (this.fachada.efetuarLogin(TLOGIN_TF_USUARIO.getText(), TLOGIN_PF_SENHA.getText()) == -1) {
+			}else if (this.fachada.efetuarLogin(TLogin_TF_Usuario.getText(), TLogin_PF_Senha.getText()) == -1) {
 				Parent root;
 				Stage stage;
 
-				stage = (Stage) TLOGIN_BT_ACESSAR.getScene().getWindow();
+				stage = (Stage) TLogin_BT_Acessar.getScene().getWindow();
 				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/TelaLogin.fxml"));
 				Scene scene = new Scene(root);
 				stage.setScene(scene);
