@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 package br.ufrpe.account_manager.gui;
 
 import br.ufrpe.account_manager.SistemaAccountManager;
@@ -60,4 +59,4 @@ public class TelaLoginController {
 
 	}
 }
->>>>>>> branch 'dev' of https://github.com/JhonSidney/AccountManager.git
+
