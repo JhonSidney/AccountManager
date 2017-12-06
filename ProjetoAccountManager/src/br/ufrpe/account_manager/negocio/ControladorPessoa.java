@@ -41,8 +41,7 @@ public class ControladorPessoa {
 		else
 			throw new NegocioException("Erro, a pessoa não está cadastrada");
 	}
-
-<<<<<<< HEAD
+	
 	public Pessoa buscarPessoa(String cpf) {
 		Pessoa result = this.re
 		
@@ -51,7 +50,7 @@ public class ControladorPessoa {
 	public void efetuarLogin() {
 		
 	}
-=======
+	
 	public boolean existeNome(String cpf) {
 		boolean resultado = this.repositorio.existeNome(cpf);
 		return resultado;
@@ -63,5 +62,4 @@ public class ControladorPessoa {
 	}
 
 	//FALTA O METODO DE PROCURAR POR NOME
->>>>>>> branch 'dev' of https://github.com/JhonSidney/AccountManager.git
 }
