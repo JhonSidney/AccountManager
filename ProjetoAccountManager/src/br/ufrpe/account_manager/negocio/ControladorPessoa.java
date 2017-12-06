@@ -43,4 +43,12 @@ public class ControladorPessoa {
 			throw new NegocioException("Erro, a pessoa não está cadastrada");
 	}
 
+	public Pessoa buscarPessoa(String cpf) {
+		Pessoa result = this.re
+		
+	}
+	
+	public void efetuarLogin() {
+		
+	}
 }
