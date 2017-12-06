@@ -2,15 +2,11 @@ package br.ufrpe.account_manager.negocio.beans;
 
 import java.sql.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-
-@Entity
+//@Entity
 public class Conta {
 
-	@Id
-	@GeneratedValue
+//	@Id
+	//@GeneratedValue
 	private long id;
 	private String nome;
 	private String descricao;

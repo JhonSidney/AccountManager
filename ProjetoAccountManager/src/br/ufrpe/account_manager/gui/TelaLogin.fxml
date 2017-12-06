@@ -31,7 +31,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Label fx:id="TLogin_LB_Ajuda" alignment="CENTER" layoutX="461.0" layoutY="420.0" text="Precisa de ajuda?" textFill="#232575">
+      <Label fx:id="TLogin_LB_EsqueciSenha" alignment="CENTER" layoutX="461.0" layoutY="420.0" text="Precisa de ajuda?" textFill="#232575">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
