@@ -14,6 +14,8 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class TelaLoginController {
+	private Inicio principal; // Classe que inicia as cenas
+	SistemaAccountManager fachada = SistemaAccountManager.getInstance(); // instancia da fachada
 
 	@FXML
 	private Button TLogin_BT_Acessar;
@@ -26,9 +28,6 @@ public class TelaLoginController {
 	@FXML
 	private Label TLogin_LB_EsqueciSenha;// Precisa de Ajuda?
 
-	private Inicio principal; // Classe que inicia as cenas
-	SistemaAccountManager fachada = SistemaAccountManager.getInstance(); // instancia da fachada
-
 	public void setPrincipal(Inicio principal) {
 		this.principal = principal;
 	}
@@ -36,12 +35,14 @@ public class TelaLoginController {
 	public void acessarLogin() throws NegocioException {
 		this.setPrincipal(principal.getInstance());
 	}
+	
 
+	
 	@FXML
 	public void acessarLogin(ActionEvent event) throws NegocioException {
 
 		try {
-			 if (this.fachada.efetuarLogin(TLogin_TF_Usuario.getText(), TLogin_LB_EsqueciSenha.getText()) == 1) {
+			if (this.fachada.efetuarLogin(TLogin_TF_Usuario.getText(), TLogin_LB_EsqueciSenha.getText()) == 1) {
 				Parent root;
 				Stage stage;
 
