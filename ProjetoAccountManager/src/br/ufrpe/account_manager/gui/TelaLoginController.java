@@ -58,5 +58,9 @@ public class TelaLoginController {
 		}
 
 	}
+<<<<<<< HEAD
 }
 
+=======
+}
+>>>>>>> refs/remotes/origin/dev

@@ -43,7 +43,20 @@ public class ControladorPessoa {
 		else
 			throw new NegocioException("Erro, a pessoa não está cadastrada");
 	}
+<<<<<<< HEAD
 
+=======
+	
+	public Pessoa buscarPessoa(String cpf) {
+		Pessoa result = this.re
+		
+	}
+	
+	public void efetuarLogin() {
+		
+	}
+	
+>>>>>>> refs/remotes/origin/dev
 	public boolean existeNome(String cpf) {
 		boolean resultado = this.repositorio.existeNome(cpf);
 		return resultado;
@@ -55,5 +68,8 @@ public class ControladorPessoa {
 	}
 
 	//FALTA O METODO DE PROCURAR POR NOME
+<<<<<<< HEAD
 
+=======
+>>>>>>> refs/remotes/origin/dev
 }
