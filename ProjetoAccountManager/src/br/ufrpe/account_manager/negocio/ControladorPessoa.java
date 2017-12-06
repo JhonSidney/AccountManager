@@ -15,6 +15,7 @@ public class ControladorPessoa {
 		this.repositorio = new RepositorioPessoas();
 	}
 
+	
 	public static ControladorPessoa getInstance() {
 		if (instance == null) {
 			instance = new ControladorPessoa();
