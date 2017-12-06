@@ -18,36 +18,5 @@
             <Image url="@../../../../../../../../Desktop/pictures/RegistroLogin.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="TREGISTRO_BT_ENVIAR" layoutX="743.0" layoutY="575.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="84.0" text="ENVIAR" />
-      <Button fx:id="TREGISTRO_BT_CANCELAR" layoutX="857.0" layoutY="576.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="84.0" text="CANCELAR" />
-      <Label layoutX="165.0" layoutY="54.0" text="REGISTRO DE USUARIO " textFill="#fffbfb">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="308.0" layoutY="184.0" text="NOME" textFill="#f8f3f3">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Label>
-      <Label layoutX="516.0" layoutY="183.0" text="SOBRENOME" textFill="#f8f3f3">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Label>
-      <Label layoutX="308.0" layoutY="247.0" text="CPF" textFill="#f8f3f3">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Label>
-      <TextField fx:id="TREGISTRO_TF_NOME" layoutX="306.0" layoutY="207.0" prefHeight="25.0" prefWidth="182.0" promptText="Digite Aqui" />
-      <TextField fx:id="TREGISTRO_TF_SOBRENOME" layoutX="505.0" layoutY="206.0" prefHeight="25.0" prefWidth="161.0" />
-      <TextField fx:id="TREGISTRO_TF_CPF" layoutX="307.0" layoutY="270.0" prefHeight="25.0" prefWidth="182.0" />
-      <PasswordField fx:id="TREGISTRO_PF_SENHA" layoutX="307.0" layoutY="329.0" prefHeight="25.0" prefWidth="182.0" />
-      <Label layoutX="309.0" layoutY="309.0" text="SENHA DE ACESSO" textFill="#f8f3f3">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Label>
    </children>
 </AnchorPane>

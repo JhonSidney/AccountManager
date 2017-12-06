@@ -18,19 +18,18 @@ public class TelaLoginController {
 	@FXML
 	private Button TLogin_BT_Acessar;
 	@FXML
-	private TextField TLogin_TF_Usuario; //NOME DA CENA_TEXTFIELD_USUARIO| nome de usuário
+	private TextField TLogin_TF_Usuario; // NOME DA CENA_TEXTFIELD_USUARIO| nome de usuário
 	@FXML
 	private PasswordField TLogin_PF_Senha;
 	@FXML
 	private Label TLogin_LB_Registro;// Ainda nao é registrado?
 	@FXML
 	private Label TLogin_LB_EsqueciSenha;// Precisa de Ajuda?
-	
-	private Principal principal; //Classe que inicia as cenas
-	SistemaAccountManager fachada = SistemaAccountManager.getInstance(); //instancia da fachada
-	
-	
-	public void setPrincipal(Principal principal) {
+
+	private Inicio principal; // Classe que inicia as cenas
+	SistemaAccountManager fachada = SistemaAccountManager.getInstance(); // instancia da fachada
+
+	public void setPrincipal(Inicio principal) {
 		this.principal = principal;
 	}
 
@@ -42,23 +41,14 @@ public class TelaLoginController {
 	public void acessarLogin(ActionEvent event) throws NegocioException {
 
 		try {
-			 if (this.fachada.efetuarLogin(TLOGIN_TF_USUARIO.getText(), TLOGIN_PF_SENHA.getText()) == 1) {
+			 if (this.fachada.efetuarLogin(TLogin_TF_Usuario.getText(), TLogin_LB_EsqueciSenha.getText()) == 1) {
 				Parent root;
 				Stage stage;
 
-				stage = (Stage) TLOGIN_BT_ACESSAR.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/TelaMenuPrincipal.fxml"));
+				stage = (Stage) TLogin_BT_Acessar.getScene().getWindow();
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaRegistro.fxml"));
 				Scene scene = new Scene(root);
 				stage.setScene(scene);
-			}else if (this.fachada.efetuarLogin(TLOGIN_TF_USUARIO.getText(), TLOGIN_PF_SENHA.getText()) == -1) {
-				Parent root;
-				Stage stage;
-
-				stage = (Stage) TLOGIN_BT_ACESSAR.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/TelaLogin.fxml"));
-				Scene scene = new Scene(root);
-				stage.setScene(scene);
-
 			}
 
 		} catch (Exception e) {
@@ -66,6 +56,4 @@ public class TelaLoginController {
 		}
 
 	}
-
-	
 }

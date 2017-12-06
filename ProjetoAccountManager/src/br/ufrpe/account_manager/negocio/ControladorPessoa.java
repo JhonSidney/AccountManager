@@ -9,14 +9,13 @@ public class ControladorPessoa {
 
 	private IRepositorio<Pessoa, String> repositorio;
 	private static ControladorPessoa instance;
-	
-	
+
 	public ControladorPessoa() {
 		this.repositorio = new RepositorioPessoas();
 	}
-	
-	public  static ControladorPessoa getInstance() {
-		if(instance == null) {
+
+	public static ControladorPessoa getInstance() {
+		if (instance == null) {
 			instance = new ControladorPessoa();
 		}
 		return instance;
@@ -43,4 +42,15 @@ public class ControladorPessoa {
 			throw new NegocioException("Erro, a pessoa não está cadastrada");
 	}
 
+	public boolean existeNome(String cpf) {
+		boolean resultado = this.repositorio.existeNome(cpf);
+		return resultado;
+	}
+
+	public Pessoa existe(Pessoa pessoa) {
+		Pessoa resultado = this.repositorio.existe(pessoa);
+		return resultado;
+	}
+
+	//FALTA O METODO DE PROCURAR POR NOME
 }

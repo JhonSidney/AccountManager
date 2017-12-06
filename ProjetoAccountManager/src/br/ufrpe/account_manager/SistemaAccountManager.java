@@ -19,7 +19,7 @@ public class SistemaAccountManager {
 
 	private SistemaAccountManager() {
 		this.pessoas = new ControladorPessoa();
-		//this.contas = new ControladorConta.getInstance();
+		// this.contas = new ControladorConta.getInstance();
 	}
 
 	public static SistemaAccountManager getInstance() {
@@ -62,7 +62,9 @@ public class SistemaAccountManager {
 		return this.contas.listar();
 	}
 
-	public void efetuarLogin(String cpf, String senha) throws NegocioException {
+	public int efetuarLogin(String cpf, String senha) throws NegocioException {
+
 		return this.logins.efetuarLogin(cpf, senha);
+
 	}
 }
