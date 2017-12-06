@@ -48,7 +48,7 @@ public class TelaLoginController {
 				Stage stage;
 
 				stage = (Stage) TLogin_BT_Acessar.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaRegistro.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/Telalogin.fxml"));
 				Scene scene = new Scene(root);
 				stage.setScene(scene);
 			}

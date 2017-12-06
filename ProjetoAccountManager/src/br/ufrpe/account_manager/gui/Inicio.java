@@ -62,7 +62,7 @@ public class Inicio extends Application {
 
 			rootLayout.setCenter(Login);
 			TelaLoginController controller = loader.getController();
-			controller.setPrincipal(this);
+			controller.setPrincipal(this.getInstance());
 
 		} catch (IOException e) {
 			e.printStackTrace();
