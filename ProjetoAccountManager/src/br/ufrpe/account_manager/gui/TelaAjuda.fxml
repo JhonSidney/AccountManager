@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.text.*?>
@@ -10,13 +11,37 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="634.0" prefWidth="1016.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="645.0" prefWidth="815.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrpe.account_manager.gui.TelaAjudaController">
    <children>
-      <BorderPane prefHeight="632.0" prefWidth="1016.0" />
-      <ImageView fitHeight="634.0" fitWidth="1018.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="654.0" fitWidth="820.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../Desktop/pictures/RegistroLogin.jpg" />
+            <Image url="@pictures/fundo1.png" />
          </image>
       </ImageView>
+      <Label layoutX="335.0" layoutY="196.0" prefHeight="36.0" prefWidth="204.0" text="Recuperação de Senha" textFill="#1e2080">
+         <font>
+            <Font name="Baskerville Old Face" size="22.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="79.0" fitWidth="45.0" layoutX="285.0" layoutY="191.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@pictures/logoAccountManager.png" />
+         </image>
+         <effect>
+            <ColorAdjust contrast="-0.35" hue="0.05" saturation="0.4" />
+         </effect>
+      </ImageView>
+      <TextField fx:id="TAjuda_TF_CPF" layoutX="294.0" layoutY="262.0" prefWidth="250.0" />
+      <PasswordField fx:id="TAjuda_PF_Senha" layoutX="294.0" layoutY="311.0" prefWidth="250.0" />
+      <Label layoutX="295.0" layoutY="244.0" text="CPF">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="295.0" layoutY="293.0" text="Senha de Acesso" />
+      <Label layoutX="295.0" layoutY="338.0" text="Confirmar Senha" />
+      <PasswordField fx:id="TAjuda_PF_ConfirmaSenha" layoutX="294.0" layoutY="356.0" prefHeight="25.0" prefWidth="250.0" />
+      <Button fx:id="TAjuda_BT_alterar" layoutX="477.0" layoutY="425.0" minHeight="25.0" mnemonicParsing="false" onAction="#botao_enviar" prefWidth="64.0" text="Alterar" />
+      <Button fx:id="TAjuda_BT_Cancelar" layoutX="549.0" layoutY="425.0" minHeight="25.0" mnemonicParsing="false" onAction="#botao_cancelar" prefWidth="64.0" text="Cancelar" />
    </children>
 </AnchorPane>

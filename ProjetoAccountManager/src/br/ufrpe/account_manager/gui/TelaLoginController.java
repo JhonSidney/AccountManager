@@ -1,6 +1,8 @@
 
 package br.ufrpe.account_manager.gui;
 
+import java.io.IOException;
+
 import br.ufrpe.account_manager.SistemaAccountManager;
 import br.ufrpe.account_manager.exception.NegocioException;
 import javafx.event.ActionEvent;
@@ -9,13 +11,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class TelaLoginController {
-	private Inicio principal; // Classe que inicia as cenas
+	private Inicio inicio; // Classe que inicia as cenas
 	SistemaAccountManager fachada = SistemaAccountManager.getInstance(); // instancia da fachada
 
 	@FXML
@@ -25,20 +27,18 @@ public class TelaLoginController {
 	@FXML
 	private PasswordField TLogin_PF_Senha;
 	@FXML
-	private Label TLogin_LB_Registro;// Ainda nao é registrado?
+	private Hyperlink TLogin_HL_Registro;// Ainda nao é registrado?
 	@FXML
-	private Label TLogin_LB_EsqueciSenha;// Precisa de Ajuda?
+	private Hyperlink TLogin_HL_EsqueciSenha;// Precisa de Ajuda?
 
 	public void setPrincipal(Inicio principal) {
-		this.principal = principal;
+		this.inicio = principal;
 	}
 
 	public void acessarLogin() throws NegocioException {
-		this.setPrincipal(principal.getInstance());
+		this.setPrincipal(inicio.getInstance());
 	}
-	
 
-	
 	@FXML
 	public void acessarLogin(ActionEvent event) throws NegocioException {
 
@@ -48,14 +48,57 @@ public class TelaLoginController {
 				Stage stage;
 
 				stage = (Stage) TLogin_BT_Acessar.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/Telalogin.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaMenuPrincipal.fxml"));
+
 				Scene scene = new Scene(root);
 				stage.setScene(scene);
 			}
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
+	}
+
+	@FXML
+	public void registroUsuario(ActionEvent event) {
+		Parent root;
+		Stage stage;
+		try {
+
+			if (event.getTarget() == TLogin_HL_Registro) {
+				stage = (Stage) TLogin_HL_Registro.getScene().getWindow();
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaRegistro.fxml"));
+			} else {
+				stage = (Stage) TLogin_HL_Registro.getScene().getWindow();
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaLogin.fxml"));
+			}
+			Scene scene = new Scene(root);
+			stage.setScene(scene);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	@FXML
+	public void esqueciSenha(ActionEvent event) {
+
+		Parent root;
+		Stage stage;
+		try {
+
+			if (event.getTarget() == TLogin_HL_EsqueciSenha) {
+				stage = (Stage) TLogin_HL_EsqueciSenha.getScene().getWindow();
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaAjuda.fxml"));
+			} else {
+				stage = (Stage) TLogin_HL_EsqueciSenha.getScene().getWindow();
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaLogin.fxml"));
+			}
+			Scene scene = new Scene(root);
+			stage.setScene(scene);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

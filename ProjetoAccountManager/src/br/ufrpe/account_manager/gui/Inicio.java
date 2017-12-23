@@ -7,6 +7,7 @@ import br.ufrpe.account_manager.negocio.beans.Pessoa;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
@@ -16,6 +17,7 @@ public class Inicio extends Application {
 	private Stage primaryStage;
 	private BorderPane rootLayout;
 	private static Inicio instancia;
+	private Image imagem;
 
 	public static Inicio getInstance() {
 		if (instancia == null) {
@@ -27,17 +29,19 @@ public class Inicio extends Application {
 	@Override
 	public void start(Stage primaryStage) throws NegocioException {
 		// criação do palco
+
+		this.primaryStage = primaryStage;
+		this.primaryStage.setTitle("Account Manager");// Nome do Sistema
+		this.primaryStage.setResizable(false);
+		imagem = new Image(getClass().getResourceAsStream("/br/ufrpe/account_manager/gui/pictures/logoAccountManager.png"));
+		this.primaryStage.getIcons().add(imagem);
 		
-			this.primaryStage = primaryStage;
-			this.primaryStage.setTitle("Account Manager");// Nome do Sistema
-			this.primaryStage.setResizable(false);
+		initRootLayout();
+		if (acesso == null) {
+			showLogin();
+		}
 
-			initRootLayout();
-			if (acesso == null) {
-				showLogin();
-			}
-
-		} 
+	}
 
 	private void initRootLayout() {
 		// TODO Auto-generated method stub
@@ -69,6 +73,60 @@ public class Inicio extends Application {
 		}
 	}
 
+	//Tela de login
+	public void acessarLogin() {
+		try {
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(Inicio.class.getResource("/br/ufrpe/account_manager/gui/TelaMenuPrincipal.fxml"));
+			AnchorPane Login = (AnchorPane) loader.load();
+
+			rootLayout.setCenter(Login);
+			TelaLoginController controller = loader.getController();
+			controller.setPrincipal(this.getInstance());
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	public void registroUsuario() {
+		try {
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(Inicio.class.getResource("/br/ufrpe/account_manager/gui/TelaRegistro.fxml"));
+			AnchorPane Login = (AnchorPane) loader.load();
+			
+
+			rootLayout.setCenter(Login);
+			TelaLoginController controller = loader.getController();
+			controller.setPrincipal(this.getInstance());
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	
+	public void esqueciSenha() {
+		try {
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(Inicio.class.getResource("/br/ufrpe/account_manager/gui/TelaAjuda.fxml"));
+			AnchorPane Login = (AnchorPane) loader.load();
+			
+
+			rootLayout.setCenter(Login);
+			TelaLoginController controller = loader.getController();
+			controller.setPrincipal(this.getInstance());
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	//Metodos MenuPrincipal
+	
+	
+	
 	public static void main(String[] args) {
 		launch(args);
 
