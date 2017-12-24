@@ -25,16 +25,17 @@ public class ControladorConta {
 	}
 
 	public void cadastrar(Conta conta) throws NegocioException {
-		if (this.repositorio.existe(conta) == null)
-			this.repositorio.cadastrar(conta);
-
-		else
+		if (this.repositorio.existe(conta))
 			throw new NegocioException("A conta ja está cadastrada");
+		else {
+			this.repositorio.cadastrar(conta);
+		}
+			
 
 	}
 
 	public void remover(Conta conta) throws NegocioException {
-		if (this.repositorio.existeNome(conta.getNome()))
+		if (this.repositorio.existe(conta))
 			this.repositorio.remover(conta);
 
 		else
@@ -43,7 +44,7 @@ public class ControladorConta {
 	}
 
 	public void atualizar(Conta conta) throws NegocioException {
-		if (this.repositorio.existeNome(conta.getNome()))
+		if (this.repositorio.existe(conta))
 			this.repositorio.atualizar(conta);
 
 		else

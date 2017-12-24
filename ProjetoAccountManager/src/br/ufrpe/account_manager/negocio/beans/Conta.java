@@ -7,7 +7,7 @@ public class Conta {
 
 //	@Id
 	//@GeneratedValue
-	private long id;
+	private String id;
 	private String nome;
 	private String descricao;
 	private Date dataVencimento;
@@ -19,7 +19,7 @@ public class Conta {
 		this.setDescricao(descricao);
 		this.setDataVencimento(dataVencimento);
 		this.setValor(valor);
-		this.setId(valor);
+		//this.setId(valor);
 	}
 
 	public String getNome() {
@@ -54,11 +54,11 @@ public class Conta {
 		this.valor = valor;
 	}
 
-	public long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

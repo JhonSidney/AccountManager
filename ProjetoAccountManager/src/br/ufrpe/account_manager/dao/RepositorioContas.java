@@ -52,29 +52,29 @@ public class RepositorioContas implements IRepositorioContas<Conta,String> {
 		
 	}
 
-	public Conta procurar(long id) {
+	public Conta procurar(String id) {
 
 		for (Conta c : this.contas) {
-			if (c.getId() == id) {
+			if (c.getId().equals(id)) {
 				return c;
 			}
 		}
 		return null;
 	}
 	
-	/*
 	@Override
-	public Conta existe(Conta conta) {
+	public boolean existe(Conta conta) {
 
-		Conta resultado = null;
+		boolean resultado = false;
 		for(int i =0; i<this.contas.size(); i++) {
 			if(this.contas.get(i).equals(conta)) {
-				return resultado;
+				return true;
 			}
 		}
-		return null;
+		return resultado;
 	}
 	
+	/*
 	public Conta existe(String nome) {
 		
 		Conta conta = null;

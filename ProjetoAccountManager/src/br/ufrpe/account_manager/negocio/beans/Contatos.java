@@ -4,58 +4,23 @@
 package br.ufrpe.account_manager.negocio.beans;
 
 
-public class Contatos {
+public class Contatos extends Pessoa{
 	
-	private String nome;
-	private String telefone;
-	private String email;
-	private String Endereco;
+	private String preferencia;
 	
-	public Contatos(String nome, String telefone, String email, String endereco) {
-		this.setNome(nome);
-		this.setTelefone(telefone);
-		this.setEmail(email);
-		this.setEndereco(endereco);
+
+	public Contatos(String nome, String cpf, String email, String senha, String preferencia) {
+		super(nome, cpf, email, senha);
+		this.setPreferencia(preferencia);
 	}
 
-	public String getNome() {
-		return nome;
+	public void setPreferencia(String preferencia) {
+		this.preferencia = preferencia;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public String getPreferencia() {
+		return preferencia;
 	}
-
-	public String getTelefone() {
-		return telefone;
-	}
-
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getEndereco() {
-		return Endereco;
-	}
-
-	public void setEndereco(String endereco) {
-		Endereco = endereco;
-	}
-
-	@Override
-	public String toString() {
-		return "Contatos [nome=" + nome + ", telefone=" + telefone + ", email=" + email + ", Endereco=" + Endereco
-				+ "]";
-	}
-	
 	
 	
 }

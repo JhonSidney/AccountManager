@@ -14,7 +14,7 @@ public class  Pessoa {
 	 private String nascimento;
 	 private String tel;
 
-	public Pessoa(String nome, String cpf, String email, String senha, String logradouro, String nascimento, String tel) {
+	public Pessoa(String nome, String cpf, String email, String senha) {
 		super();
 		this.setNome(nome);
 		this.setCpf(cpf);
