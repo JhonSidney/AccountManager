@@ -54,6 +54,7 @@ public class TelaRegistroController {
 				senha = TRegistro_PF_Senha.getText();
 				
 				Pessoa pessoa = new Pessoa(nome, sobrenome, cpf, senha);
+				
 				fachada.cadastrarPessoa(pessoa);
 				
 				stage = (Stage) TRegistro_BT_Enviar.getScene().getWindow();
