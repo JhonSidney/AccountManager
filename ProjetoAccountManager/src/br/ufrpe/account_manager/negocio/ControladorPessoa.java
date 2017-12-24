@@ -47,6 +47,7 @@ public class ControladorPessoa {
 	public Pessoa procurar(String cpf) throws NegocioException {
 		Pessoa resultado = this.repositorio.procurar(cpf);
 		return resultado;
+		
 	}
 
 	//acima implementado
