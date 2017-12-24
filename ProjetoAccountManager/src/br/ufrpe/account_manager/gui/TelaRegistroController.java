@@ -59,7 +59,7 @@ public class TelaRegistroController {
 				
 				stage = (Stage) TRegistro_BT_Enviar.getScene().getWindow();
 				root = FXMLLoader.load(
-				getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/TelaLogin.fxml"));
+				getClass().getResource("/br/ufrpe/account_manager/gui/TelaLogin.fxml"));
 
 				Scene scene = new Scene(root);
 				stage.setScene(scene);
