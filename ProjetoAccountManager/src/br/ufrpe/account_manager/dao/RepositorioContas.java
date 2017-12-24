@@ -52,6 +52,17 @@ public class RepositorioContas implements IRepositorioContas<Conta,String> {
 		
 	}
 
+	public Conta procurar(long id) {
+
+		for (Conta c : this.contas) {
+			if (c.getId() == id) {
+				return c;
+			}
+		}
+		return null;
+	}
+	
+	/*
 	@Override
 	public Conta existe(Conta conta) {
 
@@ -87,5 +98,5 @@ public class RepositorioContas implements IRepositorioContas<Conta,String> {
 		}
 		return false;
 	}
-
+*/
 }

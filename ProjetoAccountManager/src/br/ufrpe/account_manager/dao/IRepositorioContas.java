@@ -11,9 +11,7 @@ public interface IRepositorioContas<T,K> {
 	public void remover (Conta conta);
 	public ArrayList<Conta> listar();
 	public void atualizar(Conta conta);
-	public Conta existe(Conta conta);
-	public Conta existe(String nome);
-	public boolean existeNome(String nome);
+	public Conta procurar(long id);
 	
 	
 	
