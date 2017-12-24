@@ -1,6 +1,6 @@
 package br.ufrpe.account_manager.negocio;
 
-import br.ufrpe.account_manager.dao.IRepositorio;
+import br.ufrpe.account_manager.dao.IRepositorioPessoas;
 import br.ufrpe.account_manager.dao.RepositorioPessoas;
 import br.ufrpe.account_manager.exception.NegocioException;
 import br.ufrpe.account_manager.negocio.beans.Pessoa;
@@ -8,7 +8,7 @@ import br.ufrpe.account_manager.negocio.beans.Pessoa;
 public class ControladorPessoa {
 	
 
-	private IRepositorio<Pessoa, String> repositorio;
+	private IRepositorioPessoas<Pessoa, String> repositorio;
 	private static ControladorPessoa instance;
 
 	public ControladorPessoa() {
@@ -44,15 +44,22 @@ public class ControladorPessoa {
 			throw new NegocioException("Erro, a pessoa não está cadastrada");
 	}
 
+	public Pessoa procurar(String cpf) throws NegocioException {
+		Pessoa resultado = this.repositorio.procurar(cpf);
+		return resultado;
+	}
 
-	public boolean existeNome(String cpf) {
+	//acima implementado
+	protected boolean existeNome(String cpf) {
 		boolean resultado = this.repositorio.existeNome(cpf);
 		return resultado;
 	}
 
-	public Pessoa existe(Pessoa pessoa) {
+	protected Pessoa existe(Pessoa pessoa) {
 		Pessoa resultado = this.repositorio.existe(pessoa);
 		return resultado;
 	}
+	
+	
 
 }

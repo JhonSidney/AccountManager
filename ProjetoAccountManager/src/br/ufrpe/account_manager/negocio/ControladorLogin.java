@@ -18,12 +18,15 @@ public class ControladorLogin {
 	public int efetuarLogin(String cpf, String senha) throws NegocioException {
 	
 	int igual = 0;
-	boolean resultado = this.pessoa.existeNome(cpf);
-	Pessoa pessoa = null;
+	Pessoa pessoa = this.pessoa.procurar(cpf);
+	//boolean resultado = this.pessoa.existeNome(cpf);
+	//Pessoa pessoa = null;
 	
-	if(resultado == false) {
+	if(pessoa == null) {
+	//if(resultado == false) {
 		throw new NegocioException(" Usuario Nao Existe!");
-	}else if(resultado != false && pessoa.getSenha().equals(senha)) {
+	}else if(pessoa != null && pessoa.getCpf().equals(senha)) {
+	//}else if(resultado != false && pessoa.getSenha().equals(senha)) {
 		igual = 1;
 	}else {
 		throw new NegocioException (" Senha Invalida");

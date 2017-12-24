@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import br.ufrpe.account_manager.negocio.beans.Conta;
 
-public class RepositorioContas implements IRepositorio<Conta,String> {
+public class RepositorioContas implements IRepositorioContas<Conta,String> {
 
 	private ArrayList<Conta> contas;
 	

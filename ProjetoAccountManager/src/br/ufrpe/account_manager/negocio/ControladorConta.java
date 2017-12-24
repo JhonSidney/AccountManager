@@ -2,14 +2,14 @@ package br.ufrpe.account_manager.negocio;
 
 import java.util.ArrayList;
 
-import br.ufrpe.account_manager.dao.IRepositorio;
+import br.ufrpe.account_manager.dao.IRepositorioContas;
 import br.ufrpe.account_manager.dao.RepositorioContas;
 import br.ufrpe.account_manager.exception.NegocioException;
 import br.ufrpe.account_manager.negocio.beans.Conta;
 
 public class ControladorConta {
 
-	private IRepositorio<Conta, String> repositorio;
+	private IRepositorioContas<Conta, String> repositorio;
 	private static ControladorConta instance;
 	
 	

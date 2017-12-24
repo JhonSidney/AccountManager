@@ -61,6 +61,13 @@ public class Conta {
 	public void setId(long id) {
 		this.id = id;
 	}
+
+	@Override
+	public String toString() {
+		return "Conta [id=" + id + ", nome=" + nome + ", descricao=" + descricao + ", dataVencimento=" + dataVencimento
+				+ ", valor=" + valor + "]";
+	}
+	
 	
 	
 }

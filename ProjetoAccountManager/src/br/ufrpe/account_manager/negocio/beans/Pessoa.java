@@ -98,7 +98,18 @@ public class  Pessoa {
 	public void setId(String id) {
 		this.id = id;
 	}
+
+	
+	
+	@Override
+	public String toString() {
+		return "Pessoa [nome=" + nome + ", cpf=" + cpf + ", salario=" + salario + ", id=" + id + ", email=" + email
+				+ ", senha=" + senha + ", logradouro=" + logradouro + ", nascimento=" + nascimento + ", tel=" + tel
+				+ "]";
+	}
+	
 	
 	
 
+	
 }
