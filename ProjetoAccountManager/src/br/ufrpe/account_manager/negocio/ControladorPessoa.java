@@ -8,7 +8,7 @@ import br.ufrpe.account_manager.negocio.beans.Pessoa;
 public class ControladorPessoa {
 	
 
-	private IRepositorioPessoas<Pessoa, String> repositorio;
+	private IRepositorioPessoas repositorio;
 	private static ControladorPessoa instance;
 
 	public ControladorPessoa() {
@@ -24,21 +24,26 @@ public class ControladorPessoa {
 	}
 
 	public void cadastrar(Pessoa pessoa) throws NegocioException {
-		if (this.repositorio.existe(pessoa) == null)
+		 if(pessoa != null && !this.existeCpf(pessoa.getCpf()))
+		//if (this.repositorio.existe(pessoa) == null)
 			this.repositorio.cadastrar(pessoa);
 		else
 			throw new NegocioException("A pessoa já está cadastrada");
 	}
 
-	public void remover(Pessoa pessoa) throws NegocioException {
-		if (this.repositorio.existeNome(pessoa.getCpf()))
-			this.repositorio.remover(pessoa);
+	
+	public void remover(String cpf) throws NegocioException{	
+	//public void remover(Pessoa pessoa) throws NegocioException {
+		//if (this.repositorio.existeCpf(pessoa.getCpf()))
+		Pessoa pessoa = this.repositorio.procurar(cpf);
+		if(pessoa != null)
+		this.repositorio.remover(pessoa);
 		else
 			throw new NegocioException("Erro ao remover, a pessoa não está cadastrada");
 	}
 
 	public void atualizar(Pessoa pessoa) throws NegocioException {
-		if (this.repositorio.existeNome(pessoa.getCpf()))
+		if (pessoa != null && this.repositorio.existeCpf(pessoa.getCpf()))
 			this.repositorio.atualizar(pessoa);
 		else
 			throw new NegocioException("Erro, a pessoa não está cadastrada");
@@ -51,16 +56,16 @@ public class ControladorPessoa {
 	}
 
 	//acima implementado
-	protected boolean existeNome(String cpf) {
-		boolean resultado = this.repositorio.existeNome(cpf);
+	private  boolean existeCpf(String cpf) {
+		boolean resultado = this.repositorio.existeCpf(cpf);
 		return resultado;
 	}
 
-	protected Pessoa existe(Pessoa pessoa) {
+	/*protected Pessoa existe(Pessoa pessoa) {
 		Pessoa resultado = this.repositorio.existe(pessoa);
 		return resultado;
 	}
 	
-	
+	*/
 
 }

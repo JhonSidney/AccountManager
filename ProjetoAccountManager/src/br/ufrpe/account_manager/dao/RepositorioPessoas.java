@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import br.ufrpe.account_manager.negocio.beans.Pessoa;
 
 
-public class RepositorioPessoas implements IRepositorioPessoas<Pessoa, String>, Serializable {
+public class RepositorioPessoas implements IRepositorioPessoas, Serializable {
 
 	private static final String NOME_ARQUIVO_BD = "pessoas.dat";
 	private ArrayList<Pessoa> pessoas;
@@ -86,15 +86,20 @@ public class RepositorioPessoas implements IRepositorioPessoas<Pessoa, String>, 
 
 
 	@Override
-	public void cadastrar(Pessoa pessoa) {
+	public boolean cadastrar(Pessoa pessoa) {
 
 		this.pessoas.add(pessoa);
+		salvarArquivo();
+		return true;
+		
 	}
 
 	@Override
-	public void remover(Pessoa pessoa) {
+	public boolean remover(Pessoa pessoa) {
 
 		this.pessoas.remove(pessoa);
+		salvarArquivo();
+		return true;
 	}
 
 	@Override
@@ -104,10 +109,12 @@ public class RepositorioPessoas implements IRepositorioPessoas<Pessoa, String>, 
 	}
 
 	@Override
-	public void atualizar(Pessoa pessoa) {
+	public boolean atualizar(Pessoa pessoa) {
 
 		int indice = this.procurarIndice(pessoa);
 		this.pessoas.set(indice, pessoa);
+		salvarArquivo();
+		return true;
 	}
 
 	public Pessoa procurar(String cpf) {
@@ -122,7 +129,7 @@ public class RepositorioPessoas implements IRepositorioPessoas<Pessoa, String>, 
 	
 	//implementado acima 
 	
-	@Override
+	/*@Override
 	public Pessoa existe(Pessoa pessoa) {
 
 		Pessoa resultado = null;
@@ -146,9 +153,9 @@ public class RepositorioPessoas implements IRepositorioPessoas<Pessoa, String>, 
 
 		return pessoa;
 	}
-
+*/
 	@Override
-	public boolean existeNome(String cpf) {
+	public boolean existeCpf(String cpf) {
 
 		boolean resultado = false;
 		for (int i = 0; i < this.pessoas.size(); i++) {

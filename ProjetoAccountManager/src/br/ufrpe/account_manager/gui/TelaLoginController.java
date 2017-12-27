@@ -1,8 +1,6 @@
 
 package br.ufrpe.account_manager.gui;
 
-import java.io.IOException;
-
 import br.ufrpe.account_manager.SistemaAccountManager;
 import br.ufrpe.account_manager.exception.NegocioException;
 import javafx.event.ActionEvent;
@@ -10,6 +8,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.PasswordField;
@@ -55,6 +55,13 @@ public class TelaLoginController {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
+			/*Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("Login Inválido");
+			alert.setHeaderText("Usuário/Senha Inválidos ou Não existe");
+			alert.setContentText("Procure o Administrador do sistema!");
+
+			alert.showAndWait();
+			*/
 		}
 
 	}

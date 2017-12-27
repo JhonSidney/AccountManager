@@ -32,7 +32,7 @@
             <Image url="@pictures/contas.png" />
          </image>
       </ImageView>
-      <Hyperlink fx:id="TMenuPrincipal_HL_MeuPerfil" focusTraversable="false" layoutX="56.0" layoutY="121.0" prefHeight="29.0" prefWidth="100.0" text="Meu Perfil" textFill="#44d3da">
+      <Hyperlink fx:id="TMenuPrincipal_HL_MeuPerfil" focusTraversable="false" layoutX="56.0" layoutY="121.0" onAction="#menuMeuPerfil" prefHeight="29.0" prefWidth="100.0" text="Meu Perfil" textFill="#44d3da">
          <font>
             <Font size="18.0" />
          </font>
@@ -42,15 +42,15 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Hyperlink fx:id="TMenuPrincipal_HL_Contas" layoutX="55.0" layoutY="261.0" text="Contas" textFill="#44d3da">
+      <Hyperlink fx:id="TMenuPrincipal_HL_Contas" layoutX="55.0" layoutY="261.0" onAction="#menuContas" text="Contas" textFill="#44d3da">
          <font>
             <Font size="18.0" />
          </font>
       </Hyperlink>
       <MenuButton fx:id="TMenuPrincipal_BT_Cadastro" alignment="CENTER" blendMode="HARD_LIGHT" focusTraversable="false" layoutX="55.0" layoutY="224.0" mnemonicParsing="false" opacity="0.0" popupSide="RIGHT" prefHeight="23.0" prefWidth="89.0" text="Cadastro" textFill="#44d3da">
         <items>
-          <MenuItem mnemonicParsing="false" text="Contatos" />
-          <MenuItem mnemonicParsing="false" text="Contas" />
+          <MenuItem fx:id="TMenuPrincipal_BTCadastro_MI_Contatos" mnemonicParsing="false" onAction="#menuCadastroContatos" text="Contatos" />
+          <MenuItem fx:id="TMenuPrincipal_BTCadastro_MI_Contas" mnemonicParsing="false" onAction="#menuCadastroContas" text="Contas" />
         </items>
          <font>
             <Font size="10.0" />
@@ -81,8 +81,8 @@
             <Font size="10.0" />
          </font>
          <items>
-            <MenuItem mnemonicParsing="false" text="Banco" />
-            <MenuItem mnemonicParsing="false" text="Categoria" />
+            <MenuItem fx:id="TMenuPrincipal_BTConfiguracoes_MI_Banco" mnemonicParsing="false" onAction="#menuConfiguracaoBanco" text="Banco" />
+            <MenuItem fx:id="TMenuPrincipal_BTConfiguracoes_MI_Categoria" mnemonicParsing="false" onAction="#menuConfiguracaoCategoria" text="Categoria" />
          </items>
       </MenuButton>
    </children>

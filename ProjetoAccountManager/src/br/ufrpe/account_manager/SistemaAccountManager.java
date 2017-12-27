@@ -35,9 +35,10 @@ public class SistemaAccountManager {
 	public void cadastrarPessoa(Pessoa pessoa) throws NegocioException {
 		this.pessoas.cadastrar(pessoa);
 	}
-
-	public void removerPessoa(Pessoa pessoa) throws NegocioException {
-		this.pessoas.remover(pessoa);
+public void removerPessoa(String cpf) throws NegocioException{
+	//public void removerPessoa(Pessoa pessoa) throws NegocioException {
+		//this.pessoas.remover(pessoa);
+		this.pessoas.remover(cpf);
 	}
 
 	public void alterarPessoa(Pessoa pessoa) throws NegocioException {

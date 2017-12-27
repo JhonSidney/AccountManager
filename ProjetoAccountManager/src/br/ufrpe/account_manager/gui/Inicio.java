@@ -5,6 +5,8 @@ import java.io.IOException;
 import br.ufrpe.account_manager.exception.NegocioException;
 import br.ufrpe.account_manager.negocio.beans.Pessoa;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -125,6 +127,31 @@ public class Inicio extends Application {
 	
 	//Metodos MenuPrincipal
 	
+	@FXML
+	public void menuMeuPerfil(ActionEvent event) {
+
+	}
+	@FXML
+	public void menuConfiguracaoBanco(ActionEvent event) {
+
+	}
+	@FXML
+	public void menuConfiguracaoCategoria(ActionEvent event) {
+
+	}
+	@FXML
+	public void menuCadastroContatos(ActionEvent event) {
+
+	}
+	@FXML
+	public void menuCadastroContas(ActionEvent event) {
+
+	}
+	
+	@FXML
+	public void menuContas(ActionEvent event) {
+
+	}
 	
 	
 	public static void main(String[] args) {

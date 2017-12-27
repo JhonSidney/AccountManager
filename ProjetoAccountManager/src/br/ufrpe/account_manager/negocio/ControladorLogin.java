@@ -25,7 +25,7 @@ public class ControladorLogin {
 	if(pessoa == null) {
 	//if(resultado == false) {
 		throw new NegocioException(" Usuario Nao Existe!");
-	}else if(pessoa != null && pessoa.getCpf().equals(senha)) {
+	}else if(pessoa != null && pessoa.getSenha().equals(senha)) {
 	//}else if(resultado != false && pessoa.getSenha().equals(senha)) {
 		igual = 1;
 	}else {
