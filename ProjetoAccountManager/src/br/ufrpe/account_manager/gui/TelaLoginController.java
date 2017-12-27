@@ -1,4 +1,3 @@
-
 package br.ufrpe.account_manager.gui;
 
 import br.ufrpe.account_manager.SistemaAccountManager;

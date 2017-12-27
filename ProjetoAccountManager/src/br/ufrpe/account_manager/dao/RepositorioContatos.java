@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 import br.ufrpe.account_manager.negocio.beans.Contatos;
 
-public class RepositorioContatos {
+public class RepositorioContatos implements IRepositorioContatos {
 
 	private static final String NOME_ARQUIVO_BD = "contato.dat";
 	private ArrayList<Contatos> contato;
@@ -123,6 +123,18 @@ public class RepositorioContatos {
 			}
 		}
 		return indice;
+	}
+
+	@Override
+	public boolean existe(Contatos contato) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Contatos procurar(Contatos contato) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	
