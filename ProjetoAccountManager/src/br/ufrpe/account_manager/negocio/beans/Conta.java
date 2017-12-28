@@ -1,12 +1,12 @@
 package br.ufrpe.account_manager.negocio.beans;
 
+import java.io.Serializable;
 import java.sql.Date;
 
-//@Entity
-public class Conta {
 
-//	@Id
-	//@GeneratedValue
+public class Conta implements Serializable{
+
+
 	private String id;
 	private String nome;
 	private String descricao;
@@ -19,7 +19,6 @@ public class Conta {
 		this.setDescricao(descricao);
 		this.setDataVencimento(dataVencimento);
 		this.setValor(valor);
-		//this.setId(valor);
 	}
 
 	public String getNome() {

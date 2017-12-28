@@ -4,14 +4,13 @@ import java.util.ArrayList;
 
 import br.ufrpe.account_manager.negocio.beans.Conta;
 
-public interface IRepositorioContas<T,K> {
+public interface IRepositorioContas {
 	
 
-	public void cadastrar(Conta conta);
-	public void remover (Conta conta);
-	public ArrayList<Conta> listar();
-	public void atualizar(Conta conta);
+	public boolean cadastrar(Conta conta);
+	public boolean atualizar(Conta conta);
 	public Conta procurar(String id);
-	public boolean existe(Conta conta);
+	public ArrayList<Conta> listar();
+	public boolean remover (String id);
 	
 }

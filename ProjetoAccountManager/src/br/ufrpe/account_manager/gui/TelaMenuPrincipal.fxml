@@ -42,11 +42,6 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Hyperlink fx:id="TMenuPrincipal_HL_Contas" layoutX="55.0" layoutY="261.0" onAction="#menuContas" text="Contas" textFill="#44d3da">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Hyperlink>
       <MenuButton fx:id="TMenuPrincipal_BT_Cadastro" alignment="CENTER" blendMode="HARD_LIGHT" focusTraversable="false" layoutX="55.0" layoutY="224.0" mnemonicParsing="false" opacity="0.0" popupSide="RIGHT" prefHeight="23.0" prefWidth="89.0" text="Cadastro" textFill="#44d3da">
         <items>
           <MenuItem fx:id="TMenuPrincipal_BTCadastro_MI_Contatos" mnemonicParsing="false" onAction="#menuCadastroContatos" text="Contatos" />
@@ -85,5 +80,15 @@
             <MenuItem fx:id="TMenuPrincipal_BTConfiguracoes_MI_Categoria" mnemonicParsing="false" onAction="#menuConfiguracaoCategoria" text="Categoria" />
          </items>
       </MenuButton>
+      <Hyperlink fx:id="TMenuPrincipal_HL_Contas" layoutX="53.0" layoutY="266.0" onAction="#menuContas" text="Contas" textFill="#27ddf5">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Hyperlink>
+      <Hyperlink fx:id="TMenuPrincipal_HL_Sair" layoutX="180.0" layoutY="87.0" onAction="#menuSair" text="Sair" textFill="#7dcff0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Hyperlink>
    </children>
 </AnchorPane>

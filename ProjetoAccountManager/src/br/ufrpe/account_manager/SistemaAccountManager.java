@@ -12,7 +12,6 @@ import br.ufrpe.account_manager.negocio.beans.Pessoa;
 
 public class SistemaAccountManager {
 
-//	private ControladorContatos contatos;
 	private ControladorPessoa pessoas;
 	private ControladorConta contas;
 	private ControladorLogin logins;
@@ -20,8 +19,7 @@ public class SistemaAccountManager {
 	private static SistemaAccountManager instance;
 
 	public SistemaAccountManager() {
-		//this.contatos = new ControladorContatos().getInstance();
-		//this.contas = new ControladorConta.getInstance();
+		this.contas = new ControladorConta().getInstance();
 		this.pessoas = new ControladorPessoa().getInstance();
 		this.logins = new ControladorLogin().getInstance();
 	}
@@ -34,38 +32,57 @@ public class SistemaAccountManager {
 		return instance;
 	}
 
-	// Pessoa
+	/* <<<< PESSOAS >>>> */
 
 	public void cadastrarPessoa(Pessoa pessoa) throws NegocioException {
 		this.pessoas.cadastrar(pessoa);
 	}
 
-	public void removerPessoa(String cpf) throws NegocioException {
-		// public void removerPessoa(Pessoa pessoa) throws NegocioException {
-		// this.pessoas.remover(pessoa);
-		this.pessoas.remover(cpf);
-	}
-
-	public void alterarPessoa(Pessoa pessoa) throws NegocioException {
+	public void atualizarPessoa(Pessoa pessoa) throws NegocioException {
 		this.pessoas.atualizar(pessoa);
 	}
 
-	public void cadastrarConta(Conta conta) throws NegocioException {
-		this.contas.cadastrar(conta);
+	public Pessoa procurarPessoa(String cpf) throws NegocioException {
+		return this.pessoas.procurar(cpf);
 	}
 
-	public void removerConta(Conta conta) throws NegocioException {
-		this.contas.remover(conta);
+	public ArrayList<Pessoa> listarPessoas() throws NegocioException {
+		return this.pessoas.listar();
+	}
+
+	public void removerPessoa(String cpf) throws NegocioException {
+		this.pessoas.remover(cpf);
+	}
+
+	/* <<<< CONTAS >>>> */
+
+	public void cadastrarConta(Conta conta) throws NegocioException {
+		this.contas.cadastrar(conta);
 	}
 
 	public void alterarConta(Conta conta) throws NegocioException {
 		this.contas.atualizar(conta);
 	}
 
+	public Conta procurarConta(String id) throws NegocioException {
+		return this.contas.procurar(id);
+	}
+
 	public ArrayList<Conta> listarContas() throws NegocioException {
 		return this.contas.listar();
 	}
 
+	public void removerConta(String id) throws NegocioException {
+		this.contas.remover(id);
+	}
+
+	/* <<<< CONTATOS >>>> */
+	
+	
+	
+	
+
+	/* <<<< LOGIN >>>> */
 	public int efetuarLogin(String cpf, String senha) throws NegocioException {
 		return this.logins.efetuarLogin(cpf, senha);
 

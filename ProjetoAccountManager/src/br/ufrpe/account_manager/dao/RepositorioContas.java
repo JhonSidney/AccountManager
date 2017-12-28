@@ -1,104 +1,147 @@
 package br.ufrpe.account_manager.dao;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import br.ufrpe.account_manager.negocio.beans.Conta;
 
-public class RepositorioContas implements IRepositorioContas<Conta,String> {
 
-	private ArrayList<Conta> contas;
-	
-	
-	private int procurarIndice(Conta conta)
-	{
-		int indice = -1;
+public class RepositorioContas implements IRepositorioContas, Serializable {
 
-		for (int i = 0; i < this.contas.size(); i++) 
-		{
-			if (this.contas.get(i).equals(conta)) 
-			{
-				indice = i;
+	
+	// ATRIBUTOS
+		public static final String NOME_ARQUIVOS_BD = "contas.dat";
+		private ArrayList<Conta> contas;
+		public static RepositorioContas instancia;
+
+		private RepositorioContas() {
+			this.contas = new ArrayList<>();
+		}
+
+		public static RepositorioContas getInstance() {
+
+			if (instancia == null) {
+				try{
+					instancia =lerDoArquivo();
+				} catch (IOException e){
+					e.printStackTrace();
+				}
+			}
+			return instancia;
+		}
+
+		public static RepositorioContas lerDoArquivo() throws IOException {
+
+			RepositorioContas instanciaLocal = null;
+			File in = new File(NOME_ARQUIVOS_BD);
+			FileInputStream fis = null;
+			ObjectInputStream ois = null;
+
+			try {
+				fis = new FileInputStream(in);
+				ois = new ObjectInputStream(fis);
+				Object o = ois.readObject();
+				instanciaLocal = (RepositorioContas) o;
+			} catch (Exception e) {
+				instanciaLocal = new RepositorioContas();
+			} finally {
+				if (ois != null) {
+					try {
+						ois.close();
+					} catch (IOException e) {
+						/* Silence exception */
+					}
+				}
+			}
+			return instanciaLocal;
+		}
+
+		public void salvarArquivo() {
+			if (instancia == null) {
+				return;
+			}
+			File out = new File(NOME_ARQUIVOS_BD);
+			FileOutputStream fos = null;
+			ObjectOutputStream oos = null;
+
+			try {
+				fos = new FileOutputStream(out);
+				oos = new ObjectOutputStream(fos);
+				oos.writeObject(instancia);
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				if (oos != null) {
+					try {
+						oos.close();
+					} catch (IOException e) {
+						/* Silent */}
+				}
 			}
 		}
-		return indice;
-}
+
+		@Override
+		public boolean cadastrar(Conta conta) {
+			this.contas.add(conta);
+			salvarArquivo();
+			return true;
+		}
+
+		@Override
+		public boolean atualizar(Conta conta) {
+			int i = 0;
+			for (Conta contas : this.contas) {
+				
+				if (contas.getId().equals(contas.getId())) {
+					this.contas.set(i, contas);
+					salvarArquivo();
+					return true;
+				}
+				i++;
+			}
+			return false;
+		}
+
+		@Override
+		public Conta procurar(String id) {
+			for (Conta c : this.contas) {
+				if (c.getId().equals(id)) {
+					return c;
+				}
+			}
+			return null;
+		}
+
+		@Override
+		public ArrayList<Conta> listar() {
+
+			return this.contas;
+		}
+
+		public boolean remover(String id) {
+			int i = 0;
+			for (Conta c : this.contas) {
+				
+				if (c.getId().equals(id)) {
+					this.contas.remove(i);
+					salvarArquivo();
+					return true;
+				}
+				i++;
+			}
+
+			return false;
+		}
+
+		
 	
-
-	@Override
-	public void cadastrar(Conta conta) {
-		
-		this.contas.add(conta);
-	}
-
-	@Override
-	public void remover(Conta conta) {
-
-		this.contas.remove(conta);
-	}
-
-
-	@Override
-	public ArrayList<Conta> listar() {
-		
-		return this.contas;
-	}
-
-
-	@Override
-	public void atualizar(Conta conta) {
-		
-		int indice = this.procurarIndice(conta);
-		this.contas.set(indice, conta);
-		
-	}
-
-	public Conta procurar(String id) {
-
-		for (Conta c : this.contas) {
-			if (c.getId().equals(id)) {
-				return c;
-			}
-		}
-		return null;
-	}
 	
-	@Override
-	public boolean existe(Conta conta) {
-
-		boolean resultado = false;
-		for(int i =0; i<this.contas.size(); i++) {
-			if(this.contas.get(i).equals(conta)) {
-				return true;
-			}
-		}
-		return resultado;
-	}
-	
-	/*
-	public Conta existe(String nome) {
-		
-		Conta conta = null;
-		for(int i =0; i<this.contas.size(); i++) {
-			if(contas.get(i).getNome().equals(nome)) {
-				conta = contas.get(i);
-			}
-		}
-		return conta;
-		
-	}
-
-	@Override
-	public boolean existeNome(String nome) {
-
-		boolean resultado = false;
-		for(int i =0; i<this.contas.size();i++) {
-			if(this.contas.get(i).equals(nome)) {
-				return resultado;
-			}
-		}
-		return false;
-	}
-*/
 }
 
 

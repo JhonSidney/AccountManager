@@ -35,7 +35,7 @@ public class ControladorPessoa {
 			this.repositorioPessoa.atualizar(pessoa);
 
 		} else {
-			throw new NegocioException("Funcionario Não Existe !");
+			throw new NegocioException("Usuario Não Existe !");
 		}
 	}
 
@@ -64,7 +64,7 @@ public class ControladorPessoa {
 		if (pessoa != null) {
 			this.repositorioPessoa.remover(cpf);
 		} else {
-			throw new NegocioException("Funcionario Não Existe !");
+			throw new NegocioException("Usuário Não Existe !");
 		}
 	}
 

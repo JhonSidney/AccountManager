@@ -8,6 +8,7 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
@@ -125,34 +126,22 @@ public class Inicio extends Application {
 		}
 	}
 	
-	//Metodos MenuPrincipal
 	
-	@FXML
-	public void menuMeuPerfil(ActionEvent event) {
+	public void menuSair() {
+		try {
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(Inicio.class.getResource("/br/ufrpe/account_manager/gui/TelaLogin.fxml"));
+			AnchorPane Login = (AnchorPane) loader.load();
+			
 
-	}
-	@FXML
-	public void menuConfiguracaoBanco(ActionEvent event) {
+			rootLayout.setCenter(Login);
+			TelaLoginController controller = loader.getController();
+			controller.setPrincipal(this.getInstance());
 
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
-	@FXML
-	public void menuConfiguracaoCategoria(ActionEvent event) {
-
-	}
-	@FXML
-	public void menuCadastroContatos(ActionEvent event) {
-
-	}
-	@FXML
-	public void menuCadastroContas(ActionEvent event) {
-
-	}
-	
-	@FXML
-	public void menuContas(ActionEvent event) {
-
-	}
-	
 	
 	public static void main(String[] args) {
 		launch(args);
