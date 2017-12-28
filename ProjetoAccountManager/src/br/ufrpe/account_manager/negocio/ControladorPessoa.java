@@ -1,21 +1,20 @@
 package br.ufrpe.account_manager.negocio;
 
-import br.ufrpe.account_manager.dao.IRepositorioPessoas;
+import java.util.ArrayList;
+
 import br.ufrpe.account_manager.dao.RepositorioPessoas;
 import br.ufrpe.account_manager.exception.NegocioException;
 import br.ufrpe.account_manager.negocio.beans.Pessoa;
 
 public class ControladorPessoa {
-	
 
-	private IRepositorioPessoas repositorio;
+	private RepositorioPessoas repositorioPessoa;
 	private static ControladorPessoa instance;
 
 	public ControladorPessoa() {
-		this.repositorio = new RepositorioPessoas();
+		this.repositorioPessoa = RepositorioPessoas.getInstance();
 	}
 
-	
 	public static ControladorPessoa getInstance() {
 		if (instance == null) {
 			instance = new ControladorPessoa();
@@ -24,48 +23,50 @@ public class ControladorPessoa {
 	}
 
 	public void cadastrar(Pessoa pessoa) throws NegocioException {
-		 if(pessoa != null && !this.existeCpf(pessoa.getCpf()))
-		//if (this.repositorio.existe(pessoa) == null)
-			this.repositorio.cadastrar(pessoa);
-		else
-			throw new NegocioException("A pessoa já está cadastrada");
-	}
-
-	
-	public void remover(String cpf) throws NegocioException{	
-	//public void remover(Pessoa pessoa) throws NegocioException {
-		//if (this.repositorio.existeCpf(pessoa.getCpf()))
-		Pessoa pessoa = this.repositorio.procurar(cpf);
-		if(pessoa != null)
-		this.repositorio.remover(pessoa);
-		else
-			throw new NegocioException("Erro ao remover, a pessoa não está cadastrada");
+		if (pessoa != null && !this.existe(pessoa.getCpf())) {
+			this.repositorioPessoa.cadastrar(pessoa);
+		} else {
+			
+		}
 	}
 
 	public void atualizar(Pessoa pessoa) throws NegocioException {
-		if (pessoa != null && this.repositorio.existeCpf(pessoa.getCpf()))
-			this.repositorio.atualizar(pessoa);
-		else
-			throw new NegocioException("Erro, a pessoa não está cadastrada");
+		if (pessoa != null && this.existe(pessoa.getCpf())) {
+			this.repositorioPessoa.atualizar(pessoa);
+
+		} else {
+			throw new NegocioException("Funcionario Não Existe !");
+		}
 	}
 
 	public Pessoa procurar(String cpf) throws NegocioException {
-		Pessoa resultado = this.repositorio.procurar(cpf);
-		return resultado;
-		
-	}
-
-	//acima implementado
-	private  boolean existeCpf(String cpf) {
-		boolean resultado = this.repositorio.existeCpf(cpf);
+		Pessoa resultado = this.repositorioPessoa.procurar(cpf);
 		return resultado;
 	}
 
-	/*protected Pessoa existe(Pessoa pessoa) {
-		Pessoa resultado = this.repositorio.existe(pessoa);
-		return resultado;
+	public ArrayList<Pessoa> listar() {
+		return this.repositorioPessoa.listar();
 	}
-	
-	*/
+
+	private boolean existe(String cpf) {
+		ArrayList<Pessoa> retorno = this.repositorioPessoa.listar();
+		for (Pessoa pessoa : retorno) {
+			if (pessoa.getCpf().equals(cpf)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public void remover(String cpf) throws NegocioException {
+		Pessoa pessoa = this.repositorioPessoa.procurar(cpf);
+
+		if (pessoa != null) {
+			this.repositorioPessoa.remover(cpf);
+		} else {
+			throw new NegocioException("Funcionario Não Existe !");
+		}
+	}
+
 
 }

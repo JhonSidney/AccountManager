@@ -11,23 +11,24 @@ import java.util.ArrayList;
 
 import br.ufrpe.account_manager.negocio.beans.Pessoa;
 
+public class RepositorioPessoas implements IRepositorioPessoas, Serializable{
 
-public class RepositorioPessoas implements IRepositorioPessoas, Serializable {
 
-	private static final String NOME_ARQUIVO_BD = "pessoas.dat";
+	// ATRIBUTOS
+	public static final String NOME_ARQUIVOS_BD = "pessoas.dat";
 	private ArrayList<Pessoa> pessoas;
 	public static RepositorioPessoas instancia;
 
-	public RepositorioPessoas() {
-		pessoas = new ArrayList<>();
+	private RepositorioPessoas() {
+		this.pessoas = new ArrayList<>();
 	}
 
 	public static RepositorioPessoas getInstance() {
+
 		if (instancia == null) {
-			try {
-				instancia = lerDoArquivo();
-			} catch (Exception e) {
-				// TODO: handle exception
+			try{
+				instancia =lerDoArquivo();
+			} catch (IOException e){
 				e.printStackTrace();
 			}
 		}
@@ -35,12 +36,12 @@ public class RepositorioPessoas implements IRepositorioPessoas, Serializable {
 	}
 
 	public static RepositorioPessoas lerDoArquivo() throws IOException {
-		
+
 		RepositorioPessoas instanciaLocal = null;
-		File in = new File(NOME_ARQUIVO_BD);
+		File in = new File(NOME_ARQUIVOS_BD);
 		FileInputStream fis = null;
 		ObjectInputStream ois = null;
-		
+
 		try {
 			fis = new FileInputStream(in);
 			ois = new ObjectInputStream(fis);
@@ -59,12 +60,12 @@ public class RepositorioPessoas implements IRepositorioPessoas, Serializable {
 		}
 		return instanciaLocal;
 	}
-	
+
 	public void salvarArquivo() {
 		if (instancia == null) {
 			return;
 		}
-		File out = new File(NOME_ARQUIVO_BD);
+		File out = new File(NOME_ARQUIVOS_BD);
 		FileOutputStream fos = null;
 		ObjectOutputStream oos = null;
 
@@ -84,22 +85,36 @@ public class RepositorioPessoas implements IRepositorioPessoas, Serializable {
 		}
 	}
 
-
 	@Override
 	public boolean cadastrar(Pessoa pessoa) {
-
 		this.pessoas.add(pessoa);
 		salvarArquivo();
 		return true;
-		
 	}
 
 	@Override
-	public boolean remover(Pessoa pessoa) {
+	public boolean atualizar(Pessoa pessoa) {
+		int i = 0;
+		for (Pessoa pessoas : this.pessoas) {
+			
+			if (pessoas.getCpf().equals(pessoas.getCpf())) {
+				this.pessoas.set(i, pessoas);
+				salvarArquivo();
+				return true;
+			}
+			i++;
+		}
+		return false;
+	}
 
-		this.pessoas.remove(pessoa);
-		salvarArquivo();
-		return true;
+	@Override
+	public Pessoa procurar(String cpf) {
+		for (Pessoa f : this.pessoas) {
+			if (f.getCpf().equals(cpf)) {
+				return f;
+			}
+		}
+		return null;
 	}
 
 	@Override
@@ -108,74 +123,21 @@ public class RepositorioPessoas implements IRepositorioPessoas, Serializable {
 		return this.pessoas;
 	}
 
-	@Override
-	public boolean atualizar(Pessoa pessoa) {
-
-		int indice = this.procurarIndice(pessoa);
-		this.pessoas.set(indice, pessoa);
-		salvarArquivo();
-		return true;
-	}
-
-	public Pessoa procurar(String cpf) {
-
-		for (Pessoa p : this.pessoas) {
-			if (p.getCpf().equals(cpf)) {
-				return p;
+	public boolean remover(String cpf) {
+		int i = 0;
+		for (Pessoa f : this.pessoas) {
+			
+			if (f.getCpf().equals(cpf)) {
+				this.pessoas.remove(i);
+				salvarArquivo();
+				return true;
 			}
-		}
-		return null;
-	}
-	
-	//implementado acima 
-	
-	/*@Override
-	public Pessoa existe(Pessoa pessoa) {
-
-		Pessoa resultado = null;
-		for (int i = 0; i < this.pessoas.size(); i++) {
-			if (this.pessoas.get(i).equals(pessoa)) {
-				return resultado;
-			}
-		}
-
-		return null;
-	}
-
-	public Pessoa existe(String nome) {
-
-		Pessoa pessoa = null;
-		for (int i = 0; i < this.pessoas.size(); i++) {
-			if (pessoas.get(i).getNome().equals(pessoa)) {
-				pessoa = pessoas.get(i);
-			}
-		}
-
-		return pessoa;
-	}
-*/
-	@Override
-	public boolean existeCpf(String cpf) {
-
-		boolean resultado = false;
-		for (int i = 0; i < this.pessoas.size(); i++) {
-			if (this.pessoas.get(i).getCpf().equals(cpf)) {
-				return resultado;
-			}
+			i++;
 		}
 
 		return false;
 	}
 
-	private int procurarIndice(Pessoa pessoa) {
-		int indice = -1;
-
-		for (int i = 0; i < this.pessoas.size(); i++) {
-			if (this.pessoas.get(i).equals(pessoa)) {
-				indice = i;
-			}
-		}
-		return indice;
-	}
+	
 
 }

@@ -1,7 +1,9 @@
 package br.ufrpe.account_manager.negocio.beans;
 
+import java.io.Serializable;
+
 //@Entity
-public class Pessoa {
+public class Pessoa implements Serializable{
 
 	private String nome;
 	private String sobrenome;
@@ -35,11 +37,6 @@ public class Pessoa {
 		this.setSenha(senha);
 	}
 
-	public Pessoa(String cpf, String senha) {
-	 this.setCpf(cpf);
-	 this.setSenha(senha);
-	 
-	}
 	
 	public String getNome() {
 		return nome;

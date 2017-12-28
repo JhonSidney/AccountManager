@@ -31,10 +31,6 @@ public class MenuPrincipalController {
 	@FXML
 	private MenuItem TMenuPrincipal_BTCadastro_MI_Contas;
 	@FXML
-	private Button TMenuPrincipal_BT_Configuracoes;
-	@FXML
-	private Button TMenuPrincipal_BT_Cadastro;
-	@FXML
 	private Hyperlink TMenuPrincipal_HL_Contas;
 	
 	SistemaAccountManager fachada;
