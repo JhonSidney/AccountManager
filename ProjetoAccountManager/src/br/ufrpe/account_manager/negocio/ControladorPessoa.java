@@ -43,6 +43,8 @@ public class ControladorPessoa {
 		Pessoa resultado = this.repositorioPessoa.procurar(cpf);
 		return resultado;
 	}
+	
+	
 
 	public ArrayList<Pessoa> listar() {
 		return this.repositorioPessoa.listar();

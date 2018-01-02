@@ -12,7 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.stage.Stage;
 
-public class MenuPrincipalController {
+public class TelaMenuPrincipalController {
 
 	@FXML
 	private Label TMenuPrincipal_LB_SejaBemVindo;
@@ -96,4 +96,3 @@ public class MenuPrincipalController {
 	}
 	
 }
-

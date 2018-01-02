@@ -8,14 +8,14 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="650.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrpe.account_manager.gui.MenuPrincipalController">
+<AnchorPane prefHeight="650.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrpe.account_manager.gui.TelaMenuPrincipalController">
    <children>
       <ImageView fitHeight="650.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@pictures/FundoMenuPrincipal.png" />
          </image></ImageView>
       <Label fx:id="TMenuPrincipal_LB_SejaBemVindo" layoutX="611.0" layoutY="14.0" prefHeight="17.0" prefWidth="101.0" text="Seja Bem Vindo " />
-      <Label fx:id="TMenuPrincipal_LB_Nome" layoutX="705.0" layoutY="14.0" prefHeight="17.0" prefWidth="145.0" text="Nome" />
+      <Label fx:id="TMenuPrincipal_LB_Nome" layoutX="705.0" layoutY="14.0" prefHeight="17.0" prefWidth="145.0" text="" />
       <Label fx:id="TMenuPrincipal_LB_Sobrenome" layoutX="863.0" layoutY="14.0" prefHeight="17.0" prefWidth="133.0" text="Sobrenome" />
       <ImageView fitHeight="38.0" fitWidth="31.0" layoutX="11.0" layoutY="122.0" pickOnBounds="true" preserveRatio="true">
          <image>

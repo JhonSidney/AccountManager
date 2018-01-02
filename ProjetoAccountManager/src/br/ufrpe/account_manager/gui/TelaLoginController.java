@@ -2,13 +2,12 @@ package br.ufrpe.account_manager.gui;
 
 import br.ufrpe.account_manager.SistemaAccountManager;
 import br.ufrpe.account_manager.exception.NegocioException;
+import br.ufrpe.account_manager.negocio.beans.Pessoa;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.PasswordField;
@@ -22,9 +21,9 @@ public class TelaLoginController {
 	@FXML
 	private Button TLogin_BT_Acessar;
 	@FXML
-	private TextField TLogin_TF_Usuario; // NOME DA CENA_TEXTFIELD_USUARIO| nome de usuário
+	protected TextField TLogin_TF_Usuario; // NOME DA CENA_TEXTFIELD_USUARIO| nome de usuário
 	@FXML
-	private PasswordField TLogin_PF_Senha;
+	protected PasswordField TLogin_PF_Senha;
 	@FXML
 	private Hyperlink TLogin_HL_Registro;// Ainda nao é registrado?
 	@FXML
@@ -43,6 +42,7 @@ public class TelaLoginController {
 
 		try {
 			if (this.fachada.efetuarLogin(TLogin_TF_Usuario.getText(), TLogin_PF_Senha.getText()) == 1) {
+
 				Parent root;
 				Stage stage;
 
@@ -54,13 +54,14 @@ public class TelaLoginController {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			/*Alert alert = new Alert(AlertType.INFORMATION);
-			alert.setTitle("Login Inválido");
-			alert.setHeaderText("Usuário/Senha Inválidos ou Não existe");
-			alert.setContentText("Procure o Administrador do sistema!");
-
-			alert.showAndWait();
-			*/
+			/*
+			 * Alert alert = new Alert(AlertType.INFORMATION);
+			 * alert.setTitle("Login Inválido");
+			 * alert.setHeaderText("Usuário/Senha Inválidos ou Não existe");
+			 * alert.setContentText("Procure o Administrador do sistema!");
+			 * 
+			 * alert.showAndWait();
+			 */
 		}
 
 	}
