@@ -95,10 +95,10 @@ public class RepositorioPessoas implements IRepositorioPessoas, Serializable{
 	@Override
 	public boolean atualizar(Pessoa pessoa) {
 		int i = 0;
-		for (Pessoa pessoas : this.pessoas) {
+		for (Pessoa p : this.pessoas) {
 			
-			if (pessoas.getCpf().equals(pessoas.getCpf())) {
-				this.pessoas.set(i, pessoas);
+			if (p.getCpf().equals(pessoa.getCpf())) {
+				this.pessoas.set(i, pessoa);
 				salvarArquivo();
 				return true;
 			}

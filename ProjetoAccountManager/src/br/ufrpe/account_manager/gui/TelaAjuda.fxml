@@ -41,7 +41,7 @@
       <Label layoutX="295.0" layoutY="293.0" text="Senha de Acesso" />
       <Label layoutX="295.0" layoutY="338.0" text="Confirmar Senha" />
       <PasswordField fx:id="TAjuda_PF_ConfirmaSenha" layoutX="294.0" layoutY="356.0" prefHeight="25.0" prefWidth="250.0" />
-      <Button fx:id="TAjuda_BT_alterar" layoutX="477.0" layoutY="425.0" minHeight="25.0" mnemonicParsing="false" onAction="#botao_enviar" prefWidth="64.0" text="Alterar" />
+      <Button fx:id="TAjuda_BT_atualizar" layoutX="477.0" layoutY="425.0" minHeight="25.0" mnemonicParsing="false" onAction="#botao_atualizar" prefWidth="64.0" text="atualizar" />
       <Button fx:id="TAjuda_BT_Cancelar" layoutX="549.0" layoutY="425.0" minHeight="25.0" mnemonicParsing="false" onAction="#botao_cancelar" prefWidth="64.0" text="Cancelar" />
    </children>
 </AnchorPane>
