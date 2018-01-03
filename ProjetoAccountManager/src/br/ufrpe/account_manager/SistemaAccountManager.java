@@ -83,7 +83,7 @@ public class SistemaAccountManager {
 	
 
 	/* <<<< LOGIN >>>> */
-	public int efetuarLogin(String cpf, String senha) throws NegocioException {
+	public int efetuarLogin(String cpf, String senha) throws NegocioException, Exception {
 		return this.logins.efetuarLogin(cpf, senha);
 
 	}

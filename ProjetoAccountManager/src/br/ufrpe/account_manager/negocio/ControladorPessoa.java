@@ -26,7 +26,7 @@ public class ControladorPessoa {
 		if (pessoa != null && !this.existe(pessoa.getCpf())) {
 			this.repositorioPessoa.cadastrar(pessoa);
 		} else {
-			
+			throw new NegocioException("Usuario já Existe !");
 		}
 	}
 
