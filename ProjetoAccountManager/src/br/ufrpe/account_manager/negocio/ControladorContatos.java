@@ -5,16 +5,16 @@ import java.util.ArrayList;
 import br.ufrpe.account_manager.dao.IRepositorioContatos;
 import br.ufrpe.account_manager.dao.RepositorioContatos;
 import br.ufrpe.account_manager.exception.NegocioException;
-import br.ufrpe.account_manager.negocio.beans.Conta;
 import br.ufrpe.account_manager.negocio.beans.Contatos;
+import br.ufrpe.account_manager.negocio.beans.Pessoa;
 
 public class ControladorContatos {
 
-	private IRepositorioContatos repositorio;
+	private RepositorioContatos repositorioContato;
 	private static ControladorContatos instance;
 	
 	public ControladorContatos(){
-		this.repositorio = new RepositorioContatos();
+		this.repositorioContato = new RepositorioContatos();
 		
 	}
 	
@@ -26,39 +26,44 @@ public class ControladorContatos {
 	}
 	
 	public void cadastrar(Contatos contato) throws NegocioException {
-		if (this.repositorio.existe(contato))
+		if (this.repositorioContato.existe(contato))
 			throw new NegocioException("O contato já foi adicionado a sua lista");
 		else {
-			this.repositorio.cadastrar(contato);
+			this.repositorioContato.cadastrar(contato);
 		}
 			
 	}
-
-	public void remover(Contatos contato) throws NegocioException {
-		if (this.repositorio.existe(contato))
-			this.repositorio.remover(contato);
-
-		else
-			throw new NegocioException("Erro ao remover, o contato não faz parte da sua lista!");
-
+	
+	public Contatos procurar(String cpf) throws NegocioException {
+		Contatos resultado = this.repositorioContato.procurar(cpf);
+		return resultado;
 	}
 
 	public void atualizar(Contatos contato) throws NegocioException {
-		if (this.repositorio.existe(contato))
-			this.repositorio.atualizar(contato);
+		if (this.repositorioContato.existe(contato))
+			this.repositorioContato.atualizar(contato);
 
 		else
 			throw new NegocioException("Erro, o contato não está cadastrado na sua lista!");
 
 	}
 
+	public void remover(Contatos contato) throws NegocioException {
+		if (this.repositorioContato.existe(contato))
+			this.repositorioContato.remover(contato);
+
+		else
+			throw new NegocioException("Erro ao remover, o contato não faz parte da sua lista!");
+
+	}
+
 	public ArrayList<Contatos> listar() throws NegocioException {
-		if (this.repositorio.listar().isEmpty())
+		if (this.repositorioContato.listar().isEmpty())
 			throw new NegocioException("Não existem contas cadastradas");
 
 		else
 
-			return this.repositorio.listar();
+			return this.repositorioContato.listar();
 	}
 }
 

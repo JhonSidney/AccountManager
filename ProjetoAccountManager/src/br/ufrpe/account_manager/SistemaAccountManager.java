@@ -4,10 +4,11 @@ import java.util.ArrayList;
 
 import br.ufrpe.account_manager.exception.NegocioException;
 import br.ufrpe.account_manager.negocio.ControladorConta;
-//import br.ufrpe.account_manager.negocio.ControladorContatos;
+import br.ufrpe.account_manager.negocio.ControladorContatos;
 import br.ufrpe.account_manager.negocio.ControladorLogin;
 import br.ufrpe.account_manager.negocio.ControladorPessoa;
 import br.ufrpe.account_manager.negocio.beans.Conta;
+import br.ufrpe.account_manager.negocio.beans.Contatos;
 import br.ufrpe.account_manager.negocio.beans.Pessoa;
 
 public class SistemaAccountManager {
@@ -15,6 +16,7 @@ public class SistemaAccountManager {
 	private ControladorPessoa pessoas;
 	private ControladorConta contas;
 	private ControladorLogin logins;
+	private ControladorContatos contato;
 
 	private static SistemaAccountManager instance;
 
@@ -22,6 +24,7 @@ public class SistemaAccountManager {
 		this.contas = new ControladorConta().getInstance();
 		this.pessoas = new ControladorPessoa().getInstance();
 		this.logins = new ControladorLogin().getInstance();
+		this.contato = new ControladorContatos().getInstance();
 	}
 
 	public static SistemaAccountManager getInstance() {
@@ -78,10 +81,27 @@ public class SistemaAccountManager {
 
 	/* <<<< CONTATOS >>>> */
 	
+	public void cadastrarContato(Contatos contato) throws NegocioException {
+		this.contato.cadastrar(contato);
+	}
 	
+	public void alterarContato(Contatos contato) throws NegocioException {
+		this.contato.atualizar(contato);
+	}
 	
+	public Contatos procurarContatos(String cpf) throws NegocioException {
+		Contatos contato = this.contato.procurar(cpf);
+		return contato; 
+	}
 	
+	public void removerContato(Contatos contato) throws NegocioException {
+		this.contato.remover(contato);
+	}
 
+	public ArrayList<Contatos> listarContatos() throws NegocioException {
+		return this.contato.listar();
+	}
+	
 	/* <<<< LOGIN >>>> */
 	public int efetuarLogin(String cpf, String senha) throws NegocioException, Exception {
 		return this.logins.efetuarLogin(cpf, senha);
