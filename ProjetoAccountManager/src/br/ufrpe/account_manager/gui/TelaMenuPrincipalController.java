@@ -1,6 +1,10 @@
 package br.ufrpe.account_manager.gui;
 
+import java.util.ArrayList;
+
 import br.ufrpe.account_manager.SistemaAccountManager;
+import br.ufrpe.account_manager.exception.NegocioException;
+import br.ufrpe.account_manager.negocio.beans.Pessoa;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -38,41 +42,44 @@ public class TelaMenuPrincipalController {
 	private Hyperlink TMenuPrincipal_HL_Contas;
 	@FXML
 	private Hyperlink TMenuPrincipal_HL_Sair;
-	
-	
+
 	SistemaAccountManager fachada;
 
 	@FXML
-	public void initialize() {
+	public void initialize() throws Exception {
 		fachada = SistemaAccountManager.getInstance();
 	}
-	
+
 	@FXML
 	public void menuMeuPerfil(ActionEvent event) {
 
 	}
+
 	@FXML
 	public void menuConfiguracaoBanco(ActionEvent event) {
 
 	}
+
 	@FXML
 	public void menuConfiguracaoCategoria(ActionEvent event) {
 
 	}
+
 	@FXML
 	public void menuCadastroContatos(ActionEvent event) {
 
 	}
+
 	@FXML
 	public void menuCadastroContas(ActionEvent event) {
 
 	}
-	
+
 	@FXML
 	public void menuContas(ActionEvent event) {
 
 	}
-	
+
 	@FXML
 	public void menuSair(ActionEvent event) {
 		Parent root;
@@ -94,5 +101,5 @@ public class TelaMenuPrincipalController {
 		}
 
 	}
-	
+
 }
