@@ -37,5 +37,4 @@ private TextField TelaMenuPerfil_TF_Nascimento;
 private TextField TelaMenuPerfil_TF_Telefone;
 
 
-
 }
