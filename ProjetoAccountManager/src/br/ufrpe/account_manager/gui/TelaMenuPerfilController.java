@@ -3,16 +3,13 @@ package br.ufrpe.account_manager.gui;
 import java.io.IOException;
 
 import br.ufrpe.account_manager.SistemaAccountManager;
-import br.ufrpe.account_manager.negocio.beans.Pessoa;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.PasswordField;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 
 public class TelaMenuPerfilController {
@@ -36,7 +33,7 @@ public class TelaMenuPerfilController {
 	private TextField TelaMenuPerfil_TF_Email;
 
 	@FXML
-	private PasswordField TelaMenuPerfil_TF_Senha;
+	private TextField TelaMenuPerfil_TF_Senha;
 
 	@FXML
 	private TextField TelaMenuPerfil_TF_Logradouro;
@@ -45,7 +42,13 @@ public class TelaMenuPerfilController {
 	private TextField TelaMenuPerfil_TF_Nascimento;
 
 	@FXML
-	private TextField TelaMenuPerfil_TF_Telefone;
+	private Button TelaMenuPerfil_BT_Voltar;
+
+	@FXML
+	private Button TelaMenuPerfil_TF_Atualizar;
+
+	@FXML
+	private Button TelaMenuPerfil_TF_Telefone;
 
 	String nome, sobrenome, cpf, salario, id, email, senha, logradouro, nascimento, telefone;
 	SistemaAccountManager fachada;
@@ -61,7 +64,23 @@ public class TelaMenuPerfilController {
 	
 	@FXML
 	public void botao_voltar(ActionEvent event) throws IOException {
-		
+		Parent root;
+		Stage stage;
+		try {
+
+			if (event.getTarget() == TelaMenuPerfil_BT_Voltar) {
+				stage = (Stage) TelaMenuPerfil_BT_Voltar.getScene().getWindow();
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaMenuPrincipal.fxml"));
+			} else {
+				stage = (Stage) TelaMenuPerfil_BT_Voltar.getScene().getWindow();
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaMenuPerfil.fxml"));
+			}
+			Scene scene = new Scene(root);
+			stage.setScene(scene);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	@FXML
