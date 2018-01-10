@@ -1,5 +1,6 @@
 package br.ufrpe.account_manager.gui;
 
+import br.ufrpe.account_manager.SistemaAccountManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -37,4 +38,6 @@ private TextField TelaMenuPerfil_TF_Nascimento;
 private TextField TelaMenuPerfil_TF_Telefone;
 
 
+	String nome, sobrenome, cpf, salario, id, email, senha, logradouro, nascimento, telefone;
+	SistemaAccountManager fachada;
 }
