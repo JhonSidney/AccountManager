@@ -46,6 +46,9 @@ public class TelaMenuPerfilController {
 
 	@FXML
 	private Button TelaMenuPerfil_TF_Atualizar;
+	
+	@FXML
+	private Button TelaMenuPerfil_TF_ExcluirMinhaConta;
 
 	@FXML
 	private Button TelaMenuPerfil_TF_Telefone;
