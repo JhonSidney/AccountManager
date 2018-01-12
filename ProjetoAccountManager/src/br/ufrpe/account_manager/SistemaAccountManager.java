@@ -80,20 +80,20 @@ public class SistemaAccountManager {
 	}
 
 	/* <<<< CONTATOS >>>> */
-	
+
 	public void cadastrarContato(Contatos contato) throws NegocioException {
 		this.contato.cadastrar(contato);
 	}
-	
+
 	public void alterarContato(Contatos contato) throws NegocioException {
 		this.contato.atualizar(contato);
 	}
-	
+
 	public Contatos procurarContatos(String cpf) throws NegocioException {
 		Contatos contato = this.contato.procurar(cpf);
-		return contato; 
+		return contato;
 	}
-	
+
 	public void removerContato(Contatos contato) throws NegocioException {
 		this.contato.remover(contato);
 	}
@@ -101,10 +101,14 @@ public class SistemaAccountManager {
 	public ArrayList<Contatos> listarContatos() throws NegocioException {
 		return this.contato.listar();
 	}
-	
+
 	/* <<<< LOGIN >>>> */
 	public int efetuarLogin(String cpf, String senha) throws NegocioException, Exception {
 		return this.logins.efetuarLogin(cpf, senha);
 
+	}
+
+	public Pessoa getLogado() {
+		return this.logins.getLogado();
 	}
 }

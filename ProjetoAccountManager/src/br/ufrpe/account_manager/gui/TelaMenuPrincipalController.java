@@ -23,8 +23,6 @@ public class TelaMenuPrincipalController {
 	@FXML
 	private Label TMenuPrincipal_LB_Nome;
 	@FXML
-	private Label TMenuPrincipal_LB_Sobrenome;
-	@FXML
 	private Hyperlink TMenuPrincipal_HL_MeuPerfil;
 	@FXML
 	private Label TMenuPrincipal_LB_Configuracoes;
@@ -44,10 +42,14 @@ public class TelaMenuPrincipalController {
 	private Button TMenuPrincipal_BT_logoff;
 
 	SistemaAccountManager fachada;
+	String nome, sobrenome, cpf, salario, id, email, senha, logradouro, nascimento, tel;
 
 	@FXML
 	public void initialize() throws Exception {
 		fachada = SistemaAccountManager.getInstance();
+		Pessoa pessoa = new Pessoa(nome, sobrenome, cpf, salario, id, email, senha, logradouro, nascimento, tel);
+		pessoa = fachada.getLogado();
+		TMenuPrincipal_LB_Nome.setText(" "+ pessoa.getNome() + " " + pessoa.getSobrenome());
 	}
 
 	@FXML
