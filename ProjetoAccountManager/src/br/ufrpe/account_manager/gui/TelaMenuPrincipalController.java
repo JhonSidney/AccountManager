@@ -41,7 +41,7 @@ public class TelaMenuPrincipalController {
 	@FXML
 	private Hyperlink TMenuPrincipal_HL_Contas;
 	@FXML
-	private Hyperlink TMenuPrincipal_HL_Sair;
+	private Button TMenuPrincipal_BT_logoff;
 
 	SistemaAccountManager fachada;
 
@@ -98,16 +98,16 @@ public class TelaMenuPrincipalController {
 	}
 
 	@FXML
-	public void menuSair(ActionEvent event) {
+	public void botao_logoff(ActionEvent event) {
 		Parent root;
 		Stage stage;
 		try {
 
-			if (event.getTarget() == TMenuPrincipal_HL_Sair) {
-				stage = (Stage) TMenuPrincipal_HL_Sair.getScene().getWindow();
+			if (event.getTarget() == TMenuPrincipal_BT_logoff) {
+				stage = (Stage) TMenuPrincipal_BT_logoff.getScene().getWindow();
 				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaLogin.fxml"));
 			} else {
-				stage = (Stage) TMenuPrincipal_HL_Sair.getScene().getWindow();
+				stage = (Stage) TMenuPrincipal_BT_logoff.getScene().getWindow();
 				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaMenuPrincipal.fxml"));
 			}
 			Scene scene = new Scene(root);

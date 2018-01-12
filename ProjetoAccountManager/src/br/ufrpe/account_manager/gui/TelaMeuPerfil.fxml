@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
@@ -30,8 +31,8 @@
       <TextField fx:id="TelaMenuPerfil_TF_Nascimento" layoutX="333.0" layoutY="331.0" prefHeight="25.0" prefWidth="191.0" />
       <TextField fx:id="TelaMenuPerfil_TF_Telefone" layoutX="663.0" layoutY="331.0" prefHeight="25.0" prefWidth="208.0" />
       <TextField fx:id="TelaMenuPerfil_TF_Senha" layoutX="335.0" layoutY="382.0" prefHeight="25.0" prefWidth="188.0" />
-      <Button fx:id="TelaMenuPerfil_TF_ExcluirMinhaConta" layoutX="389.0" layoutY="596.0" mnemonicParsing="false" onAction="#botao_excluirMeuPerfil" prefHeight="25.0" prefWidth="143.0" text="Excluir Minha Conta" />
-      <Button fx:id="TelaMenuPerfil_TF_Atualizar" layoutX="579.0" layoutY="596.0" mnemonicParsing="false" onAction="#botao_atualizar" prefHeight="25.0" prefWidth="80.0" text="Atualizar" />
+      <Button fx:id="TelaMenuPerfil_BT_ExcluirMinhaConta" layoutX="389.0" layoutY="596.0" mnemonicParsing="false" onAction="#botao_excluirMeuPerfil" prefHeight="25.0" prefWidth="143.0" text="Excluir Minha Conta" />
+      <Button fx:id="TelaMenuPerfil_BT_Atualizar" layoutX="579.0" layoutY="596.0" mnemonicParsing="false" onAction="#botao_atualizar" prefHeight="25.0" prefWidth="80.0" text="Atualizar" />
       <Button fx:id="TelaMenuPerfil_BT_Voltar" layoutX="704.0" layoutY="596.0" mnemonicParsing="false" onAction="#botao_voltar" prefHeight="25.0" prefWidth="80.0" text="Voltar" />
       <Label layoutX="268.0" layoutY="117.0" text="Nome" />
       <Label layoutX="619.0" layoutY="118.0" text="Sobrenome" />
@@ -53,10 +54,12 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <ImageView fitHeight="25.0" fitWidth="33.0" layoutX="163.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="27.0" fitWidth="27.0" layoutX="193.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@pictures/botao_sair.png" />
+            <Image url="@pictures/exit.png" />
          </image>
       </ImageView>
+      <Button fx:id="TelaMenuPerfil_BT_Logoff" layoutX="194.0" layoutY="79.0" mnemonicParsing="false" onAction="#botao_FazerLogoff" opacity="0.0" prefHeight="27.0" prefWidth="27.0" />
+      <Label layoutX="190.0" layoutY="106.0" text="Logoff" textFill="#fffdfd" />
    </children>
 </AnchorPane>
