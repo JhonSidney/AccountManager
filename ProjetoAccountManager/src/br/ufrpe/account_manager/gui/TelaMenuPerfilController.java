@@ -132,7 +132,6 @@ public class TelaMenuPerfilController {
 				}
 				Scene scene = new Scene(root);
 				stage.setScene(scene);
-
 			}
 		} catch (Exception e) {
 			//e.printStackTrace();
