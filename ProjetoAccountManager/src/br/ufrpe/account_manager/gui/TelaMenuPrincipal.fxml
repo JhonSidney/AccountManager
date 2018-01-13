@@ -14,11 +14,11 @@
          <image>
             <Image url="@pictures/FundoMenuPrincipal.png" />
          </image></ImageView>
-      <Label fx:id="TMenuPrincipal_LB_SejaBemVindo" layoutX="529.0" layoutY="5.0" prefHeight="21.0" prefWidth="149.0" text="Seja Bem Vindo ! " textFill="#123f6f">
+      <Label fx:id="TMenuPrincipal_LB_SejaBemVindo" layoutX="213.0" layoutY="5.0" prefHeight="21.0" prefWidth="149.0" text="Seja Bem Vindo ! " textFill="#123f6f">
          <font>
             <Font size="16.0" />
          </font></Label>
-      <Label fx:id="TMenuPrincipal_LB_Nome" layoutX="661.0" layoutY="6.0" prefHeight="21.0" prefWidth="321.0" text="Nome" textFill="#123f6f">
+      <Label fx:id="TMenuPrincipal_LB_Nome" layoutX="340.0" layoutY="7.0" prefHeight="21.0" prefWidth="227.0" text="Nome" textFill="#123f6f">
          <font>
             <Font size="15.0" />
          </font></Label>

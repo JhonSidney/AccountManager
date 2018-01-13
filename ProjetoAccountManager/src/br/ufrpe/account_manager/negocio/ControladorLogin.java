@@ -11,7 +11,7 @@ public class ControladorLogin {
 
 	private ControladorPessoa pessoa;
 	private static ControladorLogin instance;
-	private Pessoa logado;
+	private static Pessoa logado;
 
 	public ControladorLogin() {
 		this.pessoa = ControladorPessoa.getInstance();
@@ -60,6 +60,7 @@ public class ControladorLogin {
 				throw new NegocioException(" Senha Inválida! ");
 			} finally {
 				// TODO: handle finally clause
+
 				Alert alert = new Alert(AlertType.INFORMATION);
 				alert.setTitle("Login Inválido");
 				alert.setHeaderText(" Senha de Acesso incorreta");
@@ -70,13 +71,14 @@ public class ControladorLogin {
 
 		return igual;
 	}
-	
+
 	public Pessoa getLogado() {
 		return logado;
 	}
 
-	private void setLogado(String cpf) throws Exception {
+	public void setLogado(String cpf) throws Exception {
 		Pessoa p = this.pessoa.procurar(cpf);
 		this.logado = p;
 	}
+
 }

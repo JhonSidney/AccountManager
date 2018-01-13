@@ -18,6 +18,7 @@ import javafx.stage.Stage;
 public class TelaLoginController {
 	private Inicio inicio; // Classe que inicia as cenas
 	SistemaAccountManager fachada = SistemaAccountManager.getInstance(); // instancia da fachada
+	private String cpf;
 
 	@FXML
 	private Button TLogin_BT_Acessar;
@@ -43,7 +44,7 @@ public class TelaLoginController {
 
 		try {
 			if (this.fachada.efetuarLogin(TLogin_TF_Usuario.getText(), TLogin_PF_Senha.getText()) == 1) {
-
+				
 				Parent root;
 				Stage stage;
 

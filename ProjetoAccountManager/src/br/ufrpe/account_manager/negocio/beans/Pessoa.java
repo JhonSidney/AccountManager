@@ -3,7 +3,7 @@ package br.ufrpe.account_manager.negocio.beans;
 import java.io.Serializable;
 
 //@Entity
-public class Pessoa implements Serializable{
+public class Pessoa implements Serializable {
 
 	private String nome;
 	private String sobrenome;
@@ -17,9 +17,10 @@ public class Pessoa implements Serializable{
 	private String nascimento;
 	private String tel;
 
-	public Pessoa(String nome, String sobrenome,String cpf, String salario,String id,String email,String senha, String logradouro,
-			String nascimento, String tel) {
+	public Pessoa(String nome, String sobrenome, String cpf, String salario, String id, String email, String senha,
+			String logradouro, String nascimento, String tel) {
 		this.setNome(nome);
+		this.setSobrenome(sobrenome);
 		this.setCpf(cpf);
 		this.setEmail(email);
 		this.setSenha(senha);
@@ -36,13 +37,12 @@ public class Pessoa implements Serializable{
 		this.setCpf(cpf);
 		this.setSenha(senha);
 	}
-	
+
 	public Pessoa(String cpf, String senha) {
 		this.setCpf(cpf);
 		this.setSenha(senha);
 	}
 
-	
 	public String getNome() {
 		return nome;
 	}
@@ -129,6 +129,5 @@ public class Pessoa implements Serializable{
 				+ id + ", email=" + email + ", senha=" + senha + ", logradouro=" + logradouro + ", nascimento="
 				+ nascimento + ", tel=" + tel + "]";
 	}
-
 
 }

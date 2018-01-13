@@ -49,7 +49,8 @@ public class TelaMenuPrincipalController {
 		fachada = SistemaAccountManager.getInstance();
 		Pessoa pessoa = new Pessoa(nome, sobrenome, cpf, salario, id, email, senha, logradouro, nascimento, tel);
 		pessoa = fachada.getLogado();
-		TMenuPrincipal_LB_Nome.setText(" "+ pessoa.getNome() + " " + pessoa.getSobrenome());
+		TMenuPrincipal_LB_Nome.setText(" " + pessoa.getNome() + "  " + pessoa.getSobrenome());
+
 	}
 
 	@FXML
