@@ -13,7 +13,7 @@
 
 <AnchorPane prefHeight="645.0" prefWidth="815.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrpe.account_manager.gui.TelaLoginController">
    <children>
-      <ImageView fitHeight="654.0" fitWidth="820.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="654.0" fitWidth="820.0" layoutX="-1.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@pictures/fundo1.png" />
          </image>
