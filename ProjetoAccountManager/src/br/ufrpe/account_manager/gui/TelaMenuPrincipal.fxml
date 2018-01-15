@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="650.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrpe.account_manager.gui.TelaMenuPrincipalController">
    <children>
-      <ImageView fitHeight="650.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="650.0" fitWidth="1000.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@pictures/FundoMenuPrincipal.png" />
          </image></ImageView>
@@ -22,70 +22,37 @@
          <font>
             <Font size="15.0" />
          </font></Label>
-      <ImageView fitHeight="38.0" fitWidth="31.0" layoutX="11.0" layoutY="122.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="25.0" fitWidth="35.0" layoutX="11.0" layoutY="136.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@pictures/perfil.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="43.0" fitWidth="31.0" layoutX="14.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="21.0" fitWidth="24.0" layoutX="15.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@pictures/cadastro.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="38.0" fitWidth="37.0" layoutX="9.0" layoutY="264.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="25.0" fitWidth="24.0" layoutX="12.0" layoutY="213.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@pictures/contas.png" />
          </image>
       </ImageView>
-      <Hyperlink fx:id="TMenuPrincipal_HL_MeuPerfil" focusTraversable="false" layoutX="55.0" layoutY="121.0" onAction="#menuMeuPerfil" prefHeight="29.0" prefWidth="100.0" text="Meu Perfil" textFill="#44d3da">
+      <Hyperlink fx:id="TMenuPrincipal_HL_MeuPerfil" focusTraversable="false" layoutX="50.0" layoutY="134.0" onAction="#menuMeuPerfil" prefHeight="29.0" prefWidth="100.0" text="Meu Perfil" textFill="#6f9ada">
          <font>
             <Font size="16.0" />
          </font>
       </Hyperlink>
-      <Label fx:id="TMenuPrincipal_LB_Cadastro" layoutX="58.0" layoutY="220.0" text="Cadastro" textFill="#44d3da">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
-      <MenuButton fx:id="TMenuPrincipal_BT_Cadastro" alignment="CENTER" blendMode="HARD_LIGHT" focusTraversable="false" layoutX="55.0" layoutY="224.0" mnemonicParsing="false" opacity="0.0" popupSide="RIGHT" prefHeight="23.0" prefWidth="89.0" text="Cadastro" textFill="#44d3da">
-        <items>
-          <MenuItem fx:id="TMenuPrincipal_BTCadastro_MI_Contatos" mnemonicParsing="false" onAction="#menuCadastroContatos" text="Contatos" />
-          <MenuItem fx:id="TMenuPrincipal_BTCadastro_MI_Contas" mnemonicParsing="false" onAction="#menuCadastroContas" text="Contas" />
-        </items>
-         <font>
-            <Font size="10.0" />
-         </font>
-      </MenuButton>
-      <ImageView fitHeight="29.0" fitWidth="26.0" layoutX="15.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="29.0" fitWidth="26.0" layoutX="33.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@pictures/painel.png" />
          </image>
       </ImageView>
-      <Label layoutX="66.0" layoutY="36.0" text="Painel" textFill="#fafbfc">
+      <Label layoutX="90.0" layoutY="32.0" text="Painel Inicial" textFill="#fafbfc">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <ImageView fitHeight="27.0" fitWidth="26.0" layoutX="11.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@pictures/iconeConfiguracao.png" />
-         </image>
-      </ImageView>
-      <Label fx:id="TMenuPrincipal_LB_Configuracoes" layoutX="53.0" layoutY="170.0" text="Configurações" textFill="#44d3da">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
-      <MenuButton fx:id="TMenuPrincipal_BT_Configuracoes" alignment="CENTER" blendMode="HARD_LIGHT" focusTraversable="false" layoutX="53.0" layoutY="172.0" mnemonicParsing="false" opacity="0.0" popupSide="RIGHT" prefHeight="23.0" prefWidth="114.0" text="Configurações" textFill="#44d3da">
-         <font>
-            <Font size="10.0" />
-         </font>
-         <items>
-            <MenuItem fx:id="TMenuPrincipal_BTConfiguracoes_MI_Banco" mnemonicParsing="false" onAction="#menuConfiguracaoBanco" text="Banco" />
-            <MenuItem fx:id="TMenuPrincipal_BTConfiguracoes_MI_Categoria" mnemonicParsing="false" onAction="#menuConfiguracaoCategoria" text="Categoria" />
-         </items>
-      </MenuButton>
-      <Hyperlink fx:id="TMenuPrincipal_HL_Contas" layoutX="53.0" layoutY="266.0" onAction="#menuContas" text="Contas" textFill="#27ddf5">
+      <Hyperlink fx:id="TMenuPrincipal_HL_Contas" layoutX="52.0" layoutY="208.0" onAction="#menuContas" prefHeight="0.0" prefWidth="59.0" text="Contas" textFill="#6f9ada">
          <font>
             <Font size="16.0" />
          </font>
@@ -106,5 +73,40 @@
             <Font name="System Bold" size="44.0" />
          </font>
       </Label>
+      <Hyperlink fx:id="TMenuPrincipal_HL_Contatos" layoutX="51.0" layoutY="169.0" onAction="#menuContatos" text="Contatos" textFill="#6f9ada">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Hyperlink>
+      <Hyperlink fx:id="TMenuPrincipal_HL_Bancos" layoutX="50.0" layoutY="246.0" onAction="#menuBancos" text="Bancos" textFill="#6f9ada">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Hyperlink>
+      <Hyperlink fx:id="TMenuPrincipal_HL_Categoria" layoutX="50.0" layoutY="282.0" onAction="#menuCategoria" text="Categoria" textFill="#6f9ada">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Hyperlink>
+      <Hyperlink fx:id="TMenuPrincipal_HL_Relatorios" layoutX="51.0" layoutY="317.0" onAction="#menuRelatorio" text="Relatorio" textFill="#6f9ada">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Hyperlink>
+      <ImageView fitHeight="25.0" fitWidth="24.0" layoutX="12.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@pictures/bank_78392.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="24.0" layoutX="13.0" layoutY="287.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@pictures/categoria.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="24.0" layoutX="13.0" layoutY="320.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@pictures/relatorio.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

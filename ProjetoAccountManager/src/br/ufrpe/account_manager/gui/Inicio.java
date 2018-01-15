@@ -7,6 +7,8 @@ import br.ufrpe.account_manager.negocio.beans.Pessoa;
 import javafx.application.Application;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -85,18 +87,19 @@ public class Inicio extends Application {
 	}
 
 	private void initRootLayout() {
-		// TODO Auto-generated method stub
+
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(Inicio.class.getResource("/br/ufrpe/account_manager/gui/RootLayout.fxml"));
 			rootLayout = (BorderPane) loader.load();
-
 			Scene scene = new Scene(rootLayout);
+			scene.setFill(Color.TRANSPARENT);
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+
 	}
 
 	public void showLogin() {
@@ -160,10 +163,53 @@ public class Inicio extends Application {
 		}
 	}
 
-	public void menuSair() {
+	// menu principal
+
+	public void botao_logoff() {
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(Inicio.class.getResource("/br/ufrpe/account_manager/gui/TelaLogin.fxml"));
+			AnchorPane Login = (AnchorPane) loader.load();
+
+			rootLayout.setCenter(Login);
+			TelaLoginController controller = loader.getController();
+			controller.setPrincipal(this.getInstance());
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	@FXML
+	public void menuConfiguracaoBanco() {
+
+	}
+
+	@FXML
+	public void menuConfiguracaoCategoria() {
+
+	}
+
+	@FXML
+	public void menuCadastroContatos() {
+
+	}
+
+	@FXML
+	public void menuCadastroContas() {
+
+	}
+
+	@FXML
+	public void menuContas() {
+
+	}
+
+	@FXML
+	public void menuMeuPerfil() {
+		try {
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(Inicio.class.getResource("/br/ufrpe/account_manager/gui/TelaMenuPerfil.fxml"));
 			AnchorPane Login = (AnchorPane) loader.load();
 
 			rootLayout.setCenter(Login);

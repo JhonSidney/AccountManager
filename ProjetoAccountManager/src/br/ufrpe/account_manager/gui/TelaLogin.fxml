@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.effect.*?>
@@ -11,9 +12,10 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="645.0" prefWidth="815.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrpe.account_manager.gui.TelaLoginController">
+
+<AnchorPane prefHeight="656.0" prefWidth="819.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrpe.account_manager.gui.TelaLoginController">
    <children>
-      <ImageView fitHeight="654.0" fitWidth="820.0" layoutX="-1.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="658.0" fitWidth="827.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@pictures/fundo1.png" />
          </image>
@@ -33,12 +35,12 @@
       <Hyperlink fx:id="TLogin_HL_Registro" layoutX="318.0" layoutY="369.0" onAction="#registroUsuario" text="Ainda não é registrado? Clique aqui" />
       <Hyperlink fx:id="TLogin_HL_EsqueciSenha" layoutX="348.0" layoutY="390.0" onAction="#esqueciSenha" text="Esqueci minha senha" />
       <ImageView fitHeight="79.0" fitWidth="45.0" layoutX="285.0" layoutY="191.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@pictures/logoAccountManager.png" />
-         </image>
          <effect>
             <ColorAdjust contrast="-0.35" hue="0.05" saturation="0.4" />
          </effect>
+         <image>
+            <Image url="@pictures/logoAccountManager.png" />
+         </image>
       </ImageView>
    </children>
 </AnchorPane>

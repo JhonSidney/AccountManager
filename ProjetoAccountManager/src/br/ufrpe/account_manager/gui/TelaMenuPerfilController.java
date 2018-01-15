@@ -99,6 +99,11 @@ public class TelaMenuPerfilController {
 
 			if (event.getTarget() == TelaMenuPerfil_BT_Atualizar) {
 				if (result.get() == ButtonType.OK) {
+					Alert alerts = new Alert(AlertType.INFORMATION);
+					alerts.setTitle("Confirmação da opção");
+					alerts.setHeaderText(null);
+					alerts.setContentText("Usuario Atualizado com Sucesso! ");
+					alerts.showAndWait();
 
 					stage = (Stage) TelaMenuPerfil_BT_Atualizar.getScene().getWindow();
 					root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaMenuPerfil.fxml"));
@@ -111,12 +116,6 @@ public class TelaMenuPerfilController {
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
-		} finally {
-			Alert alert = new Alert(AlertType.INFORMATION);
-			alert.setTitle("Confirmação da opção");
-			alert.setHeaderText(null);
-			alert.setContentText("Usuario Atualizado com Sucesso! ");
-			alert.showAndWait();
 		}
 
 	}
@@ -161,6 +160,13 @@ public class TelaMenuPerfilController {
 					fachada.removerPessoa(pessoa.getCpf());
 					stage = (Stage) TelaMenuPerfil_BT_ExcluirMinhaConta.getScene().getWindow();
 					root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaLogin.fxml"));
+					
+					Alert alerts = new Alert(AlertType.INFORMATION);
+					alerts.setTitle("Confirmação da opção");
+					alerts.setHeaderText(null);
+					alerts.setContentText("Usuario excluído com Sucesso! ");
+					alerts.showAndWait();
+					
 
 				} else {
 					stage = (Stage) TelaMenuPerfil_BT_ExcluirMinhaConta.getScene().getWindow();
@@ -171,13 +177,7 @@ public class TelaMenuPerfilController {
 			}
 		} catch (Exception e) {
 			// e.printStackTrace();
-		} finally {
-			Alert alert = new Alert(AlertType.INFORMATION);
-			alert.setTitle("Confirmação da opção");
-			alert.setHeaderText(null);
-			alert.setContentText("Usuario Excluído com Sucesso! ");
-			alert.showAndWait();
-		}
+		} 
 	}
 
 	@FXML

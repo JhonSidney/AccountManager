@@ -2,10 +2,13 @@ package br.ufrpe.account_manager.gui;
 
 import java.util.ArrayList;
 
+import org.w3c.dom.events.Event;
+
 import br.ufrpe.account_manager.SistemaAccountManager;
 import br.ufrpe.account_manager.exception.NegocioException;
 import br.ufrpe.account_manager.negocio.beans.Pessoa;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -25,19 +28,15 @@ public class TelaMenuPrincipalController {
 	@FXML
 	private Hyperlink TMenuPrincipal_HL_MeuPerfil;
 	@FXML
-	private Label TMenuPrincipal_LB_Configuracoes;
-	@FXML
-	private MenuItem TMenuPrincipal_BTConfiguracoes_MI_Banco;
-	@FXML
-	private MenuItem TMenuPrincipal_BTConfiguracoes_MI_Categoria;
-	@FXML
-	private Label TMenuPrincipal_LB_Cadastro;
-	@FXML
-	private MenuItem TMenuPrincipal_BTCadastro_MI_Contatos;
-	@FXML
-	private MenuItem TMenuPrincipal_BTCadastro_MI_Contas;
+	private Hyperlink TMenuPrincipal_HL_Contatos;
 	@FXML
 	private Hyperlink TMenuPrincipal_HL_Contas;
+	@FXML
+	private Hyperlink TMenuPrincipal_HL_Bancos;
+	@FXML
+	private Hyperlink TMenuPrincipal_HL_Categoria;
+	@FXML
+	private Hyperlink TMenuPrincipal_HL_Relatorios;
 	@FXML
 	private Button TMenuPrincipal_BT_logoff;
 
@@ -50,7 +49,6 @@ public class TelaMenuPrincipalController {
 		Pessoa pessoa = new Pessoa(nome, sobrenome, cpf, salario, id, email, senha, logradouro, nascimento, tel);
 		pessoa = fachada.getLogado();
 		TMenuPrincipal_LB_Nome.setText(" " + pessoa.getNome() + "  " + pessoa.getSobrenome());
-
 	}
 
 	@FXML
@@ -75,31 +73,54 @@ public class TelaMenuPrincipalController {
 
 	}
 
+	
 	@FXML
-	public void menuConfiguracaoBanco(ActionEvent event) {
+	public void menuContatos(ActionEvent event) {
 
+		Parent root;
+		Stage stage;
+		try {
+
+			if (event.getTarget() == TMenuPrincipal_HL_Contatos) {
+				stage = (Stage) TMenuPrincipal_HL_Contatos.getScene().getWindow();
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaMenuContatos.fxml"));
+			} else {
+				stage = (Stage) TMenuPrincipal_HL_Contatos.getScene().getWindow();
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaMenuPrincipal.fxml"));
+			}
+			Scene scene = new Scene(root);
+			stage.setScene(scene);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
-
-	@FXML
-	public void menuConfiguracaoCategoria(ActionEvent event) {
-
-	}
-
-	@FXML
-	public void menuCadastroContatos(ActionEvent event) {
-
-	}
-
-	@FXML
-	public void menuCadastroContas(ActionEvent event) {
-
-	}
-
+	
+	
 	@FXML
 	public void menuContas(ActionEvent event) {
 
 	}
+	
+	
+	@FXML
+	public void menuBancos(ActionEvent event) {
 
+	}
+	
+	
+	@FXML
+	public void menuCategoria(ActionEvent event) {
+
+	}
+	
+	
+	@FXML
+	public void menuRelatorio(ActionEvent event) {
+
+	}
+
+	
 	@FXML
 	public void botao_logoff(ActionEvent event) {
 		Parent root;

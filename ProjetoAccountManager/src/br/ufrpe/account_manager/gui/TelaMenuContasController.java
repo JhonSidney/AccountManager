@@ -1,5 +1,5 @@
 package br.ufrpe.account_manager.gui;
 
-public class TelaMenuContaController {
+public class TelaMenuContasController {
 
 }

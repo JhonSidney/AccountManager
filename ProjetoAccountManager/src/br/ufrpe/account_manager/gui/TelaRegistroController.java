@@ -68,7 +68,7 @@ public class TelaRegistroController {
 				// TODO: handle exception
 				Alert alert = new Alert(AlertType.WARNING);
 				alert.setTitle("Error");
-				alert.setHeaderText("Formato dos campos invalidos");
+				alert.setHeaderText("Atenção!");
 				alert.setContentText(e.getMessage());
 				alert.showAndWait();
 			}
