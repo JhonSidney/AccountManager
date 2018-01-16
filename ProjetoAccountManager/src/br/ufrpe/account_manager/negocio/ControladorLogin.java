@@ -1,7 +1,5 @@
 package br.ufrpe.account_manager.negocio;
 
-import java.util.ArrayList;
-
 import br.ufrpe.account_manager.exception.NegocioException;
 import br.ufrpe.account_manager.negocio.beans.Pessoa;
 import javafx.scene.control.Alert;
@@ -78,8 +76,6 @@ public class ControladorLogin {
 	}
 
 	public void setLogado(Pessoa pessoa) throws Exception {
-	
-		this.logado = pessoa;
+		this.logado=pessoa;
 	}
-
 }
