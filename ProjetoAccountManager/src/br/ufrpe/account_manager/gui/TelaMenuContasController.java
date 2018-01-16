@@ -1,10 +1,16 @@
 package br.ufrpe.account_manager.gui;
 
+import java.sql.Date;
+
 import br.ufrpe.account_manager.SistemaAccountManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class TelaMenuContasController {
 
@@ -19,9 +25,9 @@ public class TelaMenuContasController {
 	@FXML
 	private TextField TelaMenuContas_TF_Valor;
 	@FXML
-	private Button TelaMenuContatos_BT_Adicionar;
+	private Button TelaMenuContas_BT_Adicionar;
 	@FXML
-	private Button TelaMenuContatos_BT_Voltar;
+	private Button TelaMenuContas_BT_Voltar;
 	@FXML
 	private Button TelaMenuContas_BT_logoff;
 	
@@ -35,12 +41,36 @@ public class TelaMenuContasController {
 	@FXML
 	public void botao_adicionarConta(ActionEvent event) {
 		
+		String id,nome,descricao;
+		Date dataVencimento;
+		int valor;
+		
+		id = TelaMenuContas_TF_Id.getText();
+		nome = TelaMenuContas_TF_Nome.getText();
+		descricao = TelaMenuContas_TF_Descricao.getText();
+		//dataVencimento = TelaMenuContas_TF_DataVencimento.getText();
 	}
 	
 	
 	@FXML
 	public void botao_voltar(ActionEvent event) {
-		
+		Parent root;
+		Stage stage;
+		try {
+
+			if (event.getTarget() == TelaMenuContas_BT_Voltar) {
+				stage = (Stage) TelaMenuContas_BT_Voltar.getScene().getWindow();
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaMenuPrincipal.fxml"));
+			} else {
+				stage = (Stage) TelaMenuContas_BT_Voltar.getScene().getWindow();
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaMenuContas.fxml"));
+			}
+			Scene scene = new Scene(root);
+			stage.setScene(scene);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	

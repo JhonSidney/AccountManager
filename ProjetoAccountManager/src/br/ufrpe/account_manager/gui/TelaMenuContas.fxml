@@ -27,8 +27,8 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="TelaMenuContatos_BT_Adicionar" layoutX="506.0" layoutY="607.0" mnemonicParsing="false" onAction="#botao_adicionarConta" prefHeight="25.0" prefWidth="90.0" text="Adicionar" />
-      <Button fx:id="TelaMenuContatos_BT_Voltar" layoutX="600.0" layoutY="607.0" mnemonicParsing="false" onAction="#botao_voltar" prefHeight="25.0" prefWidth="90.0" text="Voltar" />
+      <Button fx:id="TelaMenuContas_BT_Adicionar" layoutX="502.0" layoutY="592.0" mnemonicParsing="false" onAction="#botao_adicionarConta" prefHeight="25.0" prefWidth="90.0" text="Adicionar" />
+      <Button fx:id="TelaMenuContas_BT_Voltar" layoutX="596.0" layoutY="592.0" mnemonicParsing="false" onAction="#botao_voltar" prefHeight="25.0" prefWidth="90.0" text="Voltar" />
       <TextField fx:id="TelaMenuContas_TF_Id" layoutX="250.0" layoutY="206.0" prefHeight="25.0" prefWidth="210.0" promptText="ID: " />
       <TextField fx:id="TelaMenuContas_TF_Nome" layoutX="250.0" layoutY="271.0" prefHeight="25.0" prefWidth="210.0" promptText="Nome:" />
       <TextField fx:id="TelaMenuContas_TF_Descricao" layoutX="250.0" layoutY="325.0" prefHeight="31.0" prefWidth="328.0" promptText="Descrição:" />
