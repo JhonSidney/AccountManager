@@ -131,7 +131,7 @@ public class TelaMenuPerfilController {
 			}
 
 		} catch (Exception e) {
-			
+			//e.printStackTrace();
 		}
 
 	}

@@ -72,6 +72,7 @@ public class TelaMenuContatosController implements Initializable {
 	public void initialize(URL url, ResourceBundle rb) {
 		fachada = SistemaAccountManager.getInstance();
 		ObservableList<Contato> list;
+		
 		try {
 			list = getUserList();
 			tableContatos.setItems(list);
@@ -120,7 +121,7 @@ public class TelaMenuContatosController implements Initializable {
 					tel = TelaMenuContatos_TF_Telefone.getText();
 					comentario = TelaMenuContatos_TF_Comentario.getText();
 					Contato contato = new Contato(nome, logradouro, tel, comentario);
-					//tableContatos.getItems().add(contato);
+					tableContatos.getItems().add(contato);
 					fachada.cadastrarContato(contato);
 
 					if (result.get() == ButtonType.OK) {
@@ -154,6 +155,7 @@ public class TelaMenuContatosController implements Initializable {
 
 	}
 
+		
 	@FXML
 	public void botao_voltar(ActionEvent event) {
 		Parent root;
