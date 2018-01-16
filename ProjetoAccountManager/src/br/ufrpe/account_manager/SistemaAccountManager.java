@@ -112,7 +112,7 @@ public class SistemaAccountManager {
 		return this.logins.getLogado();
 	}
 
-	public void gravarLogado(String cpf) throws Exception {
-		this.logins.setLogado(cpf);
+	public void gravarLogado(Pessoa pessoa) throws Exception {
+		this.logins.setLogado(pessoa);
 	}
 }

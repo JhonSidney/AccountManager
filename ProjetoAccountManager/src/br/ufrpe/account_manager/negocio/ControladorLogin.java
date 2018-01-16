@@ -53,7 +53,8 @@ public class ControladorLogin {
 			}
 		} else if (pessoa != null && pessoa.getSenha().equals(senha)) {
 			igual = 1;
-			this.setLogado(cpf);
+			logado = this.pessoa.procurar(cpf);
+			this.setLogado(logado);
 
 		} else {
 			try {
@@ -76,9 +77,9 @@ public class ControladorLogin {
 		return logado;
 	}
 
-	public void setLogado(String cpf) throws Exception {
-		Pessoa p = this.pessoa.procurar(cpf);
-		this.logado = p;
+	public void setLogado(Pessoa pessoa) throws Exception {
+	
+		this.logado = pessoa;
 	}
 
 }

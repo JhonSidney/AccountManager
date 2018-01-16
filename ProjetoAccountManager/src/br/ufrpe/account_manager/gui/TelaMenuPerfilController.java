@@ -3,6 +3,7 @@ package br.ufrpe.account_manager.gui;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Optional;
+import java.util.ResourceBundle;
 
 import br.ufrpe.account_manager.SistemaAccountManager;
 import br.ufrpe.account_manager.exception.NegocioException;
@@ -51,12 +52,11 @@ public class TelaMenuPerfilController {
 	private Button TelaMenuPerfil_BT_Logoff;
 
 	SistemaAccountManager fachada;
+	private Pessoa pessoa;
 
 	public void initialize() {
 		fachada = SistemaAccountManager.getInstance();
-		Pessoa pessoa;
-		pessoa = fachada.getLogado();
-
+		this.pessoa = fachada.getLogado();
 		TelaMenuPerfil_TF_Nome.setText(pessoa.getNome());
 		TelaMenuPerfil_TF_Sobrenome.setText(pessoa.getSobrenome());
 		TelaMenuPerfil_TF_Cpf.setText(pessoa.getCpf());
@@ -67,14 +67,16 @@ public class TelaMenuPerfilController {
 		TelaMenuPerfil_TF_Logradouro.setText(pessoa.getLogradouro());
 		TelaMenuPerfil_TF_Nascimento.setText(pessoa.getNascimento());
 		TelaMenuPerfil_TF_Telefone.setText(pessoa.getTel());
+		
 	}
 
 	@FXML
 	public void botao_atualizar(ActionEvent event) throws IOException, NegocioException {
 
-		Parent root;
-		Stage stage;
+		
 		try {
+			Parent root;
+			Stage stage;
 			String nome, sobrenome, cpf, salario, id, email, senha, logradouro, nascimento, tel;
 
 			Alert alert = new Alert(AlertType.CONFIRMATION);
@@ -83,6 +85,7 @@ public class TelaMenuPerfilController {
 			alert.setContentText("você tem certeza ?");
 			Optional<ButtonType> result = alert.showAndWait();
 
+			
 			nome = TelaMenuPerfil_TF_Nome.getText();
 			sobrenome = TelaMenuPerfil_TF_Sobrenome.getText();
 			cpf = TelaMenuPerfil_TF_Cpf.getText();
@@ -94,11 +97,26 @@ public class TelaMenuPerfilController {
 			nascimento = TelaMenuPerfil_TF_Nascimento.getText();
 			tel = TelaMenuPerfil_TF_Telefone.getText();
 			Pessoa pessoa = new Pessoa(nome, sobrenome, cpf, salario, id, email, senha, logradouro, nascimento, tel);
-			fachada.atualizarPessoa(pessoa);
-			fachada.gravarLogado(cpf);
+			
+			
+			
 
 			if (event.getTarget() == TelaMenuPerfil_BT_Atualizar) {
+				
+				if(this.fachada.getLogado().getCpf().equals(this.TelaMenuPerfil_TF_Cpf.getText()) == false) {
+					Alert alerts = new Alert(AlertType.INFORMATION);
+					alerts.setTitle("Atenção!!");
+					alerts.setHeaderText("VOCÊ NÃO PODE ALTERAR SEU CPF!!");
+					alerts.setContentText("Obs:Se seu cpf está incorreto, por favor exclua seu perfil e registre-se novamente.");
+					alerts.showAndWait();
+					return;
+					
+				}
+				
 				if (result.get() == ButtonType.OK) {
+					fachada.atualizarPessoa(pessoa);
+					fachada.gravarLogado(pessoa);
+					
 					Alert alerts = new Alert(AlertType.INFORMATION);
 					alerts.setTitle("Confirmação da opção");
 					alerts.setHeaderText(null);
@@ -107,16 +125,17 @@ public class TelaMenuPerfilController {
 
 					stage = (Stage) TelaMenuPerfil_BT_Atualizar.getScene().getWindow();
 					root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaMenuPerfil.fxml"));
-				} else {
+				}else {
 					stage = (Stage) TelaMenuPerfil_BT_Atualizar.getScene().getWindow();
 					root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaMenuPerfil.fxml"));
+					Scene scene = new Scene(root);
+					stage.setScene(scene);
 				}
-				Scene scene = new Scene(root);
-				stage.setScene(scene);
+				
 			}
+			
 		} catch (Exception e) {
-			// TODO: handle exception
-		}
+			e.printStackTrace();		}
 
 	}
 
