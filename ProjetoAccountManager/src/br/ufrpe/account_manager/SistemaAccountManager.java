@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import br.ufrpe.account_manager.exception.NegocioException;
 import br.ufrpe.account_manager.negocio.ControladorConta;
-import br.ufrpe.account_manager.negocio.ControladorContatos;
+import br.ufrpe.account_manager.negocio.ControladorContato;
 import br.ufrpe.account_manager.negocio.ControladorLogin;
 import br.ufrpe.account_manager.negocio.ControladorPessoa;
 import br.ufrpe.account_manager.negocio.beans.Conta;
@@ -16,7 +16,7 @@ public class SistemaAccountManager {
 	private ControladorPessoa pessoas;
 	private ControladorConta contas;
 	private ControladorLogin logins;
-	private ControladorContatos contato;
+	private ControladorContato contatos;
 
 	private static SistemaAccountManager instance;
 
@@ -24,7 +24,7 @@ public class SistemaAccountManager {
 		this.contas = new ControladorConta().getInstance();
 		this.pessoas = new ControladorPessoa().getInstance();
 		this.logins = new ControladorLogin().getInstance();
-		this.contato = new ControladorContatos().getInstance();
+		this.contatos = new ControladorContato().getInstance();
 	}
 
 	public static SistemaAccountManager getInstance() {
@@ -82,24 +82,24 @@ public class SistemaAccountManager {
 	/* <<<< CONTATOS >>>> */
 
 	public void cadastrarContato(Contato contato) throws NegocioException {
-		this.contato.cadastrar(contato);
+		this.contatos.cadastrar(contato);
 	}
 
 	public void alterarContato(Contato contato) throws NegocioException {
-		this.contato.atualizar(contato);
+		this.contatos.atualizar(contato);
 	}
 
 	public Contato procurarContatos(String cpf) throws NegocioException {
-		Contato contato = this.contato.procurar(cpf);
-		return contato;
+		Contato contatos = this.contato.procurar(cpf);
+		return contatos;
 	}
 
 	public void removerContato(Contato contato) throws NegocioException {
-		this.contato.remover(contato);
+		this.contatos.remover(contato);
 	}
 
 	public ArrayList<Contato> listarContatos() throws NegocioException {
-		return this.contato.listar();
+		return this.contatos.listar();
 	}
 
 	/* <<<< LOGIN >>>> */

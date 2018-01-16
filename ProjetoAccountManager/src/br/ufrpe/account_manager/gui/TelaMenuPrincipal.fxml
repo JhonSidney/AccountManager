@@ -83,12 +83,12 @@
             <Font size="16.0" />
          </font>
       </Hyperlink>
-      <Hyperlink fx:id="TMenuPrincipal_HL_Categoria" layoutX="50.0" layoutY="282.0" onAction="#menuCategoria" text="Categoria" textFill="#6f9ada">
+      <Hyperlink fx:id="TMenuPrincipal_HL_Categoria" layoutX="50.0" layoutY="282.0" onAction="#menuCategoria" text="Categorias" textFill="#6f9ada">
          <font>
             <Font size="16.0" />
          </font>
       </Hyperlink>
-      <Hyperlink fx:id="TMenuPrincipal_HL_Relatorios" layoutX="51.0" layoutY="317.0" onAction="#menuRelatorio" text="Relatorio" textFill="#6f9ada">
+      <Hyperlink fx:id="TMenuPrincipal_HL_Relatorios" layoutX="51.0" layoutY="317.0" onAction="#menuRelatorio" text="Relatorios" textFill="#6f9ada">
          <font>
             <Font size="16.0" />
          </font>

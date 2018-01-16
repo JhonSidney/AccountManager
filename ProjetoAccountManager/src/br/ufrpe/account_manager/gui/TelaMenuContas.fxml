@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="650.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrpe.account_manager.gui.TelaMenuContatosController">
+   <children>
+      <ImageView fitHeight="650.0" fitWidth="1000.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@pictures/FundoMenuPrincipal3.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="78.0" layoutY="36.0" text="Painel de Contatos" textFill="#fafbfc">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tableContatos" layoutX="249.0" layoutY="87.0" prefHeight="341.0" prefWidth="733.0" tableMenuButtonVisible="true">
+         <columns>
+            <TableColumn fx:id="nomeColumn" prefWidth="75.0" text="Nome" />
+            <TableColumn fx:id="telefoneColumn" prefWidth="75.0" text="Telefone" />
+            <TableColumn fx:id="logradouroColumn" prefWidth="75.0" text="Logradouro" />
+            <TableColumn fx:id="comentarioColumn" prefWidth="75.0" text="Comentário" />
+         </columns>
+      </TableView>
+      <Button fx:id="TelaMenuContatos_BT_Remover" layoutX="399.0" layoutY="607.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" text="Remover" />
+      <Button fx:id="TelaMenuContatos_BT_Adicionar" layoutX="506.0" layoutY="607.0" mnemonicParsing="false" onAction="#adicionarContato" prefHeight="25.0" prefWidth="90.0" text="Adicionar" />
+      <Button fx:id="TelaMenuContatos_BT_Atualizar" layoutX="615.0" layoutY="607.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" text="Atualizar" />
+      <Button fx:id="TelaMenuContatos_BT_Voltar" layoutX="726.0" layoutY="607.0" mnemonicParsing="false" onAction="#botao_voltar" prefHeight="25.0" prefWidth="90.0" text="Voltar" />
+      <TextField fx:id="TelaMenuContatos_TF_Nome" layoutX="249.0" layoutY="440.0" prefHeight="25.0" prefWidth="210.0" promptText="Nome : Ex. Joao" />
+      <TextField fx:id="TelaMenuContatos_TF_Sobrenome" layoutX="469.0" layoutY="440.0" prefHeight="25.0" prefWidth="210.0" promptText="Sobrenome : Ex. Araujo da Silva" />
+      <TextField fx:id="TelaMenuContatos_TF_Email" layoutX="687.0" layoutY="440.0" prefHeight="25.0" prefWidth="274.0" promptText="E-mail do Contato : Ex. Joao@servidor.com" />
+      <TextField fx:id="TelaMenuContatos_TF_logradouro" layoutX="251.0" layoutY="476.0" prefHeight="25.0" prefWidth="709.0" promptText="Endereço do Contato" />
+      <TextField fx:id="TelaMenuContatos_TF_Telefone" layoutX="250.0" layoutY="510.0" prefWidth="210.0" promptText="Telefone : Ex.+55 81 9999-9999" />
+      <TextField fx:id="TelaMenuContatos_TF_Comentario" layoutX="469.0" layoutY="511.0" prefHeight="25.0" prefWidth="488.0" promptText="Comentário" />
+      <Label layoutX="195.0" layoutY="102.0" text="Logoff" textFill="#f5eded" />
+      <ImageView fitHeight="17.0" fitWidth="17.0" layoutX="206.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@pictures/exit.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="TelaMenuContatos_BT_Logoff" layoutX="203.0" layoutY="81.0" mnemonicParsing="false" onAction="#botao_logoff" opacity="0.0" prefHeight="25.0" prefWidth="24.0" text="Button" />
+   </children>
+</AnchorPane>
