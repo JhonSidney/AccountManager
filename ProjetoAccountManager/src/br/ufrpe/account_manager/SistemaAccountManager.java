@@ -90,12 +90,12 @@ public class SistemaAccountManager {
 	}
 
 	public Contato procurarContatos(String cpf) throws NegocioException {
-		Contato contatos = this.contato.procurar(cpf);
+		Contato contatos = this.contatos.procurar(cpf);
 		return contatos;
 	}
 
-	public void removerContato(Contato contato) throws NegocioException {
-		this.contatos.remover(contato);
+	public void removerContato(String cpf) throws NegocioException {
+		this.contatos.remover(cpf);
 	}
 
 	public ArrayList<Contato> listarContatos() throws NegocioException {
