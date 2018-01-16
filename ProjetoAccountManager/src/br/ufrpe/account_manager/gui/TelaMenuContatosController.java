@@ -207,7 +207,8 @@ public class TelaMenuContatosController implements Initializable {
 			if (TelaMenuContatos_TF_Sobrenome.getText().isEmpty() || TelaMenuContatos_TF_logradouro.getText().isEmpty()
 					|| TelaMenuContatos_TF_Telefone.getText().isEmpty()
 					|| TelaMenuContatos_TF_Comentario.getText().isEmpty()
-					|| TelaMenuContatos_TF_Email.getText().isEmpty()) {
+					//|| TelaMenuContatos_TF_Email.getText().isEmpty()) {
+					) {
 				Alert alert = new Alert(AlertType.WARNING);
 				alert.setTitle("Error");
 				alert.setHeaderText("Informações inválidas");

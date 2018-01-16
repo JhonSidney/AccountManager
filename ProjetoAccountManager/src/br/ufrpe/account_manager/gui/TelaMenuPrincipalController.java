@@ -99,7 +99,24 @@ public class TelaMenuPrincipalController {
 	
 	@FXML
 	public void menuContas(ActionEvent event) {
+		
+		Parent root;
+		Stage stage;
+		try {
 
+			if (event.getTarget() == TMenuPrincipal_HL_Contas) {
+				stage = (Stage) TMenuPrincipal_HL_Contas.getScene().getWindow();
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaMenuContas.fxml"));
+			} else {
+				stage = (Stage) TMenuPrincipal_HL_Contas.getScene().getWindow();
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaMenuPrincipal.fxml"));
+			}
+			Scene scene = new Scene(root);
+			stage.setScene(scene);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	
