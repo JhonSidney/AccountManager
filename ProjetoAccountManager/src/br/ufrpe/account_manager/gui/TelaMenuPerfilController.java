@@ -67,13 +67,12 @@ public class TelaMenuPerfilController {
 		TelaMenuPerfil_TF_Logradouro.setText(pessoa.getLogradouro());
 		TelaMenuPerfil_TF_Nascimento.setText(pessoa.getNascimento());
 		TelaMenuPerfil_TF_Telefone.setText(pessoa.getTel());
-		
+
 	}
 
 	@FXML
 	public void botao_atualizar(ActionEvent event) throws IOException, NegocioException {
 
-		
 		try {
 			Parent root;
 			Stage stage;
@@ -85,7 +84,6 @@ public class TelaMenuPerfilController {
 			alert.setContentText("você tem certeza ?");
 			Optional<ButtonType> result = alert.showAndWait();
 
-			
 			nome = TelaMenuPerfil_TF_Nome.getText();
 			sobrenome = TelaMenuPerfil_TF_Sobrenome.getText();
 			cpf = TelaMenuPerfil_TF_Cpf.getText();
@@ -97,26 +95,24 @@ public class TelaMenuPerfilController {
 			nascimento = TelaMenuPerfil_TF_Nascimento.getText();
 			tel = TelaMenuPerfil_TF_Telefone.getText();
 			Pessoa pessoa = new Pessoa(nome, sobrenome, cpf, salario, id, email, senha, logradouro, nascimento, tel);
-			
-			
-			
 
 			if (event.getTarget() == TelaMenuPerfil_BT_Atualizar) {
-				
-				if(this.fachada.getLogado().getCpf().equals(this.TelaMenuPerfil_TF_Cpf.getText()) == false) {
+
+				if (this.fachada.getLogado().getCpf().equals(this.TelaMenuPerfil_TF_Cpf.getText()) == false) {
 					Alert alerts = new Alert(AlertType.INFORMATION);
 					alerts.setTitle("Atenção!!");
 					alerts.setHeaderText("VOCÊ NÃO PODE ALTERAR SEU CPF!!");
-					alerts.setContentText("Obs:Se seu cpf está incorreto, por favor exclua seu perfil e registre-se novamente.");
+					alerts.setContentText(
+							"Obs:Se seu cpf está incorreto, por favor exclua seu perfil e registre-se novamente.");
 					alerts.showAndWait();
 					return;
-					
+
 				}
-				
+
 				if (result.get() == ButtonType.OK) {
 					fachada.atualizarPessoa(pessoa);
 					fachada.gravarLogado(pessoa);
-					
+
 					Alert alerts = new Alert(AlertType.INFORMATION);
 					alerts.setTitle("Confirmação da opção");
 					alerts.setHeaderText(null);
@@ -125,17 +121,18 @@ public class TelaMenuPerfilController {
 
 					stage = (Stage) TelaMenuPerfil_BT_Atualizar.getScene().getWindow();
 					root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaMenuPerfil.fxml"));
-				}else {
+				} else {
 					stage = (Stage) TelaMenuPerfil_BT_Atualizar.getScene().getWindow();
 					root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaMenuPerfil.fxml"));
 					Scene scene = new Scene(root);
 					stage.setScene(scene);
 				}
-				
+
 			}
-			
+
 		} catch (Exception e) {
-			e.printStackTrace();		}
+			e.printStackTrace();
+		}
 
 	}
 
@@ -179,13 +176,12 @@ public class TelaMenuPerfilController {
 					fachada.removerPessoa(pessoa.getCpf());
 					stage = (Stage) TelaMenuPerfil_BT_ExcluirMinhaConta.getScene().getWindow();
 					root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaLogin.fxml"));
-					
+
 					Alert alerts = new Alert(AlertType.INFORMATION);
 					alerts.setTitle("Confirmação da opção");
 					alerts.setHeaderText(null);
 					alerts.setContentText("Usuario excluído com Sucesso! ");
 					alerts.showAndWait();
-					
 
 				} else {
 					stage = (Stage) TelaMenuPerfil_BT_ExcluirMinhaConta.getScene().getWindow();
@@ -196,7 +192,7 @@ public class TelaMenuPerfilController {
 			}
 		} catch (Exception e) {
 			// e.printStackTrace();
-		} 
+		}
 	}
 
 	@FXML
