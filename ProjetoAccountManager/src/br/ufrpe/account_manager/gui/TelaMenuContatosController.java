@@ -44,7 +44,7 @@ public class TelaMenuContatosController implements Initializable {
 	@FXML
 	private TextField TelaMenuContatos_TF_Sobrenome;
 	@FXML
-	private TextField TelaMenuContatos_TF_Email;
+	private TextField TelaMenuContatos_TF_Cpf;
 	@FXML
 	private TextField TelaMenuContatos_TF_logradouro;
 	@FXML
@@ -57,6 +57,8 @@ public class TelaMenuContatosController implements Initializable {
 	private TableView<Contato> tableContatos = new TableView<Contato>();
 	@FXML
 	private TableColumn<Contato, String> nomeColumn = new TableColumn<Contato, String>("Nome");
+	@FXML
+	private TableColumn<Contato, String> cpf = new TableColumn<Contato, String>("Nome");
 	@FXML
 	private TableColumn<Contato, String> telefoneColumn = new TableColumn<Contato, String>("telefone");
 	@FXML
