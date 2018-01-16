@@ -17,99 +17,34 @@
 
 <AnchorPane prefHeight="650.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrpe.account_manager.gui.TelaMenuContatosController">
    <children>
-      <ImageView fitHeight="650.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="650.0" fitWidth="1000.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@pictures/FundoMenuPrincipal2.png" />
+            <Image url="@pictures/FundoMenuPrincipal3.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="27.0" fitWidth="27.0" layoutX="30.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@pictures/painel.png" />
-         </image>
-      </ImageView>
-      <Label layoutX="80.0" layoutY="36.0" text="Painel de Contatos" textFill="#fafbfc">
+      <Label layoutX="78.0" layoutY="36.0" text="Painel de Contatos" textFill="#fafbfc">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TableView layoutX="249.0" layoutY="87.0" prefHeight="341.0" prefWidth="733.0" tableMenuButtonVisible="true">
-        <columns>
-          <TableColumn prefWidth="151.66665649414062" text="Nome do Contato" />
-          <TableColumn prefWidth="95.33334350585938" text="Telefone" />
-            <TableColumn prefWidth="148.0" text="Endereço" />
-            <TableColumn prefWidth="339.0" text="Comentário" />
-        </columns>
+      <TableView fx:id="tableContatos" layoutX="249.0" layoutY="87.0" prefHeight="341.0" prefWidth="733.0" tableMenuButtonVisible="true">
+         <columns>
+            <TableColumn fx:id="nomeColumn" prefWidth="75.0" text="Nome" />
+            <TableColumn fx:id="telefoneColumn" prefWidth="75.0" text="Telefone" />
+            <TableColumn fx:id="logradouroColumn" prefWidth="75.0" text="Logradouro" />
+            <TableColumn fx:id="comentarioColumn" prefWidth="75.0" text="Comentário" />
+         </columns>
       </TableView>
-      <Button layoutX="399.0" layoutY="607.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" text="Remover" />
-      <Button layoutX="506.0" layoutY="607.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" text="Adicionar" />
-      <Button layoutX="615.0" layoutY="607.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" text="Atualizar" />
+      <Button fx:id="TelaMenuContatos_BT_Remover" layoutX="399.0" layoutY="607.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" text="Remover" />
+      <Button fx:id="TelaMenuContatos_BT_Adicionar" layoutX="506.0" layoutY="607.0" mnemonicParsing="false" onAction="#adicionarContato" prefHeight="25.0" prefWidth="90.0" text="Adicionar" />
+      <Button fx:id="TelaMenuContatos_BT_Atualizar" layoutX="615.0" layoutY="607.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" text="Atualizar" />
       <Button fx:id="TelaMenuContatos_BT_Voltar" layoutX="726.0" layoutY="607.0" mnemonicParsing="false" onAction="#botao_voltar" prefHeight="25.0" prefWidth="90.0" text="Voltar" />
-      <TextField layoutX="249.0" layoutY="440.0" prefHeight="25.0" prefWidth="210.0" promptText="Nome : Ex. Joao" />
-      <TextField layoutX="469.0" layoutY="440.0" prefHeight="25.0" prefWidth="210.0" promptText="Sobrenome : Ex. Araujo da Silva" />
-      <TextField layoutX="687.0" layoutY="440.0" prefHeight="25.0" prefWidth="274.0" promptText="E-mail do Contato : Ex. Joao@servidor.com" />
-      <TextField layoutX="251.0" layoutY="476.0" prefHeight="25.0" prefWidth="709.0" promptText="Endereço do Contato" />
-      <TextField layoutX="250.0" layoutY="510.0" prefWidth="210.0" promptText="Telefone : Ex.+55 81 9999-9999" />
-      <TextField layoutX="469.0" layoutY="511.0" prefHeight="25.0" prefWidth="488.0" promptText="Comentário" />
-      <ImageView fitHeight="25.0" fitWidth="24.0" layoutX="20.0" layoutY="330.0" opacity="0.26" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@pictures/relatorio.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="25.0" fitWidth="24.0" layoutX="20.0" layoutY="297.0" opacity="0.26" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@pictures/categoria.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="25.0" fitWidth="24.0" layoutX="19.0" layoutY="261.0" opacity="0.26" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@pictures/bank_78392.png" />
-         </image>
-      </ImageView>
-      <Hyperlink layoutX="58.0" layoutY="327.0" opacity="0.26" text="Relatorio" textFill="#b2b2b2">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Hyperlink>
-      <Hyperlink layoutX="57.0" layoutY="292.0" opacity="0.26" text="Categoria" textFill="#b2b2b2">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Hyperlink>
-      <Hyperlink layoutX="57.0" layoutY="256.0" opacity="0.26" text="Bancos" textFill="#b2b2b2">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Hyperlink>
-      <Hyperlink layoutX="58.0" layoutY="179.0" opacity="0.26" text="Contatos" textFill="#b2b2b2">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Hyperlink>
-      <Hyperlink layoutX="59.0" layoutY="218.0" opacity="0.26" prefHeight="0.0" prefWidth="59.0" text="Contas" textFill="#b2b2b2">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Hyperlink>
-      <Hyperlink focusTraversable="false" layoutX="57.0" layoutY="144.0" opacity="0.26" prefHeight="29.0" prefWidth="100.0" text="Meu Perfil" textFill="#b2b2b2">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Hyperlink>
-      <ImageView fitHeight="25.0" fitWidth="24.0" layoutX="19.0" layoutY="223.0" opacity="0.26" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@pictures/contas.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="21.0" fitWidth="24.0" layoutX="22.0" layoutY="185.0" opacity="0.26" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@pictures/cadastro.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="25.0" fitWidth="35.0" layoutX="18.0" layoutY="146.0" opacity="0.26" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@pictures/perfil.png" />
-         </image>
-      </ImageView>
+      <TextField fx:id="TelaMenuContatos_TF_Nome" layoutX="249.0" layoutY="440.0" prefHeight="25.0" prefWidth="210.0" promptText="Nome : Ex. Joao" />
+      <TextField fx:id="TelaMenuContatos_TF_Sobrenome" layoutX="469.0" layoutY="440.0" prefHeight="25.0" prefWidth="210.0" promptText="Sobrenome : Ex. Araujo da Silva" />
+      <TextField fx:id="TelaMenuContatos_TF_Email" layoutX="687.0" layoutY="440.0" prefHeight="25.0" prefWidth="274.0" promptText="E-mail do Contato : Ex. Joao@servidor.com" />
+      <TextField fx:id="TelaMenuContatos_TF_logradouro" layoutX="251.0" layoutY="476.0" prefHeight="25.0" prefWidth="709.0" promptText="Endereço do Contato" />
+      <TextField fx:id="TelaMenuContatos_TF_Telefone" layoutX="250.0" layoutY="510.0" prefWidth="210.0" promptText="Telefone : Ex.+55 81 9999-9999" />
+      <TextField fx:id="TelaMenuContatos_TF_Comentario" layoutX="469.0" layoutY="511.0" prefHeight="25.0" prefWidth="488.0" promptText="Comentário" />
       <Label layoutX="195.0" layoutY="102.0" text="Logoff" textFill="#f5eded" />
       <ImageView fitHeight="17.0" fitWidth="17.0" layoutX="206.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
          <image>

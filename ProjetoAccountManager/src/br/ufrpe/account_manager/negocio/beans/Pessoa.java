@@ -37,6 +37,12 @@ public class Pessoa implements Serializable {
 		this.setCpf(cpf);
 		this.setSenha(senha);
 	}
+	
+	public Pessoa(String nome, String tel, String logradouro ) {
+		this.setNome(nome);
+		this.setTel(tel);
+		this.setLogradouro(logradouro);
+	}
 
 	public Pessoa(String cpf, String senha) {
 		this.setCpf(cpf);

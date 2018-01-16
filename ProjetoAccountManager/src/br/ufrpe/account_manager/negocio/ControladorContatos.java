@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import br.ufrpe.account_manager.dao.IRepositorioContatos;
 import br.ufrpe.account_manager.dao.RepositorioContatos;
 import br.ufrpe.account_manager.exception.NegocioException;
-import br.ufrpe.account_manager.negocio.beans.Contatos;
+import br.ufrpe.account_manager.negocio.beans.Contato;
 import br.ufrpe.account_manager.negocio.beans.Pessoa;
 
 public class ControladorContatos {
@@ -25,7 +25,7 @@ public class ControladorContatos {
 		return instance;
 	}
 	
-	public void cadastrar(Contatos contato) throws NegocioException {
+	public void cadastrar(Contato contato) throws NegocioException {
 		if (this.repositorioContato.existe(contato))
 			throw new NegocioException("O contato já foi adicionado a sua lista");
 		else {
@@ -34,12 +34,12 @@ public class ControladorContatos {
 			
 	}
 	
-	public Contatos procurar(String cpf) throws NegocioException {
-		Contatos resultado = this.repositorioContato.procurar(cpf);
+	public Contato procurar(String cpf) throws NegocioException {
+		Contato resultado = this.repositorioContato.procurar(cpf);
 		return resultado;
 	}
 
-	public void atualizar(Contatos contato) throws NegocioException {
+	public void atualizar(Contato contato) throws NegocioException {
 		if (this.repositorioContato.existe(contato))
 			this.repositorioContato.atualizar(contato);
 
@@ -48,7 +48,7 @@ public class ControladorContatos {
 
 	}
 
-	public void remover(Contatos contato) throws NegocioException {
+	public void remover(Contato contato) throws NegocioException {
 		if (this.repositorioContato.existe(contato))
 			this.repositorioContato.remover(contato);
 
@@ -57,7 +57,7 @@ public class ControladorContatos {
 
 	}
 
-	public ArrayList<Contatos> listar() throws NegocioException {
+	public ArrayList<Contato> listar() throws NegocioException {
 		if (this.repositorioContato.listar().isEmpty())
 			throw new NegocioException("Não existem contas cadastradas");
 

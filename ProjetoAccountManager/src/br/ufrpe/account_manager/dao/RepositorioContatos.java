@@ -6,26 +6,31 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-import br.ufrpe.account_manager.negocio.beans.Contatos;
+import br.ufrpe.account_manager.negocio.beans.Contato;
 
-public class RepositorioContatos implements IRepositorioContatos {
 
-	private static final String NOME_ARQUIVO_BD = "contato.dat";
-	private ArrayList<Contatos> contato;
+
+public class RepositorioContatos implements IRepositorioContatos, Serializable{
+
+
+	// ATRIBUTOS
+	public static final String NOME_ARQUIVOS_BD = "pessoas.dat";
+	private ArrayList<Contato> contatos;
 	public static RepositorioContatos instancia;
 
-	public RepositorioContatos() {
-		contato = new ArrayList<>();
+	private RepositorioContatos() {
+		this.contatos = new ArrayList<>();
 	}
 
 	public static RepositorioContatos getInstance() {
+
 		if (instancia == null) {
-			try {
-				instancia = lerDoArquivo();
-			} catch (Exception e) {
-				// TODO: handle exception
+			try{
+				instancia =lerDoArquivo();
+			} catch (IOException e){
 				e.printStackTrace();
 			}
 		}
@@ -33,12 +38,12 @@ public class RepositorioContatos implements IRepositorioContatos {
 	}
 
 	public static RepositorioContatos lerDoArquivo() throws IOException {
-		
+
 		RepositorioContatos instanciaLocal = null;
-		File in = new File(NOME_ARQUIVO_BD);
+		File in = new File(NOME_ARQUIVOS_BD);
 		FileInputStream fis = null;
 		ObjectInputStream ois = null;
-		
+
 		try {
 			fis = new FileInputStream(in);
 			ois = new ObjectInputStream(fis);
@@ -57,12 +62,12 @@ public class RepositorioContatos implements IRepositorioContatos {
 		}
 		return instanciaLocal;
 	}
-	
+
 	public void salvarArquivo() {
 		if (instancia == null) {
 			return;
 		}
-		File out = new File(NOME_ARQUIVO_BD);
+		File out = new File(NOME_ARQUIVOS_BD);
 		FileOutputStream fos = null;
 		ObjectOutputStream oos = null;
 
@@ -82,60 +87,59 @@ public class RepositorioContatos implements IRepositorioContatos {
 		}
 	}
 
-
-	public void cadastrar(Contatos c1) {
-
-		this.contato.add(c1);
-	}
-
-	public void remover(Contatos c1) {
-
-		this.contato.remove(c1);
-	}
-
-	public ArrayList<Contatos> listar() {
-
-		return this.contato;
-	}
-
-	public void atualizar(Contatos c1) {
-		
-		int indice = this.procurarIndice(c1);
-		this.contato.set(indice, c1);
-	}
-
-	public Contatos procurar(String cpf) {
-
-		for (Contatos c : this.contato) {
-			if (c.getCpf().equals(cpf)) {
-				return c;
-			}
-		}
-		return null;
-	}
-	
-	private int procurarIndice(Contatos c1) {
-		int indice = -1;
-
-		for (int i = 0; i < this.contato.size(); i++) {
-			if (this.contato.get(i).equals(c1)) {
-				indice = i;
-			}
-		}
-		return indice;
+	@Override
+	public boolean cadastrar(Contato contato) {
+		this.contatos.add(contato);
+		salvarArquivo();
+		return true;
 	}
 
 	@Override
-	public boolean existe(Contatos contato) {
-		// TODO Auto-generated method stub
+	public boolean atualizar(Contato contato) {
+		int i = 0;
+		for (Contato p : this.contatos) {
+			
+			if (p.getCpf().equals(contato.getCpf())) {
+				this.contatos.set(i, contato);
+				salvarArquivo();
+				return true;
+			}
+			i++;
+		}
 		return false;
 	}
 
 	@Override
-	public Contatos procurar(Contatos contato) {
-		// TODO Auto-generated method stub
+	public Contato procurar(String cpf) {
+		for (Contato f : this.contatos) {
+			if (f.getCpf().equals(cpf)) {
+				return f;
+			}
+		}
 		return null;
 	}
 
+	@Override
+	public ArrayList<Contato> listar() {
+
+		return this.contatos;
+	}
+
+	public boolean remover(String cpf) {
+		int i = 0;
+		for (Contato f : this.contatos) {
+			
+			if (f.getCpf().equals(cpf)) {
+				this.contatos.remove(i);
+				salvarArquivo();
+				return true;
+			}
+			i++;
+		}
+
+		return false;
+	}
+
 	
+
 }

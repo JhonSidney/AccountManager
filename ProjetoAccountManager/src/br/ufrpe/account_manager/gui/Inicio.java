@@ -181,22 +181,17 @@ public class Inicio extends Application {
 	}
 
 	@FXML
-	public void menuConfiguracaoBanco() {
+	public void menuBanco() {
 
 	}
 
 	@FXML
-	public void menuConfiguracaoCategoria() {
+	public void menuCategoria() {
 
 	}
 
 	@FXML
-	public void menuCadastroContatos() {
-
-	}
-
-	@FXML
-	public void menuCadastroContas() {
+	public void menuContatos() {
 
 	}
 

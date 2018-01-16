@@ -8,7 +8,7 @@ import br.ufrpe.account_manager.negocio.ControladorContatos;
 import br.ufrpe.account_manager.negocio.ControladorLogin;
 import br.ufrpe.account_manager.negocio.ControladorPessoa;
 import br.ufrpe.account_manager.negocio.beans.Conta;
-import br.ufrpe.account_manager.negocio.beans.Contatos;
+import br.ufrpe.account_manager.negocio.beans.Contato;
 import br.ufrpe.account_manager.negocio.beans.Pessoa;
 
 public class SistemaAccountManager {
@@ -81,24 +81,24 @@ public class SistemaAccountManager {
 
 	/* <<<< CONTATOS >>>> */
 
-	public void cadastrarContato(Contatos contato) throws NegocioException {
+	public void cadastrarContato(Contato contato) throws NegocioException {
 		this.contato.cadastrar(contato);
 	}
 
-	public void alterarContato(Contatos contato) throws NegocioException {
+	public void alterarContato(Contato contato) throws NegocioException {
 		this.contato.atualizar(contato);
 	}
 
-	public Contatos procurarContatos(String cpf) throws NegocioException {
-		Contatos contato = this.contato.procurar(cpf);
+	public Contato procurarContatos(String cpf) throws NegocioException {
+		Contato contato = this.contato.procurar(cpf);
 		return contato;
 	}
 
-	public void removerContato(Contatos contato) throws NegocioException {
+	public void removerContato(Contato contato) throws NegocioException {
 		this.contato.remover(contato);
 	}
 
-	public ArrayList<Contatos> listarContatos() throws NegocioException {
+	public ArrayList<Contato> listarContatos() throws NegocioException {
 		return this.contato.listar();
 	}
 
