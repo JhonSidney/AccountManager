@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.effect.*?>
 <?import java.lang.*?>
@@ -27,13 +28,13 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="TelaMenuContas_BT_Adicionar" layoutX="502.0" layoutY="592.0" mnemonicParsing="false" onAction="#botao_adicionarConta" prefHeight="25.0" prefWidth="90.0" text="Adicionar" />
-      <Button fx:id="TelaMenuContas_BT_Voltar" layoutX="596.0" layoutY="592.0" mnemonicParsing="false" onAction="#botao_voltar" prefHeight="25.0" prefWidth="90.0" text="Voltar" />
-      <TextField fx:id="TelaMenuContas_TF_Id" layoutX="250.0" layoutY="206.0" prefHeight="25.0" prefWidth="210.0" promptText="ID: " />
-      <TextField fx:id="TelaMenuContas_TF_Nome" layoutX="250.0" layoutY="271.0" prefHeight="25.0" prefWidth="210.0" promptText="Nome:" />
-      <TextField fx:id="TelaMenuContas_TF_Descricao" layoutX="250.0" layoutY="325.0" prefHeight="31.0" prefWidth="328.0" promptText="Descrição:" />
-      <TextField fx:id="TelaMenuContas_TF_DataVencimento" layoutX="250.0" layoutY="383.0" prefHeight="31.0" prefWidth="172.0" promptText="Data de vencimento:" />
-      <TextField fx:id="TelaMenuContas_TF_Valor" layoutX="250.0" layoutY="438.0" prefWidth="210.0" promptText="Valor:" />
+      <Button fx:id="TelaMenuContas_BT_Adicionar" layoutX="506.0" layoutY="600.0" mnemonicParsing="false" onAction="#botao_adicionarConta" prefHeight="25.0" prefWidth="90.0" text="Adicionar" />
+      <Button fx:id="TelaMenuContas_BT_Voltar" layoutX="639.0" layoutY="600.0" mnemonicParsing="false" onAction="#botao_voltar" prefHeight="25.0" prefWidth="90.0" text="Voltar" />
+      <TextField fx:id="TelaMenuContas_TF_Id" layoutX="360.0" layoutY="153.0" prefHeight="31.0" prefWidth="149.0" promptText="ID: " />
+      <TextField fx:id="TelaMenuContas_TF_Nome" layoutX="360.0" layoutY="198.0" prefHeight="31.0" prefWidth="568.0" promptText="Nome:" />
+      <TextField fx:id="TelaMenuContas_TF_Descricao" layoutX="362.0" layoutY="247.0" prefHeight="31.0" prefWidth="568.0" promptText="Descrição:" />
+      <TextField fx:id="TelaMenuContas_TF_DataVencimento" layoutX="362.0" layoutY="302.0" prefHeight="31.0" prefWidth="235.0" promptText="Data de vencimento:" />
+      <TextField fx:id="TelaMenuContas_TF_Valor" layoutX="694.0" layoutY="302.0" prefHeight="31.0" prefWidth="235.0" promptText="Valor:" />
       <Label layoutX="188.0" layoutY="102.0" text="Logoff" textFill="#f5eded" />
       <ImageView fitHeight="17.0" fitWidth="17.0" layoutX="206.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -41,10 +42,15 @@
          </image>
       </ImageView>
       <Button fx:id="TelaMenuContas_BT_logoff" layoutX="203.0" layoutY="81.0" mnemonicParsing="false" onAction="#logoff" opacity="0.0" prefHeight="25.0" prefWidth="24.0" text="Button" />
-      <Label layoutX="502.0" layoutY="113.0" prefHeight="36.0" prefWidth="188.0" text="Cadastrar Conta" textAlignment="CENTER">
+      <Label layoutX="502.0" layoutY="18.0" prefHeight="36.0" prefWidth="188.0" text="Cadastrar Conta" textAlignment="CENTER" textFill="#f8f8f8">
          <font>
             <Font size="25.0" />
          </font>
       </Label>
+      <Label layoutX="303.0" layoutY="158.0" text="ID:" />
+      <Label layoutX="287.0" layoutY="203.0" prefHeight="21.0" prefWidth="53.0" text="Nome:" />
+      <Label layoutX="286.0" layoutY="252.0" text="Descrição:" />
+      <Label layoutX="272.0" layoutY="307.0" text="Vencimento:" />
+      <Label layoutX="644.0" layoutY="307.0" text="Valor:" />
    </children>
 </AnchorPane>
