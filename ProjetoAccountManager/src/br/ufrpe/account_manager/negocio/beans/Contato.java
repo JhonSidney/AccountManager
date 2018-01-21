@@ -15,11 +15,12 @@ public class Contato extends Pessoa {
 		this.setComentario(comentario);
 	}*/
 
-	public Contato(String nome, String logradouro, String tel, String comentario2) {
+	public Contato(String nome, String logradouro, String tel, String comentario,String cpf, String email) {
 		super(nome, tel, logradouro);
 		this.setPreferencia(preferencia);
-		this.setComentario(comentario2);
-		
+		this.setComentario(comentario);
+		this.setCpf(cpf);
+		this.setEmail(email);
 	}
 
 	public void setPreferencia(String preferencia) {

@@ -52,19 +52,29 @@ public class TelaMenuContatosController implements Initializable {
 	@FXML
 	private TextField TelaMenuContatos_TF_Comentario;
 	@FXML
+	private TextField TelaMenuContatos_TF_Email;
+	@FXML
 	private Button TelaMenuContatos_BT_Logoff;
+	@FXML
+	private Button botao_voltar;
+	@FXML
+	private Button adicionarContato;
+	@FXML
+	private Button atualizarContato;
 	@FXML
 	private TableView<Contato> tableContatos = new TableView<Contato>();
 	@FXML
 	private TableColumn<Contato, String> nomeColumn = new TableColumn<Contato, String>("Nome");
 	@FXML
-	private TableColumn<Contato, String> cpf = new TableColumn<Contato, String>("Nome");
+	private TableColumn<Contato, String> cpf = new TableColumn<Contato, String>("CPF");
 	@FXML
 	private TableColumn<Contato, String> telefoneColumn = new TableColumn<Contato, String>("telefone");
 	@FXML
 	private TableColumn<Contato, String> logradouroColumn = new TableColumn<Contato, String>("logradouro");
 	@FXML
 	private TableColumn<Contato, String> comentarioColumn = new TableColumn<Contato, String>("comentario");
+	@FXML
+	private TableColumn<Contato, String> emailColumn = new TableColumn<Contato, String> ("Email");
 	@FXML
 	private TextArea textArea;
 
@@ -98,11 +108,6 @@ public class TelaMenuContatosController implements Initializable {
 	}
 
 	@FXML
-	private void removerContato(ActionEvent event) {
-
-	}
-
-	@FXML
 	private void adicionarContato(ActionEvent event) throws IOException {
 		Parent root;
 		Stage stage;
@@ -117,12 +122,14 @@ public class TelaMenuContatosController implements Initializable {
 				Optional<ButtonType> result = alert.showAndWait();
 
 				if (event.getTarget() == TelaMenuContatos_BT_Adicionar) {
-					String nome, logradouro, tel, comentario;
+					String nome, logradouro, tel, comentario, cpf,email;
 					nome = TelaMenuContatos_TF_Nome.getText();
 					logradouro = TelaMenuContatos_TF_logradouro.getText();
 					tel = TelaMenuContatos_TF_Telefone.getText();
 					comentario = TelaMenuContatos_TF_Comentario.getText();
-					Contato contato = new Contato(nome, logradouro, tel, comentario);
+					cpf = TelaMenuContatos_TF_Cpf.getText();
+					email = TelaMenuContatos_TF_Email.getText();
+					Contato contato = new Contato(nome, logradouro, tel, comentario, cpf,email);
 					tableContatos.getItems().add(contato);
 					fachada.cadastrarContato(contato);
 
@@ -154,6 +161,36 @@ public class TelaMenuContatosController implements Initializable {
 				alert.showAndWait();
 			}
 		}
+
+	}
+
+	@FXML
+	private void atualizarContato(ActionEvent event) {
+		try {
+			this.fachada = SistemaAccountManager.getInstance();
+			String nome, logradouro, tel, comentario, cpf,email;
+			nome = TelaMenuContatos_TF_Nome.getText();
+			logradouro = TelaMenuContatos_TF_logradouro.getText();
+			tel = TelaMenuContatos_TF_Telefone.getText();
+			comentario = TelaMenuContatos_TF_Comentario.getText();
+			cpf = TelaMenuContatos_TF_Cpf.getText();
+			email = TelaMenuContatos_TF_Email.getText();
+			Contato novoContato = new Contato(nome,logradouro,tel,comentario, cpf,email);
+			novoContato.setNome(nome);
+			novoContato.setLogradouro(logradouro);
+			novoContato.setTel(tel);
+			novoContato.setComentario(comentario);
+			novoContato.setCpf(cpf);
+			novoContato.setEmail(email);
+			this.fachada.alterarContato(novoContato);
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	@FXML
+	private void removerContato(ActionEvent event) {
 
 	}
 
