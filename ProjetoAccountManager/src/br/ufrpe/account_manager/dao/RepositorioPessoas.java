@@ -11,8 +11,7 @@ import java.util.ArrayList;
 
 import br.ufrpe.account_manager.negocio.beans.Pessoa;
 
-public class RepositorioPessoas implements IRepositorioPessoas, Serializable{
-
+public class RepositorioPessoas implements IRepositorioPessoas, Serializable {
 
 	// ATRIBUTOS
 	public static final String NOME_ARQUIVOS_BD = "pessoas.dat";
@@ -26,9 +25,9 @@ public class RepositorioPessoas implements IRepositorioPessoas, Serializable{
 	public static RepositorioPessoas getInstance() {
 
 		if (instancia == null) {
-			try{
-				instancia =lerDoArquivo();
-			} catch (IOException e){
+			try {
+				instancia = lerDoArquivo();
+			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
@@ -96,7 +95,7 @@ public class RepositorioPessoas implements IRepositorioPessoas, Serializable{
 	public boolean atualizar(Pessoa pessoa) {
 		int i = 0;
 		for (Pessoa p : this.pessoas) {
-			
+
 			if (p.getCpf().equals(pessoa.getCpf())) {
 				this.pessoas.set(i, pessoa);
 				salvarArquivo();
@@ -107,7 +106,6 @@ public class RepositorioPessoas implements IRepositorioPessoas, Serializable{
 		return false;
 	}
 
-	
 	@Override
 	public Pessoa procurar(String cpf) {
 		for (Pessoa f : this.pessoas) {
@@ -127,7 +125,7 @@ public class RepositorioPessoas implements IRepositorioPessoas, Serializable{
 	public boolean remover(String cpf) {
 		int i = 0;
 		for (Pessoa f : this.pessoas) {
-			
+
 			if (f.getCpf().equals(cpf)) {
 				this.pessoas.remove(i);
 				salvarArquivo();
@@ -138,7 +136,5 @@ public class RepositorioPessoas implements IRepositorioPessoas, Serializable{
 
 		return false;
 	}
-
-	
 
 }

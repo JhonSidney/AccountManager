@@ -11,10 +11,7 @@ import java.util.ArrayList;
 
 import br.ufrpe.account_manager.negocio.beans.Contato;
 
-
-
-public class RepositorioContatos implements IRepositorioContatos, Serializable{
-
+public class RepositorioContatos implements IRepositorioContatos, Serializable {
 
 	// ATRIBUTOS
 	public static final String NOME_ARQUIVOS_BD = "contatos.dat";
@@ -28,9 +25,9 @@ public class RepositorioContatos implements IRepositorioContatos, Serializable{
 	public static RepositorioContatos getInstance() {
 
 		if (instancia == null) {
-			try{
-				instancia =lerDoArquivo();
-			} catch (IOException e){
+			try {
+				instancia = lerDoArquivo();
+			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
@@ -98,7 +95,7 @@ public class RepositorioContatos implements IRepositorioContatos, Serializable{
 	public boolean atualizar(Contato contato) {
 		int i = 0;
 		for (Contato p : this.contatos) {
-			
+
 			if (p.getCpf().equals(contato.getCpf())) {
 				this.contatos.set(i, contato);
 				salvarArquivo();
@@ -128,7 +125,7 @@ public class RepositorioContatos implements IRepositorioContatos, Serializable{
 	public boolean remover(String cpf) {
 		int i = 0;
 		for (Contato f : this.contatos) {
-			
+
 			if (f.getCpf().equals(cpf)) {
 				this.contatos.remove(i);
 				salvarArquivo();
@@ -139,7 +136,5 @@ public class RepositorioContatos implements IRepositorioContatos, Serializable{
 
 		return false;
 	}
-
-	
 
 }
