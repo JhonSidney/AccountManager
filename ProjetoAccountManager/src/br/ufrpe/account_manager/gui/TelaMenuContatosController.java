@@ -34,7 +34,6 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-
 public class TelaMenuContatosController {
 
 	@FXML
@@ -113,11 +112,7 @@ public class TelaMenuContatosController {
 		TelaMenuContatos_TF_logradouro.clear();
 		TelaMenuContatos_TF_Comentario.clear();
 		TelaMenuContatos_TF_Email.clear();
-		/*
-		 * TelaMenuContatos_TF_Cpf.editableProperty().set(true);
-		 * TelaMenuContatos_TF_Cpf.setStyle(null);
-		 * TelaMenuContatos_TF_nome.setStyle(null); lblMensagem.setText(null);
-		 */
+
 		tabelaContatos.getSelectionModel().clearSelection();
 
 	}
@@ -126,44 +121,13 @@ public class TelaMenuContatosController {
 		tabelaContatos.setItems(dadosCliente);
 	}
 
-	private void validateAttributes(Contato contato) throws ValidationException {
-		String returnMs = "";
-		/*
-		 * Integer idade = contato.getIdade(); Integer codigo = contato.getCodigo();
-		 */
-		if (contato.getNome() == null || contato.getNome().isEmpty()) {
-			returnMs += "'Nome' ";
-		}
-		if (contato.getSobrenome() == null || contato.getSobrenome().isEmpty()) {
-			returnMs += "'Sobrenome' ";
-		}
-		if (contato.getCpf() == null || contato.getCpf().isEmpty()) {
-			returnMs += "'CPF' ";
-		}
-		if (contato.getEmail() == null || contato.getEmail().isEmpty()) {
-			returnMs += "'EMAIL' ";
-		}
-
-		if (contato.getLogradouro() == null || contato.getLogradouro().isEmpty()) {
-			returnMs += "'Endereço' ";
-		}
-
-		if (contato.getTel() == null || contato.getTel().isEmpty()) {
-			returnMs += "'Telefone' ";
-		}
-
-		if (!returnMs.isEmpty()) {
-			throw new ValidationException(
-					String.format("Os argumento[%s] obrigatorios estao nulos ou com valores invalidos", returnMs));
-		}
-	}
-
 	private boolean validarCampos() throws IOException {
 		boolean validate = false;
 		try {
 			if (TelaMenuContatos_TF_Nome.getText().isEmpty() || TelaMenuContatos_TF_Sobrenome.getText().isEmpty()
 					|| TelaMenuContatos_TF_Cpf.getText().isEmpty() || TelaMenuContatos_TF_Telefone.getText().isEmpty()
-					|| TelaMenuContatos_TF_logradouro.getText().isEmpty() ||TelaMenuContatos_TF_Comentario.getText().isEmpty()
+					|| TelaMenuContatos_TF_logradouro.getText().isEmpty()
+					|| TelaMenuContatos_TF_Comentario.getText().isEmpty()
 					|| TelaMenuContatos_TF_Email.getText().isEmpty()) {
 
 				Alert alert = new Alert(AlertType.WARNING);
@@ -187,10 +151,21 @@ public class TelaMenuContatosController {
 	}
 
 	@FXML
-	private void refreshTable() throws NegocioException, IOException {
+	private void refreshTable(){
 		data = FXCollections.observableArrayList();
-		data.addAll(fachada.listarContatos());
-		tabelaContatos.setItems(data);
+		System.out.println("Elementos Tablea: "+this.tabelaContatos.getItems().toString());
+		try {
+			for(Contato c : this.fachada.listarContatos()) {
+				this.tabelaContatos.getItems().add(c);
+			}
+			this.tabelaContatos.refresh();
+//			data.addAll(fachada.listarContatos());	
+		}catch(NegocioException e) {
+			e.printStackTrace();
+		}
+		//tabelaContatos.setItems(data);
+		System.out.println("Elementos Tablea: "+this.tabelaContatos.getItems().toString());
+		
 	}
 
 	@FXML
@@ -227,38 +202,24 @@ public class TelaMenuContatosController {
 
 	@FXML
 	public void adicionarContato(ActionEvent event) throws IOException, NegocioException {
-
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	/*	if (validarCampos()) {
-			try {
-				String nome, sobrenome, cpf, logradouro, comentario, email, telefone;
-				nome = TelaMenuContatos_TF_Nome.getText();
-				sobrenome = TelaMenuContatos_TF_Sobrenome.getText();
-				cpf = TelaMenuContatos_TF_Cpf.getText();
-				logradouro = TelaMenuContatos_TF_logradouro.getText();
-				telefone = TelaMenuContatos_TF_Telefone.getText();
-				email = TelaMenuContatos_TF_Email.getText();
-				comentario = TelaMenuContatos_TF_Comentario.getText();
-				Contato cont = new Contato(nome, sobrenome, logradouro, telefone, comentario, cpf, email);
-				// validateAttributes(cont);
-				fachada.cadastrarContato(cont);
-				refreshTable();
-				limparForm();
-				// lblMensagem.setText("Cliente cadastrado");
-			} catch (IOException e) {// funcionando
-				e.printStackTrace();
-
-			}
+		this.fachada = SistemaAccountManager.getInstance();
+		if (validarCampos()) {
+			String nome, sobrenome, cpf, logradouro, comentario, email, telefone;
+			nome = TelaMenuContatos_TF_Nome.getText();
+			sobrenome = TelaMenuContatos_TF_Sobrenome.getText();
+			cpf = TelaMenuContatos_TF_Cpf.getText();
+			logradouro = TelaMenuContatos_TF_logradouro.getText();
+			telefone = TelaMenuContatos_TF_Telefone.getText();
+			email = TelaMenuContatos_TF_Email.getText();
+			comentario = TelaMenuContatos_TF_Comentario.getText();
+			Contato cont = new Contato(nome, sobrenome, logradouro, telefone, comentario, cpf, email);
+			// validateAttributes(cont);
+			if(fachada != null) System.out.println("ok");
+			this.fachada.cadastrarContato(cont);
+			refreshTable();
+			limparForm();
+			// lblMensagem.setText("Cliente cadastrado");
 		}
-		*/
 
 	}
 
