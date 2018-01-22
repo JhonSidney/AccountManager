@@ -38,10 +38,12 @@ public class Pessoa implements Serializable {
 		this.setSenha(senha);
 	}
 	
-	public Pessoa(String nome, String tel, String logradouro ) {
+	public Pessoa(String nome,String sobrenome, String tel, String logradouro, String email) {
 		this.setNome(nome);
 		this.setTel(tel);
 		this.setLogradouro(logradouro);
+		this.setEmail(email);
+		this.setSobrenome(sobrenome);
 	}
 
 	public Pessoa(String cpf, String senha) {

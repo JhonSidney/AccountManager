@@ -192,6 +192,18 @@ public class Inicio extends Application {
 
 	@FXML
 	public void menuContatos() {
+		try {
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(Inicio.class.getResource("/br/ufrpe/account_manager/gui/TelaMenuContatos.fxml"));
+			AnchorPane Login = (AnchorPane) loader.load();
+
+			rootLayout.setCenter(Login);
+			TelaLoginController controller = loader.getController();
+			controller.setPrincipal(this.getInstance());
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 
 	}
 

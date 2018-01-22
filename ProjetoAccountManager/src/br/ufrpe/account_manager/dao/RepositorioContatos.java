@@ -17,7 +17,7 @@ public class RepositorioContatos implements IRepositorioContatos, Serializable{
 
 
 	// ATRIBUTOS
-	public static final String NOME_ARQUIVOS_BD = "pessoas.dat";
+	public static final String NOME_ARQUIVOS_BD = "contatos.dat";
 	private ArrayList<Contato> contatos;
 	public static RepositorioContatos instancia;
 

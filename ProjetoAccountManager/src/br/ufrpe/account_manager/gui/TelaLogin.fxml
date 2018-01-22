@@ -12,7 +12,6 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane prefHeight="656.0" prefWidth="819.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrpe.account_manager.gui.TelaLoginController">
    <children>
       <ImageView fitHeight="658.0" fitWidth="827.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
@@ -42,5 +41,6 @@
             <Image url="@pictures/logoAccountManager.png" />
          </image>
       </ImageView>
+      <Button fx:id="TLogin_BT_Sair" layoutX="582.0" layoutY="146.0" mnemonicParsing="false" onAction="#sair" prefHeight="25.0" prefWidth="45.0" text="Sair" />
    </children>
 </AnchorPane>

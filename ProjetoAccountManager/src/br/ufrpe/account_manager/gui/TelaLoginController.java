@@ -5,6 +5,7 @@ import br.ufrpe.account_manager.exception.NegocioException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -23,6 +24,8 @@ public class TelaLoginController {
 	@FXML
 	private Button TLogin_BT_Acessar;
 	@FXML
+	private Button TLogin_BT_Sair;
+	@FXML
 	protected TextField TLogin_TF_Usuario; // NOME DA CENA_TEXTFIELD_USUARIO| nome de usuário
 	@FXML
 	protected PasswordField TLogin_PF_Senha;
@@ -39,6 +42,11 @@ public class TelaLoginController {
 		this.setPrincipal(inicio.getInstance());
 	}
 
+	public void sair(ActionEvent event) {
+		((Node) event.getSource()).getScene().getWindow().hide();
+
+	}
+	
 	@FXML
 	public void acessarLogin(ActionEvent event) throws NegocioException {
 
