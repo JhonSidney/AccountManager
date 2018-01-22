@@ -3,10 +3,9 @@ package br.ufrpe.account_manager.negocio;
 import java.util.ArrayList;
 
 import br.ufrpe.account_manager.dao.RepositorioContatos;
-import br.ufrpe.account_manager.dao.RepositorioPessoas;
 import br.ufrpe.account_manager.exception.NegocioException;
 import br.ufrpe.account_manager.negocio.beans.Contato;
-import br.ufrpe.account_manager.negocio.beans.Pessoa;
+
 
 public class ControladorContato{
 
@@ -28,7 +27,7 @@ public class ControladorContato{
 		if (contato != null && !this.existe(contato.getCpf())) {
 			this.repositorioContato.cadastrar(contato);
 		} else {
-			throw new NegocioException("Usuario já Existe !");
+			throw new NegocioException("Contato já Existe !");
 		}
 	}
 
@@ -37,7 +36,7 @@ public class ControladorContato{
 			this.repositorioContato.atualizar(contato);
 
 		} else {
-			throw new NegocioException("Usuario Não Existe !");
+			throw new NegocioException("Contato Não Existe !");
 		}
 	}
 
@@ -68,7 +67,7 @@ public class ControladorContato{
 		if (contato != null) {
 			this.repositorioContato.remover(cpf);
 		} else {
-			throw new NegocioException("Usuário Não Existe !");
+			throw new NegocioException("Contato Não Existe !");
 		}
 	}
 

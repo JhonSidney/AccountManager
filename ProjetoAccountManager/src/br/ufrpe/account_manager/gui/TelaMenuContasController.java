@@ -3,6 +3,8 @@ package br.ufrpe.account_manager.gui;
 import java.sql.Date;
 
 import br.ufrpe.account_manager.SistemaAccountManager;
+import br.ufrpe.account_manager.exception.NegocioException;
+import br.ufrpe.account_manager.negocio.beans.Conta;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -41,14 +43,7 @@ public class TelaMenuContasController {
 	@FXML
 	public void botao_adicionarConta(ActionEvent event) {
 		
-		String id,nome,descricao;
-		Date dataVencimento;
-		int valor;
 		
-		id = TelaMenuContas_TF_Id.getText();
-		nome = TelaMenuContas_TF_Nome.getText();
-		descricao = TelaMenuContas_TF_Descricao.getText();
-		//dataVencimento = TelaMenuContas_TF_DataVencimento.getText();
 	}
 	
 	

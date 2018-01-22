@@ -21,7 +21,7 @@ public class TelaRegistroController {
 	@FXML
 	private Button TRegistro_BT_Cancelar;
 	@FXML
-	private Button TRegistro_BT_Enviar;
+	private Button TRegistro_BT_cadastrar;
 	@FXML
 	private TextField TRegistro_TF_Nome;
 	@FXML
@@ -39,7 +39,7 @@ public class TelaRegistroController {
 	}
 
 	@FXML
-	public void botao_enviar(ActionEvent event) throws IOException{
+	public void botao_cadastrar(ActionEvent event) throws IOException{
 		
 		Parent root;
 		Stage stage;
@@ -57,7 +57,7 @@ public class TelaRegistroController {
 				
 				fachada.cadastrarPessoa(pessoa);
 				
-				stage = (Stage) TRegistro_BT_Enviar.getScene().getWindow();
+				stage = (Stage) TRegistro_BT_cadastrar.getScene().getWindow();
 				root = FXMLLoader.load(
 				getClass().getResource("/br/ufrpe/account_manager/gui/TelaLogin.fxml"));
 

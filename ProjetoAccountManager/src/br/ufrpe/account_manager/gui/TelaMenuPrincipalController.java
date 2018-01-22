@@ -134,8 +134,26 @@ public class TelaMenuPrincipalController {
 	
 	@FXML
 	public void menuRelatorio(ActionEvent event) {
+		Parent root;
+		Stage stage;
+		try {
+
+			if (event.getTarget() == TMenuPrincipal_HL_Relatorios) {
+				stage = (Stage) TMenuPrincipal_HL_Relatorios.getScene().getWindow();
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaMenuRelatorios.fxml"));
+			} else {
+				stage = (Stage) TMenuPrincipal_HL_Relatorios.getScene().getWindow();
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaMenuPrincipal.fxml"));
+			}
+			Scene scene = new Scene(root);
+			stage.setScene(scene);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 	}
+	
 
 	
 	@FXML

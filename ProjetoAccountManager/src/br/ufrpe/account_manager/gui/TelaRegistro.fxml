@@ -35,7 +35,7 @@
       <TextField fx:id="TRegistro_TF_Sobrenome" layoutX="293.0" layoutY="294.0" prefWidth="250.0" />
       <TextField fx:id="TRegistro_TF_CPF" layoutX="294.0" layoutY="336.0" prefWidth="250.0" />
       <PasswordField fx:id="TRegistro_PF_Senha" layoutX="294.0" layoutY="380.0" prefWidth="250.0" />
-      <Button fx:id="TRegistro_BT_Enviar" layoutX="475.0" layoutY="425.0" mnemonicParsing="false" onAction="#botao_enviar" prefHeight="25.0" prefWidth="64.0" text="Enviar" />
+      <Button fx:id="TRegistro_BT_cadastrar" layoutX="457.0" layoutY="425.0" mnemonicParsing="false" onAction="#botao_cadastrar" prefHeight="25.0" prefWidth="82.0" text="Cadastrar" />
       <Button fx:id="TRegistro_BT_Cancelar" layoutX="549.0" layoutY="425.0" mnemonicParsing="false" onAction="#botao_cancelar" prefHeight="25.0" prefWidth="64.0" text="Cancelar" />
       <Label layoutX="294.0" layoutY="237.0" text="Nome" />
       <Label layoutX="294.0" layoutY="278.0" text="Sobrenome" />

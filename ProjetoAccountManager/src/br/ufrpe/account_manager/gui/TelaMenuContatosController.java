@@ -163,7 +163,7 @@ public class TelaMenuContatosController {
 		try {
 			if (TelaMenuContatos_TF_Nome.getText().isEmpty() || TelaMenuContatos_TF_Sobrenome.getText().isEmpty()
 					|| TelaMenuContatos_TF_Cpf.getText().isEmpty() || TelaMenuContatos_TF_Telefone.getText().isEmpty()
-					|| TelaMenuContatos_TF_logradouro.getText().isEmpty()
+					|| TelaMenuContatos_TF_logradouro.getText().isEmpty() ||TelaMenuContatos_TF_Comentario.getText().isEmpty()
 					|| TelaMenuContatos_TF_Email.getText().isEmpty()) {
 
 				Alert alert = new Alert(AlertType.WARNING);
@@ -228,7 +228,16 @@ public class TelaMenuContatosController {
 	@FXML
 	public void adicionarContato(ActionEvent event) throws IOException, NegocioException {
 
-		if (validarCampos()) {
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	/*	if (validarCampos()) {
 			try {
 				String nome, sobrenome, cpf, logradouro, comentario, email, telefone;
 				nome = TelaMenuContatos_TF_Nome.getText();
@@ -249,6 +258,7 @@ public class TelaMenuContatosController {
 
 			}
 		}
+		*/
 
 	}
 
