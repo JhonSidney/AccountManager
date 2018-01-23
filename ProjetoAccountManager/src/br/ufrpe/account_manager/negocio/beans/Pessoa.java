@@ -7,7 +7,6 @@ public class Pessoa implements Serializable {
 
 	private String nome;
 	private String sobrenome;
-	// @Id
 	private String cpf;
 	private String salario;
 	private String id;

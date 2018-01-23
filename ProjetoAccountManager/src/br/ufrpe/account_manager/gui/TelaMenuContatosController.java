@@ -172,8 +172,6 @@ public class TelaMenuContatosController {
 	public void selecionarCliente(MouseEvent arg0) {
 		if (!tabelaContatos.getSelectionModel().isEmpty()) {
 			Contato c = tabelaContatos.getSelectionModel().getSelectedItem();
-			// Integer codigo = c.getCodigo();
-			// Integer idade = c.getIdade();
 			TelaMenuContatos_TF_Nome.setText(c.getNome());
 			TelaMenuContatos_TF_Sobrenome.setText(c.getSobrenome());
 			TelaMenuContatos_TF_Cpf.setText(c.getCpf());
@@ -181,22 +179,9 @@ public class TelaMenuContatosController {
 			TelaMenuContatos_TF_Telefone.setText(c.getTel());
 			TelaMenuContatos_TF_Comentario.setText(c.getComentario());
 			TelaMenuContatos_TF_Email.setText(c.getEmail());
-			/*
-			 * char[] a = TelaMenuContatos_TF_Cpf.getText().toCharArray(); String cpf = "";
-			 * for (int i = 0; i < a.length; i++) { if (i == 2 || i == 5) { cpf += a[i] +
-			 * "."; } else if (i == 8) { cpf += a[i] + "-"; } else { cpf += a[i]; } }
-			 * txtCpfCliente.setText(cpf); char[] b =
-			 * TelaMenuContatos_TF_Telefone.getText().toCharArray(); String telefone = "";
-			 * for (int i = 0; i < b.length; i++) { if (i == 0) { telefone += "(" + b[i]; }
-			 * else if (i == 1) { telefone += b[i] + ")"; } else if (i == 6) { telefone +=
-			 * b[i] + "-"; } else { telefone += b[i]; } }
-			 */
-
-			// txtTelefoneCliente.setText(telefone);
-			// txtCodigoCliente.editableProperty().set(false);
 			TelaMenuContatos_TF_Cpf.editableProperty().set(false);
-			TelaMenuContatos_TF_Cpf.setStyle("-fx-background-color: gray;");
-			// txtCodigoCliente.setStyle("-fx-background-color: gray;");
+			TelaMenuContatos_TF_Cpf.setStyle("-fx-background-color: blue;");
+			
 		}
 	}
 
@@ -213,18 +198,18 @@ public class TelaMenuContatosController {
 			email = TelaMenuContatos_TF_Email.getText();
 			comentario = TelaMenuContatos_TF_Comentario.getText();
 			Contato cont = new Contato(nome, sobrenome, logradouro, telefone, comentario, cpf, email);
-			// validateAttributes(cont);
 			if(fachada != null) System.out.println("ok");
 			this.fachada.cadastrarContato(cont);
 			refreshTable();
 			limparForm();
-			// lblMensagem.setText("Cliente cadastrado");
+			
 		}
 
 	}
 
 	@FXML
 	public void atualizarContato(ActionEvent event) {
+		
 		try {
 			this.fachada = SistemaAccountManager.getInstance();
 			String nome, sobrenome, logradouro, tel, comentario, cpf, email;
