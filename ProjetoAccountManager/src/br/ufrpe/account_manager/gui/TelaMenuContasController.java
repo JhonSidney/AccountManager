@@ -222,9 +222,13 @@ public class TelaMenuContasController implements Initializable {
 
 				}
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
-
+		} catch (NegocioException e) {
+			//e.printStackTrace();
+			Alert alert = new Alert(AlertType.WARNING);
+			alert.setTitle("Error");
+			alert.setHeaderText("Atenção!");
+			alert.setContentText(e.getMessage());
+			alert.showAndWait();
 		}
 	}
 

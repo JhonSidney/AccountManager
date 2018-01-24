@@ -93,7 +93,7 @@ public class TelaMenuContatosController2 implements Initializable {
 			if (validateFields()) {
 				Alert alert = new Alert(AlertType.CONFIRMATION);
 				alert.setTitle("Confirmação de seleção ");
-				alert.setHeaderText("Remover Contato");
+				alert.setHeaderText("Atualizar Contato");
 				alert.setContentText("você tem certeza ?");
 				Optional<ButtonType> result = alert.showAndWait();
 
@@ -216,12 +216,12 @@ public class TelaMenuContatosController2 implements Initializable {
 				comentario = TelaMenuContatos_TF_Comentario.getText();
 				telefone = TelaMenuContatos_TF_Telefone.getText();
 				Contato novoContato = new Contato(nome, sobrenome, logradouro, telefone, comentario, cpf, email);
+				SistemaAccountManager.getInstance().cadastrarContato(novoContato);
+				limparForm1();
+				refreshTable();
 
 				if (event.getTarget() == TelaMenuContatos_BT_Adicionar) {
 					if (result.get() == ButtonType.OK) {
-						SistemaAccountManager.getInstance().cadastrarContato(novoContato);
-						limparForm1();
-						refreshTable();
 
 						Alert alerts = new Alert(AlertType.INFORMATION);
 						alerts.setTitle("Confirmação da opção");
@@ -243,9 +243,13 @@ public class TelaMenuContatosController2 implements Initializable {
 
 				}
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
-
+		} catch (NegocioException e) {
+			//e.printStackTrace();
+			Alert alert = new Alert(AlertType.WARNING);
+			alert.setTitle("Error");
+			alert.setHeaderText("Atenção!");
+			alert.setContentText(e.getMessage());
+			alert.showAndWait();
 		}
 	}
 
