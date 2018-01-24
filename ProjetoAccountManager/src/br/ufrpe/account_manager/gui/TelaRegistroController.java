@@ -57,6 +57,12 @@ public class TelaRegistroController {
 				
 				fachada.cadastrarPessoa(pessoa);
 				
+				Alert alerts = new Alert(AlertType.INFORMATION);
+				alerts.setTitle("Confirmação da opção");
+				alerts.setHeaderText(null);
+				alerts.setContentText("Usuario Cadastrado com Sucesso! ");
+				alerts.showAndWait();
+				
 				stage = (Stage) TRegistro_BT_cadastrar.getScene().getWindow();
 				root = FXMLLoader.load(
 				getClass().getResource("/br/ufrpe/account_manager/gui/TelaLogin.fxml"));

@@ -53,6 +53,12 @@ public class TelaAjudaController {
 					Pessoa pessoa = new Pessoa(cpf, confirmarSenha);
 
 					fachada.atualizarPessoa(pessoa);
+					
+					Alert alerts = new Alert(AlertType.INFORMATION);
+					alerts.setTitle("Confirmação da opção");
+					alerts.setHeaderText(null);
+					alerts.setContentText("Senha atualizada com Sucesso! ");
+					alerts.showAndWait();
 
 					stage = (Stage) TAjuda_BT_atualizar.getScene().getWindow();
 					root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaLogin.fxml"));

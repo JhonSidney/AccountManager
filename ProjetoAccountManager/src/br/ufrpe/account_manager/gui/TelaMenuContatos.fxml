@@ -57,5 +57,10 @@
       <TextField fx:id="TelaMenuContatos_TF_Email" layoutX="660.0" layoutY="458.0" prefHeight="25.0" prefWidth="311.0" promptText="EMAIL" />
       <TextField fx:id="TelaMenuContatos_TF_Comentario" layoutX="252.0" layoutY="493.0" prefHeight="25.0" prefWidth="720.0" promptText="COMENTARIO" />
       <Button fx:id="TelaMenuContatos_BT_limpar" layoutX="531.0" layoutY="527.0" mnemonicParsing="false" onAction="#limparForm2" prefHeight="25.0" prefWidth="149.0" text="Limpar Campos" />
+      <Label layoutX="529.0" layoutY="27.0" text="CONTATOS" textFill="WHITE">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
