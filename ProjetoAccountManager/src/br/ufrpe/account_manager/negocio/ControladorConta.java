@@ -26,7 +26,7 @@ public class ControladorConta {
 		if (Conta != null && !this.existe(Conta.getId())) {
 			this.repositorioConta.cadastrar(Conta);
 		} else {
-			
+			throw new NegocioException("Conta já existe  !");
 		}
 	}
 

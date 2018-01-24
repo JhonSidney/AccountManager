@@ -44,8 +44,6 @@ public class ControladorContato{
 		Contato resultado = this.repositorioContato.procurar(cpf);
 		return resultado;
 	}
-	
-	
 
 	public ArrayList<Contato> listar() {
 		return this.repositorioContato.listar();
