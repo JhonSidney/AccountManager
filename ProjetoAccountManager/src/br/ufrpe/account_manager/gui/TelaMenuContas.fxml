@@ -49,11 +49,11 @@
             <TableColumn prefWidth="75.0" text="Valor" />
         </columns>
       </TableView>
-      <TextField layoutX="243.0" layoutY="450.0" prefHeight="31.0" prefWidth="106.0" promptText="Id:" />
-      <TextField layoutX="358.0" layoutY="450.0" prefHeight="31.0" prefWidth="194.0" promptText="Nome:" />
-      <TextField layoutX="561.0" layoutY="450.0" prefHeight="31.0" prefWidth="425.0" promptText="Descrição" />
-      <TextField layoutX="243.0" layoutY="489.0" promptText="Data de vencimento:" />
-      <TextField layoutX="440.0" layoutY="489.0" promptText="Valor" />
+      <TextField fx:id="TelaMenuContas_TF_Id" layoutX="243.0" layoutY="450.0" prefHeight="31.0" prefWidth="106.0" promptText="Id:" />
+      <TextField fx:id="TelaMenuContas_TF_Nome" layoutX="358.0" layoutY="450.0" prefHeight="31.0" prefWidth="194.0" promptText="Nome:" />
+      <TextField fx:id="TelaMenuContas_TF_Descricao" layoutX="561.0" layoutY="450.0" prefHeight="31.0" prefWidth="425.0" promptText="Descrição" />
+      <TextField fx:id="TelaMenuContas_TF_DataVencimento" layoutX="243.0" layoutY="489.0" promptText="Data de vencimento:" />
+      <TextField fx:id="TelaMenuContas_TF_Valor" layoutX="440.0" layoutY="489.0" promptText="Valor" />
       <Button layoutX="533.0" layoutY="524.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="140.0" text="Limpar Campos" />
       <Button layoutX="430.0" layoutY="605.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="79.0" text="Remover" />
       <Button layoutX="518.0" layoutY="605.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="85.0" text="Adicionar" />
