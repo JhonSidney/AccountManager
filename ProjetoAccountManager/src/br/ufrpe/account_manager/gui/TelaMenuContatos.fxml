@@ -22,10 +22,10 @@
             <Image url="@pictures/FundoMenuPrincipal3.png" />
          </image>
       </ImageView>
-      <Button fx:id="TelaMenuContatos_BT_Remover" layoutX="399.0" layoutY="607.0" mnemonicParsing="false" onAction="#removerContato" prefHeight="25.0" prefWidth="90.0" text="Remover" />
-      <Button fx:id="TelaMenuContatos_BT_Adicionar" layoutX="506.0" layoutY="607.0" mnemonicParsing="false" onAction="#adicionarContato" prefHeight="25.0" prefWidth="90.0" text="Adicionar" />
-      <Button fx:id="TelaMenuContatos_BT_Atualizar" layoutX="615.0" layoutY="607.0" mnemonicParsing="false" onAction="#atualizarContato" prefHeight="25.0" prefWidth="90.0" text="Atualizar" />
-      <Button fx:id="TelaMenuContatos_BT_Voltar" layoutX="726.0" layoutY="607.0" mnemonicParsing="false" onAction="#botao_voltar" prefHeight="25.0" prefWidth="90.0" text="Voltar" />
+      <Button fx:id="TelaMenuContatos_BT_Remover" layoutX="421.0" layoutY="605.0" mnemonicParsing="false" onAction="#removerContato" prefHeight="31.0" prefWidth="84.0" text="Remover" />
+      <Button fx:id="TelaMenuContatos_BT_Adicionar" layoutX="513.0" layoutY="605.0" mnemonicParsing="false" onAction="#adicionarContato" prefHeight="31.0" prefWidth="84.0" text="Adicionar" />
+      <Button fx:id="TelaMenuContatos_BT_Atualizar" layoutX="606.0" layoutY="605.0" mnemonicParsing="false" onAction="#atualizarContato" prefHeight="31.0" prefWidth="84.0" text="Atualizar" />
+      <Button fx:id="TelaMenuContatos_BT_Voltar" layoutX="699.0" layoutY="607.0" mnemonicParsing="false" onAction="#botao_voltar" prefHeight="31.0" prefWidth="63.0" text="Voltar" />
       <Label layoutX="195.0" layoutY="102.0" text="Logoff" textFill="#f5eded" />
       <ImageView fitHeight="17.0" fitWidth="17.0" layoutX="206.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
          <image>

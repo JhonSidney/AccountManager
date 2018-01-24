@@ -28,13 +28,11 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="TelaMenuContas_BT_Adicionar" layoutX="499.0" layoutY="600.0" mnemonicParsing="false" onAction="#botao_adicionarConta" prefHeight="25.0" prefWidth="90.0" text="Adicionar" />
-      <Button fx:id="TelaMenuContas_BT_Voltar" layoutX="702.0" layoutY="600.0" mnemonicParsing="false" onAction="#botao_voltar" prefHeight="25.0" prefWidth="90.0" text="Voltar" />
-      <TextField fx:id="TelaMenuContas_TF_Id" layoutX="254.0" layoutY="397.0" prefHeight="31.0" prefWidth="90.0" promptText="ID: " />
-      <TextField fx:id="TelaMenuContas_TF_Nome" layoutX="356.0" layoutY="397.0" prefHeight="31.0" prefWidth="209.0" promptText="Nome:" />
-      <TextField fx:id="TelaMenuContas_TF_Descricao" layoutX="581.0" layoutY="397.0" prefHeight="31.0" prefWidth="393.0" promptText="Descrição:" />
-      <TextField fx:id="TelaMenuContas_TF_DataVencimento" layoutX="254.0" layoutY="436.0" prefHeight="31.0" prefWidth="235.0" promptText="Data de vencimento:" />
-      <TextField fx:id="TelaMenuContas_TF_Valor" layoutX="501.0" layoutY="436.0" prefHeight="31.0" prefWidth="235.0" promptText="Valor:" />
+      <TextField layoutX="254.0" layoutY="444.0" prefHeight="31.0" prefWidth="90.0" promptText="ID: " />
+      <TextField layoutX="355.0" layoutY="444.0" prefHeight="31.0" prefWidth="209.0" promptText="Nome:" />
+      <TextField layoutX="576.0" layoutY="444.0" prefHeight="31.0" prefWidth="393.0" promptText="Descrição:" />
+      <TextField layoutX="254.0" layoutY="482.0" prefHeight="31.0" prefWidth="235.0" promptText="Data de vencimento:" />
+      <TextField layoutX="501.0" layoutY="482.0" prefHeight="31.0" prefWidth="235.0" promptText="Valor:" />
       <Label layoutX="188.0" layoutY="102.0" text="Logoff" textFill="#f5eded" />
       <ImageView fitHeight="17.0" fitWidth="17.0" layoutX="206.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -47,10 +45,7 @@
             <Font size="25.0" />
          </font>
       </Label>
-      <Button layoutX="399.0" layoutY="600.0" mnemonicParsing="false" text="Remover" />
-      <Button layoutX="607.0" layoutY="600.0" mnemonicParsing="false" text="Atualizar" />
-      <Button layoutX="527.0" layoutY="495.0" mnemonicParsing="false" text="Limpar Campos" />
-      <TableView layoutX="239.0" layoutY="69.0" prefHeight="322.0" prefWidth="758.0">
+      <TableView layoutX="239.0" layoutY="69.0" prefHeight="355.0" prefWidth="751.0">
         <columns>
           <TableColumn prefWidth="75.0" text="Id" />
           <TableColumn prefWidth="75.0" text="Nome" />
@@ -59,5 +54,10 @@
             <TableColumn prefWidth="75.0" text="Valor" />
         </columns>
       </TableView>
+      <Button layoutX="547.0" layoutY="517.0" mnemonicParsing="false" text="Limpar Campos" />
+      <Button layoutX="420.0" layoutY="605.0" mnemonicParsing="false" text="Remover" />
+      <Button layoutX="511.0" layoutY="605.0" mnemonicParsing="false" text="Adicionar" />
+      <Button layoutX="607.0" layoutY="605.0" mnemonicParsing="false" text="Atualizar" />
+      <Button layoutX="695.0" layoutY="605.0" mnemonicParsing="false" text="Voltar" />
    </children>
 </AnchorPane>
