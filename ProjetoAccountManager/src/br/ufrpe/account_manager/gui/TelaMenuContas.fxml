@@ -40,13 +40,13 @@
             <Font size="25.0" />
          </font>
       </Label>
-      <TableView layoutX="243.0" layoutY="87.0" prefHeight="342.0" prefWidth="743.0">
+      <TableView fx:id="tabelaContas" layoutX="243.0" layoutY="87.0" prefHeight="342.0" prefWidth="743.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Id" />
-          <TableColumn prefWidth="75.0" text="Nome" />
-            <TableColumn prefWidth="75.0" text="Descrição" />
-            <TableColumn prefWidth="75.0" text="Data de vencimento" />
-            <TableColumn prefWidth="75.0" text="Valor" />
+          <TableColumn fx:id="colunaId" prefWidth="75.0" text="Id" />
+          <TableColumn fx:id="colunaNome" prefWidth="75.0" text="Nome" />
+            <TableColumn fx:id="colunaDescricao" prefWidth="75.0" text="Descrição" />
+            <TableColumn fx:id="colunaDataVencimento" prefWidth="75.0" text="Data de vencimento" />
+            <TableColumn fx:id="colunaValor" prefWidth="75.0" text="Valor" />
         </columns>
       </TableView>
       <TextField fx:id="TelaMenuContas_TF_Id" layoutX="243.0" layoutY="450.0" prefHeight="31.0" prefWidth="106.0" promptText="Id:" />
