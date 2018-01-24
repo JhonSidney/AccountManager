@@ -28,11 +28,6 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="254.0" layoutY="444.0" prefHeight="31.0" prefWidth="90.0" promptText="ID: " />
-      <TextField layoutX="355.0" layoutY="444.0" prefHeight="31.0" prefWidth="209.0" promptText="Nome:" />
-      <TextField layoutX="576.0" layoutY="444.0" prefHeight="31.0" prefWidth="393.0" promptText="Descrição:" />
-      <TextField layoutX="254.0" layoutY="482.0" prefHeight="31.0" prefWidth="235.0" promptText="Data de vencimento:" />
-      <TextField layoutX="501.0" layoutY="482.0" prefHeight="31.0" prefWidth="235.0" promptText="Valor:" />
       <Label layoutX="188.0" layoutY="102.0" text="Logoff" textFill="#f5eded" />
       <ImageView fitHeight="17.0" fitWidth="17.0" layoutX="206.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -45,19 +40,24 @@
             <Font size="25.0" />
          </font>
       </Label>
-      <TableView layoutX="239.0" layoutY="69.0" prefHeight="355.0" prefWidth="751.0">
+      <TableView layoutX="243.0" layoutY="87.0" prefHeight="342.0" prefWidth="743.0">
         <columns>
           <TableColumn prefWidth="75.0" text="Id" />
           <TableColumn prefWidth="75.0" text="Nome" />
             <TableColumn prefWidth="75.0" text="Descrição" />
-            <TableColumn prefWidth="75.0" text="Data de Vencimento" />
+            <TableColumn prefWidth="75.0" text="Data de vencimento" />
             <TableColumn prefWidth="75.0" text="Valor" />
         </columns>
       </TableView>
-      <Button layoutX="547.0" layoutY="517.0" mnemonicParsing="false" text="Limpar Campos" />
-      <Button layoutX="420.0" layoutY="605.0" mnemonicParsing="false" text="Remover" />
-      <Button layoutX="511.0" layoutY="605.0" mnemonicParsing="false" text="Adicionar" />
-      <Button layoutX="607.0" layoutY="605.0" mnemonicParsing="false" text="Atualizar" />
-      <Button layoutX="695.0" layoutY="605.0" mnemonicParsing="false" text="Voltar" />
+      <TextField layoutX="243.0" layoutY="450.0" prefHeight="31.0" prefWidth="106.0" promptText="Id:" />
+      <TextField layoutX="358.0" layoutY="450.0" prefHeight="31.0" prefWidth="194.0" promptText="Nome:" />
+      <TextField layoutX="561.0" layoutY="450.0" prefHeight="31.0" prefWidth="425.0" promptText="Descrição" />
+      <TextField layoutX="243.0" layoutY="489.0" promptText="Data de vencimento:" />
+      <TextField layoutX="440.0" layoutY="489.0" promptText="Valor" />
+      <Button layoutX="533.0" layoutY="524.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="140.0" text="Limpar Campos" />
+      <Button layoutX="430.0" layoutY="605.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="79.0" text="Remover" />
+      <Button layoutX="518.0" layoutY="605.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="85.0" text="Adicionar" />
+      <Button layoutX="611.0" layoutY="605.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="79.0" text="Atualizar" />
+      <Button layoutX="697.0" layoutY="605.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="60.0" text="Voltar" />
    </children>
 </AnchorPane>
