@@ -36,6 +36,7 @@ public class Inicio extends Application {
 	@Override
 	public void start(Stage primaryStage) throws NegocioException, IOException {
 
+		
 		// Carrega o FXML
 		FXMLLoader splashLoader = new FXMLLoader(getClass().getResource("/br/ufrpe/account_manager/gui/Splash.fxml"));
 		StackPane splashPane = splashLoader.load();
@@ -83,6 +84,7 @@ public class Inicio extends Application {
 			}
 		};
 
+	
 		splashService.start();
 	}
 

@@ -256,15 +256,21 @@ public class TelaMenuContasController implements Initializable {
 	}
 
 	@FXML
-	public void limparForm2() throws NegocioException {
+	public void limparForm2(ActionEvent event) throws NegocioException {
 		Parent root;
 		Stage stage;
 		try {
 			limparForm1();
 			refreshTable();
+			
+			if (event.getTarget() == TelaMenuContas_BT_Limpar) {
 			stage = (Stage) TelaMenuContas_BT_Limpar.getScene().getWindow();
 			root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaMenuContas.fxml"));
 
+			}else {
+				stage = (Stage) TelaMenuContas_BT_Limpar.getScene().getWindow();
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaMenuContas.fxml"));
+			}
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
 

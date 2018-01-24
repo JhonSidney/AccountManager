@@ -29,7 +29,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-public class TelaMenuContatosController2 implements Initializable {
+public class TelaMenuContatosController implements Initializable {
 
 	@FXML
 	private Button TelaMenuContatos_BT_Voltar;
@@ -279,15 +279,21 @@ public class TelaMenuContatosController2 implements Initializable {
 	}
 
 	@FXML
-	public void limparForm2() throws NegocioException {
+	public void limparForm2(ActionEvent event) throws NegocioException {
 		Parent root;
 		Stage stage;
 		try {
 			limparForm1();
 			refreshTable();
+			
+			if (event.getTarget() == TelaMenuContatos_BT_limpar) {
 			stage = (Stage) TelaMenuContatos_BT_Adicionar.getScene().getWindow();
 			root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaMenuContatos.fxml"));
 
+			}else {
+				stage = (Stage) TelaMenuContatos_BT_Adicionar.getScene().getWindow();
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaMenuContatos.fxml"));
+			}
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
 

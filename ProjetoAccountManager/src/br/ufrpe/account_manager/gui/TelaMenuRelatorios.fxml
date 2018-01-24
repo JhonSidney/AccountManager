@@ -28,11 +28,22 @@
             <Image url="@pictures/exit.png" />
          </image>
       </ImageView>
-      <Button layoutX="203.0" layoutY="81.0" mnemonicParsing="false" opacity="0.0" prefHeight="25.0" prefWidth="24.0" />
+      <Button fx:id="TelaMenuRelatorio_BT_Logoff" layoutX="203.0" layoutY="81.0" mnemonicParsing="false" onAction="#botao_logoff" opacity="0.0" prefHeight="25.0" prefWidth="24.0" />
       <Hyperlink fx:id="TelaMenuRelatorio_HL_Relatorio" layoutX="306.0" layoutY="118.0" onAction="#link_RelatorioMensal" prefHeight="38.0" prefWidth="220.0" text="Relatorio Mensal">
          <font>
             <Font size="16.0" />
          </font>
       </Hyperlink>
+      <Label layoutX="56.0" layoutY="30.0" text="Painel Contatos" textFill="#fafbfc">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="575.0" layoutY="30.0" text="RELATÓRIOS " textFill="WHITE">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Button fx:id="TelaMenuRelatorio_BT_Voltar" layoutX="589.0" layoutY="611.0" mnemonicParsing="false" onAction="#botao_voltar" prefHeight="25.0" prefWidth="113.0" text="VOLTAR" />
    </children>
 </AnchorPane>
