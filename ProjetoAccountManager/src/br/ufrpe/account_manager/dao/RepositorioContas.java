@@ -99,7 +99,7 @@ public class RepositorioContas implements IRepositorioContas, Serializable {
 			for (Conta contas : this.contas) {
 				
 				if (contas.getId().equals(contas.getId())) {
-					this.contas.set(i, contas);
+					this.contas.set(i, conta);
 					salvarArquivo();
 					return true;
 				}

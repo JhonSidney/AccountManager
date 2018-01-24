@@ -34,30 +34,30 @@
             <Image url="@pictures/exit.png" />
          </image>
       </ImageView>
-      <Button fx:id="TelaMenuContas_BT_logoff" layoutX="203.0" layoutY="81.0" mnemonicParsing="false" onAction="#logoff" opacity="0.0" prefHeight="25.0" prefWidth="24.0" text="Button" />
+      <Button fx:id="TelaMenuContas_BT_logoff" layoutX="203.0" layoutY="81.0" mnemonicParsing="false" onAction="#botao_logoff" opacity="0.0" prefHeight="25.0" prefWidth="24.0" text="Button" />
       <Label layoutX="552.0" layoutY="18.0" prefHeight="36.0" prefWidth="188.0" text="CONTAS" textAlignment="CENTER" textFill="#f8f8f8">
          <font>
             <Font size="25.0" />
          </font>
       </Label>
-      <TableView fx:id="tabelaContas" layoutX="243.0" layoutY="87.0" prefHeight="342.0" prefWidth="743.0">
+      <TableView fx:id="tabelaContas" layoutX="243.0" layoutY="87.0" onMouseClicked="#selecionarCliente" prefHeight="342.0" prefWidth="743.0" tableMenuButtonVisible="true">
         <columns>
-          <TableColumn fx:id="colunaId" prefWidth="75.0" text="Id" />
-          <TableColumn fx:id="colunaNome" prefWidth="75.0" text="Nome" />
-            <TableColumn fx:id="colunaDescricao" prefWidth="75.0" text="Descrição" />
-            <TableColumn fx:id="colunaDataVencimento" prefWidth="75.0" text="Data de vencimento" />
-            <TableColumn fx:id="colunaValor" prefWidth="75.0" text="Valor" />
+          <TableColumn fx:id="colunaId" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="colunaNome" prefWidth="75.0" text="NOME" />
+            <TableColumn fx:id="colunaDescricao" prefWidth="75.0" text="DESCRIÇÃO" />
+            <TableColumn fx:id="colunaDataVencimento" prefWidth="75.0" text="DATA DE VENCIMENTO" />
+            <TableColumn fx:id="colunaValor" prefWidth="75.0" text="VALOR" />
         </columns>
       </TableView>
-      <TextField fx:id="TelaMenuContas_TF_Id" layoutX="243.0" layoutY="450.0" prefHeight="31.0" prefWidth="106.0" promptText="Id:" />
-      <TextField fx:id="TelaMenuContas_TF_Nome" layoutX="358.0" layoutY="450.0" prefHeight="31.0" prefWidth="194.0" promptText="Nome:" />
-      <TextField fx:id="TelaMenuContas_TF_Descricao" layoutX="561.0" layoutY="450.0" prefHeight="31.0" prefWidth="425.0" promptText="Descrição" />
-      <TextField fx:id="TelaMenuContas_TF_DataVencimento" layoutX="243.0" layoutY="489.0" promptText="Data de vencimento:" />
-      <TextField fx:id="TelaMenuContas_TF_Valor" layoutX="440.0" layoutY="489.0" promptText="Valor" />
-      <Button layoutX="533.0" layoutY="524.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="140.0" text="Limpar Campos" />
-      <Button layoutX="430.0" layoutY="605.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="79.0" text="Remover" />
-      <Button layoutX="518.0" layoutY="605.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="85.0" text="Adicionar" />
-      <Button layoutX="611.0" layoutY="605.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="79.0" text="Atualizar" />
-      <Button layoutX="697.0" layoutY="605.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="60.0" text="Voltar" />
+      <TextField fx:id="TelaMenuContas_TF_Id" layoutX="243.0" layoutY="450.0" prefHeight="17.0" prefWidth="106.0" promptText="Id:" />
+      <TextField fx:id="TelaMenuContas_TF_Nome" layoutX="358.0" layoutY="450.0" prefHeight="25.0" prefWidth="194.0" promptText="Nome:" />
+      <TextField fx:id="TelaMenuContas_TF_Descricao" layoutX="561.0" layoutY="450.0" prefHeight="17.0" prefWidth="425.0" promptText="Descrição" />
+      <TextField fx:id="TelaMenuContas_TF_DataVencimento" layoutX="243.0" layoutY="489.0" prefHeight="25.0" prefWidth="182.0" promptText="Data de vencimento:" />
+      <TextField fx:id="TelaMenuContas_TF_Valor" layoutX="440.0" layoutY="489.0" prefHeight="25.0" prefWidth="161.0" promptText="Valor" />
+      <Button fx:id="TelaMenuContas_BT_Limpar" layoutX="533.0" layoutY="524.0" mnemonicParsing="false" onAction="#limparForm2" prefHeight="25.0" prefWidth="140.0" text="Limpar Campos" />
+      <Button fx:id="TelaMenuContas_BT_Remover" layoutX="363.0" layoutY="608.0" mnemonicParsing="false" onAction="#removerConta" prefHeight="25.0" prefWidth="106.0" text="Remover" />
+      <Button fx:id="TelaMenuContas_BT_Adicionar" layoutX="488.0" layoutY="608.0" mnemonicParsing="false" onAction="#adicionarConta" prefHeight="25.0" prefWidth="96.0" text="Adicionar" />
+      <Button fx:id="TelaMenuContas_BT_Atualizar" layoutX="598.0" layoutY="608.0" mnemonicParsing="false" onAction="#atualizarConta" prefHeight="25.0" prefWidth="96.0" text="Atualizar" />
+      <Button fx:id="TelaMenuContas_BT_Voltar" layoutX="714.0" layoutY="608.0" mnemonicParsing="false" onAction="#botao_voltar" prefHeight="25.0" prefWidth="106.0" text="Voltar" />
    </children>
 </AnchorPane>

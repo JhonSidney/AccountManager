@@ -11,15 +11,17 @@ public class Conta implements Serializable{
 	private String nome;
 	private String descricao;
 	private String dataVencimento;
-	private int valor;
+	private String valor;
 	
-	public Conta(String nome, String descricao, String dataVencimento, int valor) {
-		super();
+	public Conta(String id, String nome, String descricao, String dataVencimento, String valor) {
+		this.setId(id);
 		this.setNome(nome);
 		this.setDescricao(descricao);
 		this.setDataVencimento(dataVencimento);
 		this.setValor(valor);
+		
 	}
+
 
 	public String getNome() {
 		return nome;
@@ -45,11 +47,11 @@ public class Conta implements Serializable{
 		this.dataVencimento = dataVencimento;
 	}
 
-	public int getValor() {
+	public String getValor() {
 		return valor;
 	}
 
-	public void setValor(int valor) {
+	public void setValor(String valor) {
 		this.valor = valor;
 	}
 
