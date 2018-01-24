@@ -14,13 +14,13 @@
          <image>
             <Image url="@pictures/FundoMenuPrincipal.png" />
          </image></ImageView>
-      <Label fx:id="TMenuPrincipal_LB_SejaBemVindo" layoutX="242.0" layoutY="37.0" prefHeight="25.0" prefWidth="125.0" text="Seja Bem Vindo ! " textFill="#09bfd0">
+      <Label fx:id="TMenuPrincipal_LB_SejaBemVindo" layoutX="242.0" layoutY="27.0" prefHeight="36.0" prefWidth="200.0" text="Seja Bem Vindo ! " textFill="#feffff">
          <font>
-            <Font size="16.0" />
+            <Font size="25.0" />
          </font></Label>
-      <Label fx:id="TMenuPrincipal_LB_Nome" layoutX="367.0" layoutY="39.0" prefHeight="21.0" prefWidth="415.0" text="Nome" textFill="#09bfd0">
+      <Label fx:id="TMenuPrincipal_LB_Nome" layoutX="442.0" layoutY="27.0" prefHeight="17.0" prefWidth="415.0" text="Nome" textFill="WHITE">
          <font>
-            <Font size="15.0" />
+            <Font size="25.0" />
          </font></Label>
       <ImageView fitHeight="25.0" fitWidth="35.0" layoutX="11.0" layoutY="136.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -42,14 +42,14 @@
             <Font size="16.0" />
          </font>
       </Hyperlink>
-      <ImageView fitHeight="29.0" fitWidth="26.0" layoutX="33.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="33.0" fitWidth="55.0" layoutX="3.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@pictures/painel.png" />
          </image>
       </ImageView>
-      <Label layoutX="90.0" layoutY="32.0" text="Painel Inicial" textFill="#fafbfc">
+      <Label layoutX="62.0" layoutY="28.0" text="Painel Inicial" textFill="#fafbfc">
          <font>
-            <Font size="18.0" />
+            <Font size="25.0" />
          </font>
       </Label>
       <Hyperlink fx:id="TMenuPrincipal_HL_Contas" layoutX="52.0" layoutY="208.0" onAction="#menuContas" prefHeight="0.0" prefWidth="59.0" text="Contas" textFill="#6f9ada">
@@ -85,7 +85,7 @@
       </Hyperlink>
       <ImageView fitHeight="25.0" fitWidth="24.0" layoutX="12.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@pictures/categoria.png" />
+            <Image url="@pictures/relatorio.png" />
          </image>
       </ImageView>
    </children>

@@ -22,11 +22,6 @@
             <Image url="@pictures/FundoMenuPrincipal3.png" />
          </image>
       </ImageView>
-      <Label layoutX="78.0" layoutY="36.0" text="Painel de Contatos" textFill="#fafbfc">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
       <Button fx:id="TelaMenuContatos_BT_Remover" layoutX="399.0" layoutY="607.0" mnemonicParsing="false" onAction="#removerContato" prefHeight="25.0" prefWidth="90.0" text="Remover" />
       <Button fx:id="TelaMenuContatos_BT_Adicionar" layoutX="506.0" layoutY="607.0" mnemonicParsing="false" onAction="#adicionarContato" prefHeight="25.0" prefWidth="90.0" text="Adicionar" />
       <Button fx:id="TelaMenuContatos_BT_Atualizar" layoutX="615.0" layoutY="607.0" mnemonicParsing="false" onAction="#atualizarContato" prefHeight="25.0" prefWidth="90.0" text="Atualizar" />
@@ -57,9 +52,14 @@
       <TextField fx:id="TelaMenuContatos_TF_Email" layoutX="660.0" layoutY="458.0" prefHeight="25.0" prefWidth="311.0" promptText="EMAIL" />
       <TextField fx:id="TelaMenuContatos_TF_Comentario" layoutX="252.0" layoutY="493.0" prefHeight="25.0" prefWidth="720.0" promptText="COMENTARIO" />
       <Button fx:id="TelaMenuContatos_BT_limpar" layoutX="531.0" layoutY="527.0" mnemonicParsing="false" onAction="#limparForm2" prefHeight="25.0" prefWidth="149.0" text="Limpar Campos" />
-      <Label layoutX="529.0" layoutY="27.0" text="CONTATOS" textFill="WHITE">
+      <Label layoutX="529.0" layoutY="30.0" text="CONTATOS" textFill="WHITE">
          <font>
-            <Font size="30.0" />
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="58.0" layoutY="27.0" text="Painel Contatos" textFill="#fafbfc">
+         <font>
+            <Font size="25.0" />
          </font>
       </Label>
    </children>

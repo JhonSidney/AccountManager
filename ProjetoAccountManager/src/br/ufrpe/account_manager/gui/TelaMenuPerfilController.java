@@ -203,6 +203,12 @@ public class TelaMenuPerfilController {
 		try {
 
 			if (event.getTarget() == TelaMenuPerfil_BT_Logoff) {
+				
+				Alert alerts = new Alert(AlertType.INFORMATION);
+				alerts.setTitle("Confirmação da opção");
+				alerts.setHeaderText(null);
+				alerts.setContentText("Logoff com Sucesso ! ");
+				alerts.showAndWait();
 				stage = (Stage) TelaMenuPerfil_BT_Logoff.getScene().getWindow();
 				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaLogin.fxml"));
 			} else {

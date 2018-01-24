@@ -342,6 +342,12 @@ public class TelaMenuContatosController2 implements Initializable {
 		try {
 
 			if (event.getTarget() == TelaMenuContatos_BT_Logoff) {
+				Alert alerts = new Alert(AlertType.INFORMATION);
+				alerts.setTitle("Confirmação da opção");
+				alerts.setHeaderText(null);
+				alerts.setContentText("Logoff com Sucesso ! ");
+				alerts.showAndWait();
+				
 				stage = (Stage) TelaMenuContatos_BT_Logoff.getScene().getWindow();
 				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaLogin.fxml"));
 			} else {

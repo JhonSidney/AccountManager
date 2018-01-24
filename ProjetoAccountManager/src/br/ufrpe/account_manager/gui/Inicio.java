@@ -181,48 +181,33 @@ public class Inicio extends Application {
 	}
 
 	@FXML
-	public void menuBanco() {
-
-	}
-
-	@FXML
-	public void menuCategoria() {
-
-	}
-
-	@FXML
 	public void menuContatos() {
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(Inicio.class.getResource("/br/ufrpe/account_manager/gui/TelaMenuContatos.fxml"));
 			AnchorPane Login = (AnchorPane) loader.load();
-
 			rootLayout.setCenter(Login);
 			TelaLoginController controller = loader.getController();
 			controller.setPrincipal(this.getInstance());
-
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	@FXML
 	public void menuContas() {
-		
+
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(Inicio.class.getResource("/br/ufrpe/account_manager/gui/TelaMenuContas.fxml"));
 			AnchorPane Login = (AnchorPane) loader.load();
-
 			rootLayout.setCenter(Login);
 			TelaLoginController controller = loader.getController();
 			controller.setPrincipal(this.getInstance());
-
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+
 	}
 
 	@FXML
