@@ -38,7 +38,7 @@
          </image>
       </ImageView>
       <Button fx:id="TelaMenuContatos_BT_Logoff" layoutX="203.0" layoutY="81.0" mnemonicParsing="false" onAction="#botao_logoff" opacity="0.0" prefHeight="25.0" prefWidth="24.0" text="Button" />
-      <TableView fx:id="tabelaContatos" layoutX="251.0" layoutY="88.0" prefHeight="309.0" prefWidth="730.0" tableMenuButtonVisible="true" onMouseClicked="#selecionarCliente">
+      <TableView fx:id="tabelaContatos" layoutX="251.0" layoutY="88.0" onMouseClicked="#selecionarCliente" prefHeight="309.0" prefWidth="730.0" tableMenuButtonVisible="true">
         <columns>
           <TableColumn fx:id="colunaCpf" prefWidth="75.0" text="CPF" />
           <TableColumn fx:id="colunaNome" prefWidth="75.0" text="NOME" />
@@ -56,5 +56,6 @@
       <TextField fx:id="TelaMenuContatos_TF_logradouro" layoutX="251.0" layoutY="458.0" prefHeight="25.0" prefWidth="396.0" promptText="LOGRADOURO" />
       <TextField fx:id="TelaMenuContatos_TF_Email" layoutX="660.0" layoutY="458.0" prefHeight="25.0" prefWidth="311.0" promptText="EMAIL" />
       <TextField fx:id="TelaMenuContatos_TF_Comentario" layoutX="252.0" layoutY="493.0" prefHeight="25.0" prefWidth="720.0" promptText="COMENTARIO" />
+      <Button fx:id="TelaMenuContatos_BT_limpar" layoutX="531.0" layoutY="527.0" mnemonicParsing="false" onAction="#limparForm2" prefHeight="25.0" prefWidth="149.0" text="Limpar Campos" />
    </children>
 </AnchorPane>

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 import br.ufrpe.account_manager.SistemaAccountManager;
@@ -20,6 +21,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -37,6 +39,8 @@ public class TelaMenuContatosController2 implements Initializable {
 	private Button TelaMenuContatos_BT_Adicionar;
 	@FXML
 	private Button TelaMenuContatos_BT_Atualizar;
+	@FXML
+	private Button TelaMenuContatos_BT_limpar;
 	@FXML
 	private TextField TelaMenuContatos_TF_Nome;
 	@FXML
@@ -75,13 +79,20 @@ public class TelaMenuContatosController2 implements Initializable {
 	private TableColumn<Contato, String> colunaComentario;
 	@FXML
 	private TableColumn<Contato, String> colunaEmail;
-
 	SistemaAccountManager fachada;
 
 	@FXML
 	public void atualizarContato(ActionEvent event) {
+		Parent root;
+		Stage stage;
 		try {
 			if (validateFields()) {
+				Alert alert = new Alert(AlertType.CONFIRMATION);
+				alert.setTitle("Confirmação de seleção ");
+				alert.setHeaderText("Remover Contato");
+				alert.setContentText("você tem certeza ?");
+				Optional<ButtonType> result = alert.showAndWait();
+
 				String nome, sobrenome, cpf, logradouro, email, comentario, telefone;
 				cpf = TelaMenuContatos_TF_Cpf.getText();
 				nome = TelaMenuContatos_TF_Nome.getText();
@@ -91,9 +102,33 @@ public class TelaMenuContatosController2 implements Initializable {
 				comentario = TelaMenuContatos_TF_Comentario.getText();
 				telefone = TelaMenuContatos_TF_Telefone.getText();
 				Contato novoContato = new Contato(nome, sobrenome, logradouro, telefone, comentario, cpf, email);
-				SistemaAccountManager.getInstance().alterarContato(novoContato);
-				limparForm();
-				refreshTable();
+
+				if (event.getTarget() == TelaMenuContatos_BT_Atualizar) {
+					if (result.get() == ButtonType.OK) {
+						SistemaAccountManager.getInstance().alterarContato(novoContato);
+						limparForm1();
+						refreshTable();
+
+						Alert alerts = new Alert(AlertType.INFORMATION);
+						alerts.setTitle("Confirmação da opção");
+						alerts.setHeaderText(null);
+						alerts.setContentText("Usuario Atualizado com Sucesso! ");
+						alerts.showAndWait();
+
+						stage = (Stage) TelaMenuContatos_BT_Atualizar.getScene().getWindow();
+						root = FXMLLoader
+								.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaMenuContatos.fxml"));
+
+					} else {
+						stage = (Stage) TelaMenuContatos_BT_Atualizar.getScene().getWindow();
+						root = FXMLLoader
+								.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaMenuContatos.fxml"));
+					}
+
+					Scene scene = new Scene(root);
+					stage.setScene(scene);
+				}
+
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -103,9 +138,18 @@ public class TelaMenuContatosController2 implements Initializable {
 
 	@FXML
 	public void removerContato(ActionEvent event) {
+		Parent root;
+		Stage stage;
+
 		try {
 			if (validateFields()) {
 				String nome, sobrenome, cpf, logradouro, email, comentario, telefone;
+				Alert alert = new Alert(AlertType.CONFIRMATION);
+				alert.setTitle("Confirmação de seleção ");
+				alert.setHeaderText("Remover Contato");
+				alert.setContentText("você tem certeza ?");
+				Optional<ButtonType> result = alert.showAndWait();
+
 				cpf = TelaMenuContatos_TF_Cpf.getText();
 				nome = TelaMenuContatos_TF_Nome.getText();
 				sobrenome = TelaMenuContatos_TF_Sobrenome.getText();
@@ -114,15 +158,91 @@ public class TelaMenuContatosController2 implements Initializable {
 				comentario = TelaMenuContatos_TF_Comentario.getText();
 				telefone = TelaMenuContatos_TF_Telefone.getText();
 				Contato novoContato = new Contato(nome, sobrenome, logradouro, telefone, comentario, cpf, email);
-				SistemaAccountManager.getInstance().removerContato(novoContato.getCpf());
-				limparForm();
-				refreshTable();
+
+				if (event.getTarget() == TelaMenuContatos_BT_Remover) {
+					if (result.get() == ButtonType.OK) {
+						SistemaAccountManager.getInstance().removerContato(novoContato.getCpf());
+						limparForm1();
+						refreshTable();
+
+						Alert alerts = new Alert(AlertType.INFORMATION);
+						alerts.setTitle("Confirmação da opção");
+						alerts.setHeaderText(null);
+						alerts.setContentText("Usuario Removido com Sucesso! ");
+						alerts.showAndWait();
+						stage = (Stage) TelaMenuContatos_BT_Remover.getScene().getWindow();
+						root = FXMLLoader
+								.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaMenuContatos.fxml"));
+
+					} else {
+						stage = (Stage) TelaMenuContatos_BT_Remover.getScene().getWindow();
+						root = FXMLLoader
+								.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaMenuContatos.fxml"));
+					}
+
+					Scene scene = new Scene(root);
+					stage.setScene(scene);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	@FXML
+	public void adicionarContato(ActionEvent event) throws NegocioException, IOException {
+
+		Parent root;
+		Stage stage;
+		try {
+			if (validateFields()) {
+				String nome, sobrenome, cpf, logradouro, email, comentario, telefone;
+
+				Alert alert = new Alert(AlertType.CONFIRMATION);
+				alert.setTitle("Confirmação de seleção ");
+				alert.setHeaderText("Adicionar Contato");
+				alert.setContentText("você tem certeza ?");
+				Optional<ButtonType> result = alert.showAndWait();
+
+				cpf = TelaMenuContatos_TF_Cpf.getText();
+				nome = TelaMenuContatos_TF_Nome.getText();
+				sobrenome = TelaMenuContatos_TF_Sobrenome.getText();
+				logradouro = TelaMenuContatos_TF_logradouro.getText();
+				email = TelaMenuContatos_TF_Email.getText();
+				comentario = TelaMenuContatos_TF_Comentario.getText();
+				telefone = TelaMenuContatos_TF_Telefone.getText();
+				Contato novoContato = new Contato(nome, sobrenome, logradouro, telefone, comentario, cpf, email);
+
+				if (event.getTarget() == TelaMenuContatos_BT_Adicionar) {
+					if (result.get() == ButtonType.OK) {
+						SistemaAccountManager.getInstance().cadastrarContato(novoContato);
+						limparForm1();
+						refreshTable();
+
+						Alert alerts = new Alert(AlertType.INFORMATION);
+						alerts.setTitle("Confirmação da opção");
+						alerts.setHeaderText(null);
+						alerts.setContentText("Usuario Adicionado com Sucesso! ");
+						alerts.showAndWait();
+
+						stage = (Stage) TelaMenuContatos_BT_Adicionar.getScene().getWindow();
+						root = FXMLLoader
+								.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaMenuContatos.fxml"));
+
+					} else {
+						stage = (Stage) TelaMenuContatos_BT_Adicionar.getScene().getWindow();
+						root = FXMLLoader
+								.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaMenuContatos.fxml"));
+					}
+					Scene scene = new Scene(root);
+					stage.setScene(scene);
+
+				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 
 		}
-
 	}
 
 	@FXML
@@ -133,33 +253,7 @@ public class TelaMenuContatosController2 implements Initializable {
 	}
 
 	@FXML
-	public void adicionarContato() throws NegocioException, IOException {
-
-		try {
-			if (validateFields()) {
-				String nome, sobrenome, cpf, logradouro, email, comentario, telefone;
-				cpf = TelaMenuContatos_TF_Cpf.getText();
-				nome = TelaMenuContatos_TF_Nome.getText();
-				sobrenome = TelaMenuContatos_TF_Sobrenome.getText();
-				logradouro = TelaMenuContatos_TF_logradouro.getText();
-				email = TelaMenuContatos_TF_Email.getText();
-				comentario = TelaMenuContatos_TF_Comentario.getText();
-				telefone = TelaMenuContatos_TF_Telefone.getText();
-				Contato novoContato = new Contato(nome, sobrenome, logradouro, telefone, comentario, cpf, email);
-				SistemaAccountManager.getInstance().cadastrarContato(novoContato);
-
-				limparForm();
-				refreshTable();
-
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-
-		}
-	}
-
-	@FXML
-	public void limparForm() {
+	public void limparForm1() {
 		try {
 			TelaMenuContatos_TF_Nome.clear();
 			TelaMenuContatos_TF_Sobrenome.clear();
@@ -170,9 +264,29 @@ public class TelaMenuContatosController2 implements Initializable {
 			TelaMenuContatos_TF_Comentario.clear();
 			tabelaContatos.getSelectionModel().clearSelection();
 			TelaMenuContatos_TF_Cpf.setStyle(null);
+
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
+	}
+
+	@FXML
+	public void limparForm2() throws NegocioException {
+		Parent root;
+		Stage stage;
+		try {
+			limparForm1();
+			refreshTable();
+			stage = (Stage) TelaMenuContatos_BT_Adicionar.getScene().getWindow();
+			root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaMenuContatos.fxml"));
+
+			Scene scene = new Scene(root);
+			stage.setScene(scene);
+
+		} catch (Exception e) {
+
+		}
+
 	}
 
 	private boolean validateFields() throws IOException {
@@ -267,28 +381,8 @@ public class TelaMenuContatosController2 implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 		try {
 
-			// colunaNome.setCellValueFactory(cellData -> new
-			// SimpleStringProperty(cellData.getValue().getNome()));
-			// colunaSobrenome
-			// .setCellValueFactory(cellData -> new
-			// SimpleStringProperty(cellData.getValue().getSobrenome()));
-			// colunaCpf.setCellValueFactory(cellData -> new
-			// SimpleStringProperty(cellData.getValue().getCpf()));
-			// colunaLogradouro
-			// .setCellValueFactory(cellData -> new
-			// SimpleStringProperty(cellData.getValue().getLogradouro()));
-			// colunaTelefone.setCellValueFactory(cellData -> new
-			// SimpleStringProperty(cellData.getValue().getTel()));
-			// colunaComentario
-			// .setCellValueFactory(cellData -> new
-			// SimpleStringProperty(cellData.getValue().getComentario()));
-			// colunaEmail.setCellValueFactory(cellData -> new
-			// SimpleStringProperty(cellData.getValue().getComentario()));
-
 			fachada = SistemaAccountManager.getInstance();
-
 			ArrayList<Contato> cont = fachada.getInstance().listarContatos();
-
 			colunaNome.setCellValueFactory(new PropertyValueFactory<Contato, String>("nome"));
 			colunaSobrenome.setCellValueFactory(new PropertyValueFactory<Contato, String>("sobrenome"));
 			colunaCpf.setCellValueFactory(new PropertyValueFactory<Contato, String>("cpf"));
@@ -296,7 +390,6 @@ public class TelaMenuContatosController2 implements Initializable {
 			colunaEmail.setCellValueFactory(new PropertyValueFactory<Contato, String>("email"));
 			colunaLogradouro.setCellValueFactory(new PropertyValueFactory<Contato, String>("logradouro"));
 			colunaComentario.setCellValueFactory(new PropertyValueFactory<Contato, String>("comentario"));
-
 			tabelaContatos.setItems(FXCollections.observableArrayList(cont));
 
 		} catch (NegocioException e) {

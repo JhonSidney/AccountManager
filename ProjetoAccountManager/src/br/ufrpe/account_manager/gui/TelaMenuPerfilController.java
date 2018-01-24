@@ -169,6 +169,7 @@ public class TelaMenuPerfilController {
 			alert.setContentText("Obs.Após confirmar a exclusão do seu perfil,"
 					+ " você será deslogado do sistema! Você tem certeza ?");
 			Optional<ButtonType> result = alert.showAndWait();
+			
 			if (event.getTarget() == TelaMenuPerfil_BT_ExcluirMinhaConta) {
 				if (result.get() == ButtonType.OK) {
 					Pessoa pessoa;

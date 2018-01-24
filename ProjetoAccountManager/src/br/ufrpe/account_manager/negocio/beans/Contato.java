@@ -15,7 +15,7 @@ public class Contato extends Pessoa {
 		this.setTel(tel);
 		this.setLogradouro(logradouro);
 		this.setSobrenome(sobrenome);
-		this.setNome(sobrenome);
+		this.setNome(nome);
 		this.setEmail(email);
 		
 		}
