@@ -15,6 +15,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
+import util.TextFieldFormatter;
 
 public class TelaRegistroController {
 
@@ -130,5 +131,13 @@ public class TelaRegistroController {
 		return validate;
 	}
 
+	@FXML
+	private void Formatter_Registro_Cpf() {
+		TextFieldFormatter tff = new TextFieldFormatter();
+		tff.setMask("###.###.###-##");
+		tff.setCaracteresValidos("0123456789");
+		tff.setTf(TRegistro_TF_CPF);
+		tff.formatter();
+	}
 }
 

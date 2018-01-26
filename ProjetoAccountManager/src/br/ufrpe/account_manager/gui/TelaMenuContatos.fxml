@@ -44,10 +44,10 @@
             <TableColumn fx:id="colunaComentario" prefWidth="75.0" text="COMENTARIO" />
         </columns>
       </TableView>
-      <TextField fx:id="TelaMenuContatos_TF_Cpf" layoutX="251.0" layoutY="414.0" prefHeight="25.0" prefWidth="168.0" promptText="CPF" />
+      <TextField fx:id="TelaMenuContatos_TF_Cpf" layoutX="251.0" layoutY="414.0" onKeyReleased="#Formatter_Cpf" prefHeight="25.0" prefWidth="168.0" promptText="CPF" />
       <TextField fx:id="TelaMenuContatos_TF_Nome" layoutX="432.0" layoutY="414.0" prefHeight="25.0" prefWidth="157.0" promptText="NOME" />
       <TextField fx:id="TelaMenuContatos_TF_Sobrenome" layoutX="605.0" layoutY="414.0" prefHeight="25.0" prefWidth="168.0" promptText="SOBRENOME" />
-      <TextField fx:id="TelaMenuContatos_TF_Telefone" layoutX="796.0" layoutY="414.0" prefHeight="25.0" prefWidth="174.0" promptText="TELEFONE" />
+      <TextField fx:id="TelaMenuContatos_TF_Telefone" layoutX="796.0" layoutY="414.0" onKeyReleased="#Formatter_Telefone" prefHeight="25.0" prefWidth="174.0" promptText="TELEFONE" />
       <TextField fx:id="TelaMenuContatos_TF_logradouro" layoutX="251.0" layoutY="458.0" prefHeight="25.0" prefWidth="396.0" promptText="LOGRADOURO" />
       <TextField fx:id="TelaMenuContatos_TF_Email" layoutX="660.0" layoutY="458.0" prefHeight="25.0" prefWidth="311.0" promptText="EMAIL" />
       <TextField fx:id="TelaMenuContatos_TF_Comentario" layoutX="252.0" layoutY="493.0" prefHeight="25.0" prefWidth="720.0" promptText="COMENTARIO" />

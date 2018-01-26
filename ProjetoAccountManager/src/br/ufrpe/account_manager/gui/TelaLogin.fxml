@@ -24,7 +24,7 @@
             <Font name="Baskerville Old Face" size="26.0" />
          </font>
       </Label>
-      <TextField fx:id="TLogin_TF_Usuario" layoutX="287.0" layoutY="245.0" prefHeight="25.0" prefWidth="250.0" promptText="Usuario" />
+      <TextField fx:id="TLogin_TF_Usuario" layoutX="287.0" layoutY="245.0" onKeyReleased="#Formatter_Login_Cpf" prefHeight="25.0" prefWidth="250.0" promptText="Usuario" />
       <PasswordField fx:id="TLogin_PF_Senha" layoutX="287.0" layoutY="282.0" prefHeight="25.0" prefWidth="250.0" promptText="Senha" />
       <Button fx:id="TLogin_BT_Acessar" alignment="CENTER" layoutX="289.0" layoutY="322.0" mnemonicParsing="false" onAction="#acessarLogin" prefHeight="35.0" prefWidth="247.0" text="Acessar" textFill="#1579e4">
          <font>

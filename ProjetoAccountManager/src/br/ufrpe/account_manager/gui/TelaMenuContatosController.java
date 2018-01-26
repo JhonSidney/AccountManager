@@ -28,6 +28,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import util.TextFieldFormatter;
 
 public class TelaMenuContatosController implements Initializable {
 
@@ -417,5 +418,23 @@ public class TelaMenuContatosController implements Initializable {
 			e.printStackTrace();
 		}
 
+	}
+	
+	@FXML
+	private void Formatter_Cpf() {
+		TextFieldFormatter tff = new TextFieldFormatter();
+		tff.setMask("###.###.###-##");
+		tff.setCaracteresValidos("0123456789");
+		tff.setTf(TelaMenuContatos_TF_Cpf);
+		tff.formatter();
+	}
+	
+	@FXML
+	private void Formatter_Telefone() {
+		TextFieldFormatter tff = new TextFieldFormatter();
+		tff.setMask("(##)#####-####");
+		tff.setCaracteresValidos("0123456789");
+		tff.setTf(TelaMenuContatos_TF_Telefone);
+		tff.formatter();
 	}
 }

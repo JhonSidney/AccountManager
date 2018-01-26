@@ -19,6 +19,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import util.TextFieldFormatter;
 
 public class TelaMenuPerfilController {
 
@@ -31,7 +32,7 @@ public class TelaMenuPerfilController {
 	@FXML
 	private TextField TelaMenuPerfil_TF_Salario;
 	@FXML
-	private TextField TelaMenuPerfil_TF_Id;
+	private TextField TelaMenuPerfil_TF_Rg;
 	@FXML
 	private TextField TelaMenuPerfil_TF_Email;
 	@FXML
@@ -60,7 +61,7 @@ public class TelaMenuPerfilController {
 		TelaMenuPerfil_TF_Nome.setText(pessoa.getNome());
 		TelaMenuPerfil_TF_Sobrenome.setText(pessoa.getSobrenome());
 		TelaMenuPerfil_TF_Cpf.setText(pessoa.getCpf());
-		TelaMenuPerfil_TF_Id.setText(pessoa.getId());
+		TelaMenuPerfil_TF_Rg.setText(pessoa.getId());
 		TelaMenuPerfil_TF_Salario.setText(pessoa.getSalario());
 		TelaMenuPerfil_TF_Email.setText(pessoa.getEmail());
 		TelaMenuPerfil_TF_Senha.setText(pessoa.getSenha());
@@ -87,7 +88,7 @@ public class TelaMenuPerfilController {
 			nome = TelaMenuPerfil_TF_Nome.getText();
 			sobrenome = TelaMenuPerfil_TF_Sobrenome.getText();
 			cpf = TelaMenuPerfil_TF_Cpf.getText();
-			id = TelaMenuPerfil_TF_Id.getText();
+			id = TelaMenuPerfil_TF_Rg.getText();
 			salario = TelaMenuPerfil_TF_Salario.getText();
 			email = TelaMenuPerfil_TF_Email.getText();
 			senha = TelaMenuPerfil_TF_Senha.getText();
@@ -222,5 +223,32 @@ public class TelaMenuPerfilController {
 			e.printStackTrace();
 		}
 	}
+	
+	@FXML
+	private void FormatterTF_Nascimento() {
+		TextFieldFormatter tff = new TextFieldFormatter();
+		tff.setMask("##/##/####");
+		tff.setCaracteresValidos("0123456789");
+		tff.setTf(TelaMenuPerfil_TF_Nascimento);
+		tff.formatter();
+	}
+	
+	@FXML
+	private void FormatterTF_Telefone() {
+		TextFieldFormatter tff = new TextFieldFormatter();
+		tff.setMask("(##)#####-####");
+		tff.setCaracteresValidos("0123456789");
+		tff.setTf(TelaMenuPerfil_TF_Telefone);
+		tff.formatter();
+	}
 
+	@FXML
+	private void FormatterTF_Rg() {
+		TextFieldFormatter tff = new TextFieldFormatter();
+		tff.setMask("#.###.###");
+		tff.setCaracteresValidos("0123456789");
+		tff.setTf(TelaMenuPerfil_TF_Rg);
+		tff.formatter();
+	}
+	
 }

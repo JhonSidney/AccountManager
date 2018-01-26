@@ -52,8 +52,8 @@
       <TextField fx:id="TelaMenuContas_TF_Id" layoutX="243.0" layoutY="450.0" prefHeight="17.0" prefWidth="106.0" promptText="Id:" />
       <TextField fx:id="TelaMenuContas_TF_Nome" layoutX="358.0" layoutY="450.0" prefHeight="25.0" prefWidth="194.0" promptText="Nome:" />
       <TextField fx:id="TelaMenuContas_TF_Descricao" layoutX="561.0" layoutY="450.0" prefHeight="17.0" prefWidth="425.0" promptText="Descrição" />
-      <TextField fx:id="TelaMenuContas_TF_DataVencimento" layoutX="243.0" layoutY="489.0" prefHeight="25.0" prefWidth="182.0" promptText="Data de vencimento:" />
-      <TextField fx:id="TelaMenuContas_TF_Valor" layoutX="440.0" layoutY="489.0" prefHeight="25.0" prefWidth="161.0" promptText="Valor" />
+      <TextField fx:id="TelaMenuContas_TF_DataVencimento" layoutX="243.0" layoutY="489.0" onKeyReleased="#Formatter_Vencimento" prefHeight="25.0" prefWidth="182.0" promptText="Data de vencimento:" />
+      <TextField fx:id="TelaMenuContas_TF_Valor" layoutX="440.0" layoutY="489.0" onKeyReleased="#Formatter_Valor" prefHeight="25.0" prefWidth="161.0" promptText="Valor" />
       <Button fx:id="TelaMenuContas_BT_Limpar" layoutX="533.0" layoutY="524.0" mnemonicParsing="false" onAction="#limparForm2" prefHeight="25.0" prefWidth="140.0" text="Limpar Campos" />
       <Button fx:id="TelaMenuContas_BT_Remover" layoutX="363.0" layoutY="608.0" mnemonicParsing="false" onAction="#removerConta" prefHeight="25.0" prefWidth="106.0" text="Remover" />
       <Button fx:id="TelaMenuContas_BT_Adicionar" layoutX="488.0" layoutY="608.0" mnemonicParsing="false" onAction="#adicionarConta" prefHeight="25.0" prefWidth="96.0" text="Adicionar" />

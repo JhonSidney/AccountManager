@@ -2,6 +2,7 @@ package br.ufrpe.account_manager.gui;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -28,6 +29,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import util.TextFieldFormatter;
 
 public class TelaMenuContasController implements Initializable {
 
@@ -388,5 +390,19 @@ public class TelaMenuContasController implements Initializable {
 			e.printStackTrace();
 		}
 
+	}
+	
+	@FXML
+	private void Formatter_Vencimento() {
+		TextFieldFormatter tff = new TextFieldFormatter();
+		tff.setMask("##/##/####");
+		tff.setCaracteresValidos("0123456789");
+		tff.setTf(TelaMenuContas_TF_DataVencimento);
+		tff.formatter();
+	}
+	
+	@FXML
+	private void Formatter_Valor() {
+		NumberFormat money = NumberFormat.getCurrencyInstance();
 	}
 }
