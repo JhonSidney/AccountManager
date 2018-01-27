@@ -22,7 +22,6 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 
 public class TelaMenuPrincipalController {
-
 	@FXML
 	private Label TMenuPrincipal_LB_SejaBemVindo;
 	@FXML
@@ -58,7 +57,6 @@ public class TelaMenuPrincipalController {
 		Parent root;
 		Stage stage;
 		try {
-
 			if (event.getTarget() == TMenuPrincipal_HL_MeuPerfil) {
 				stage = (Stage) TMenuPrincipal_HL_MeuPerfil.getScene().getWindow();
 				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaMeuPerfil.fxml"));
@@ -68,21 +66,16 @@ public class TelaMenuPrincipalController {
 			}
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 	}
-
 	
 	@FXML
 	public void menuContatos(ActionEvent event) {
-
 		Parent root;
 		Stage stage;
 		try {
-
 			if (event.getTarget() == TMenuPrincipal_HL_Contatos) {
 				stage = (Stage) TMenuPrincipal_HL_Contatos.getScene().getWindow();
 				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaMenuContatos.fxml"));
@@ -98,14 +91,11 @@ public class TelaMenuPrincipalController {
 		}
 	}
 	
-	
 	@FXML
 	public void menuContas(ActionEvent event) {
-		
 		Parent root;
 		Stage stage;
 		try {
-
 			if (event.getTarget() == TMenuPrincipal_HL_Contas) {
 				stage = (Stage) TMenuPrincipal_HL_Contas.getScene().getWindow();
 				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaMenuContas.fxml"));
@@ -121,25 +111,11 @@ public class TelaMenuPrincipalController {
 		}
 	}
 	
-	
-	@FXML
-	public void menuBancos(ActionEvent event) {
-
-	}
-	
-	
-	@FXML
-	public void menuCategoria(ActionEvent event) {
-
-	}
-	
-	
 	@FXML
 	public void menuRelatorio(ActionEvent event) {
 		Parent root;
 		Stage stage;
 		try {
-
 			if (event.getTarget() == TMenuPrincipal_HL_Relatorios) {
 				stage = (Stage) TMenuPrincipal_HL_Relatorios.getScene().getWindow();
 				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaMenuRelatorios.fxml"));
@@ -149,29 +125,22 @@ public class TelaMenuPrincipalController {
 			}
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 	}
-	
-
 	
 	@FXML
 	public void botao_logoff(ActionEvent event) {
 		Parent root;
 		Stage stage;
 		try {
-			
-			
 			Alert alerts = new Alert(AlertType.INFORMATION);
 			alerts.setTitle("Confirmação da opção");
 			alerts.setHeaderText(null);
 			alerts.setContentText("Logoff com Sucesso ! ");
 			alerts.showAndWait();
 			
-
 			if (event.getTarget() == TMenuPrincipal_BT_logoff) {
 				stage = (Stage) TMenuPrincipal_BT_logoff.getScene().getWindow();
 				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaLogin.fxml"));
@@ -181,11 +150,8 @@ public class TelaMenuPrincipalController {
 			}
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 	}
-
 }

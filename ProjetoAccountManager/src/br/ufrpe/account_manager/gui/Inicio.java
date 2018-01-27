@@ -232,10 +232,10 @@ public class Inicio extends Application {
 		launch(args);
 	}
 
+	
 	private void chamarTelaPrincipal(Stage primaryStage) throws Exception {
-
 		this.primaryStage = primaryStage;
-		this.primaryStage.setTitle("Account Manager");// Nome do Sistema
+		this.primaryStage.setTitle("Account Manager");//Nome do Sistema
 		this.primaryStage.setResizable(false);
 		imagem = new Image(
 				getClass().getResourceAsStream("/br/ufrpe/account_manager/gui/pictures/logoAccountManager.png"));
