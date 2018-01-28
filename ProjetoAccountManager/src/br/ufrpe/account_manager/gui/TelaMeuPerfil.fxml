@@ -28,9 +28,9 @@
       <TextField fx:id="TelaMenuPerfil_TF_Rg" layoutX="707.0" layoutY="172.0" onKeyReleased="#FormatterTF_Rg" prefHeight="25.0" prefWidth="279.0" promptText="ex: 9.999.999" />
       <TextField fx:id="TelaMenuPerfil_TF_Salario" layoutX="349.0" layoutY="228.0" prefHeight="25.0" prefWidth="131.0" promptText="ex: 9.999,00" />
       <TextField fx:id="TelaMenuPerfil_TF_Email" layoutX="655.0" layoutY="229.0" prefHeight="25.0" prefWidth="333.0" promptText="ex: nome@servidor.com" />
-      <TextField fx:id="TelaMenuPerfil_TF_Logradouro" layoutX="349.0" layoutY="281.0" prefHeight="25.0" prefWidth="638.0" promptText="Rua Manoel Borba" />
+      <TextField fx:id="TelaMenuPerfil_TF_Logradouro" layoutX="349.0" layoutY="281.0" prefHeight="25.0" prefWidth="638.0" promptText="ex: RUA MANOEL BORBA" />
       <TextField fx:id="TelaMenuPerfil_TF_Nascimento" layoutX="347.0" layoutY="331.0" onKeyReleased="#FormatterTF_Nascimento" prefHeight="25.0" prefWidth="191.0" promptText="ex: 01/01/1999" />
-      <TextField fx:id="TelaMenuPerfil_TF_Telefone" layoutX="677.0" layoutY="331.0" onKeyReleased="#FormatterTF_Telefone" prefHeight="25.0" prefWidth="208.0" promptText="ex: (DDD) XXXXX-XXXX" />
+      <TextField fx:id="TelaMenuPerfil_TF_Telefone" layoutX="677.0" layoutY="331.0" onKeyReleased="#FormatterTF_Telefone" prefHeight="25.0" prefWidth="208.0" promptText="ex: (DDD)XXXXX-XXXX" />
       <TextField fx:id="TelaMenuPerfil_TF_Senha" layoutX="349.0" layoutY="382.0" prefHeight="25.0" prefWidth="188.0" promptText="Senha de acesso" />
       <Button fx:id="TelaMenuPerfil_BT_ExcluirMinhaConta" layoutX="403.0" layoutY="596.0" mnemonicParsing="false" onAction="#botao_excluirMeuPerfil" prefHeight="25.0" prefWidth="143.0" text="Excluir Minha Conta" />
       <Button fx:id="TelaMenuPerfil_BT_Atualizar" layoutX="593.0" layoutY="596.0" mnemonicParsing="false" onAction="#botao_atualizar" prefHeight="25.0" prefWidth="80.0" text="Atualizar" />

@@ -1,7 +1,9 @@
 package br.ufrpe.account_manager.gui;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.net.URL;
+import java.text.NumberFormat;
+import java.util.Locale;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
@@ -11,6 +13,7 @@ import br.ufrpe.account_manager.negocio.beans.Pessoa;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -21,7 +24,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import util.TextFieldFormatter;
 
-public class TelaMenuPerfilController {
+public class TelaMenuPerfilController implements Initializable{
 
 	@FXML
 	private TextField TelaMenuPerfil_TF_Nome;
@@ -30,7 +33,7 @@ public class TelaMenuPerfilController {
 	@FXML
 	private TextField TelaMenuPerfil_TF_Cpf;
 	@FXML
-	private TextField TelaMenuPerfil_TF_Salario;
+	public TextField TelaMenuPerfil_TF_Salario;
 	@FXML
 	private TextField TelaMenuPerfil_TF_Rg;
 	@FXML
@@ -55,11 +58,12 @@ public class TelaMenuPerfilController {
 	SistemaAccountManager fachada;
 	private Pessoa pessoa;
 
-	public void initialize() {
+	
+	public void initialize(URL url, ResourceBundle rb ){
 		fachada = SistemaAccountManager.getInstance();
 		this.pessoa = fachada.getLogado();
-		TelaMenuPerfil_TF_Nome.setText(pessoa.getNome());
-		TelaMenuPerfil_TF_Sobrenome.setText(pessoa.getSobrenome());
+		TelaMenuPerfil_TF_Nome.setText(pessoa.getNome().toUpperCase());
+		TelaMenuPerfil_TF_Sobrenome.setText(pessoa.getSobrenome().toUpperCase());
 		TelaMenuPerfil_TF_Cpf.setText(pessoa.getCpf());
 		TelaMenuPerfil_TF_Rg.setText(pessoa.getId());
 		TelaMenuPerfil_TF_Salario.setText(pessoa.getSalario());
@@ -68,12 +72,11 @@ public class TelaMenuPerfilController {
 		TelaMenuPerfil_TF_Logradouro.setText(pessoa.getLogradouro());
 		TelaMenuPerfil_TF_Nascimento.setText(pessoa.getNascimento());
 		TelaMenuPerfil_TF_Telefone.setText(pessoa.getTel());
-
 	}
-
+	
+	
 	@FXML
-	public void botao_atualizar(ActionEvent event) throws IOException, NegocioException {
-
+	public void botao_atualizar(ActionEvent event) throws Exception, NegocioException {
 		try {
 			Parent root;
 			Stage stage;
@@ -95,10 +98,9 @@ public class TelaMenuPerfilController {
 			logradouro = TelaMenuPerfil_TF_Logradouro.getText();
 			nascimento = TelaMenuPerfil_TF_Nascimento.getText();
 			tel = TelaMenuPerfil_TF_Telefone.getText();
-			Pessoa pessoa = new Pessoa(nome, sobrenome, cpf, salario, id, email, senha, logradouro, nascimento, tel);
+			Pessoa pessoa = new Pessoa(nome.toUpperCase(), sobrenome.toUpperCase(), cpf, salario, id, email, senha, logradouro.toUpperCase(), nascimento, tel);
 
 			if (event.getTarget() == TelaMenuPerfil_BT_Atualizar) {
-
 				if (this.fachada.getLogado().getCpf().equals(this.TelaMenuPerfil_TF_Cpf.getText()) == false) {
 					Alert alerts = new Alert(AlertType.INFORMATION);
 					alerts.setTitle("Atenção!!");
@@ -107,12 +109,13 @@ public class TelaMenuPerfilController {
 							"Obs:Se seu cpf está incorreto, por favor exclua seu perfil e registre-se novamente.");
 					alerts.showAndWait();
 					return;
-
 				}
 
 				if (result.get() == ButtonType.OK) {
 					fachada.atualizarPessoa(pessoa);
 					fachada.gravarLogado(pessoa);
+					limparCampos();
+					preencher();
 
 					Alert alerts = new Alert(AlertType.INFORMATION);
 					alerts.setTitle("Confirmação da opção");
@@ -125,16 +128,43 @@ public class TelaMenuPerfilController {
 				} else {
 					stage = (Stage) TelaMenuPerfil_BT_Atualizar.getScene().getWindow();
 					root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaMenuPerfil.fxml"));
-					Scene scene = new Scene(root);
-					stage.setScene(scene);
+
 				}
-
+				Scene scene = new Scene(root);
+				stage.setScene(scene);
 			}
-
 		} catch (Exception e) {
-			//e.printStackTrace();
+			// e.printStackTrace();
 		}
-
+	}
+	
+	@FXML
+	private void limparCampos() {
+	TelaMenuPerfil_TF_Nome.clear();
+	TelaMenuPerfil_TF_Sobrenome.clear();
+	TelaMenuPerfil_TF_Cpf.clear();
+	TelaMenuPerfil_TF_Rg.clear();
+	TelaMenuPerfil_TF_Salario.clear();
+	TelaMenuPerfil_TF_Email.clear();
+	TelaMenuPerfil_TF_Senha.clear();
+	TelaMenuPerfil_TF_Logradouro.clear();
+	TelaMenuPerfil_TF_Nascimento.clear();
+	TelaMenuPerfil_TF_Telefone.clear();
+	}
+	
+	@FXML
+	private void preencher() {
+		this.pessoa = fachada.getLogado();
+		TelaMenuPerfil_TF_Nome.setText(pessoa.getNome().toUpperCase());
+		TelaMenuPerfil_TF_Sobrenome.setText(pessoa.getSobrenome().toUpperCase());
+		TelaMenuPerfil_TF_Cpf.setText(pessoa.getCpf());
+		TelaMenuPerfil_TF_Rg.setText(pessoa.getId());
+		TelaMenuPerfil_TF_Salario.setText(pessoa.getSalario());
+		TelaMenuPerfil_TF_Email.setText(pessoa.getEmail());
+		TelaMenuPerfil_TF_Senha.setText(pessoa.getSenha());
+		TelaMenuPerfil_TF_Logradouro.setText(pessoa.getLogradouro().toUpperCase());
+		TelaMenuPerfil_TF_Nascimento.setText(pessoa.getNascimento());
+		TelaMenuPerfil_TF_Telefone.setText(pessoa.getTel());
 	}
 
 	@FXML
@@ -170,7 +200,7 @@ public class TelaMenuPerfilController {
 			alert.setContentText("Obs.Após confirmar a exclusão do seu perfil,"
 					+ " você será deslogado do sistema! Você tem certeza ?");
 			Optional<ButtonType> result = alert.showAndWait();
-			
+
 			if (event.getTarget() == TelaMenuPerfil_BT_ExcluirMinhaConta) {
 				if (result.get() == ButtonType.OK) {
 					Pessoa pessoa;
@@ -204,7 +234,7 @@ public class TelaMenuPerfilController {
 		try {
 
 			if (event.getTarget() == TelaMenuPerfil_BT_Logoff) {
-				
+
 				Alert alerts = new Alert(AlertType.INFORMATION);
 				alerts.setTitle("Confirmação da opção");
 				alerts.setHeaderText(null);
@@ -223,7 +253,7 @@ public class TelaMenuPerfilController {
 			e.printStackTrace();
 		}
 	}
-	
+
 	@FXML
 	private void FormatterTF_Nascimento() {
 		TextFieldFormatter tff = new TextFieldFormatter();
@@ -232,7 +262,7 @@ public class TelaMenuPerfilController {
 		tff.setTf(TelaMenuPerfil_TF_Nascimento);
 		tff.formatter();
 	}
-	
+
 	@FXML
 	private void FormatterTF_Telefone() {
 		TextFieldFormatter tff = new TextFieldFormatter();
@@ -252,4 +282,5 @@ public class TelaMenuPerfilController {
 	}
 	
 	
+
 }

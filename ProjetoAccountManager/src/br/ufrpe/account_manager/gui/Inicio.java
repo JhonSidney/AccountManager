@@ -35,8 +35,6 @@ public class Inicio extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws NegocioException, IOException {
-
-		
 		// Carrega o FXML
 		FXMLLoader splashLoader = new FXMLLoader(getClass().getResource("/br/ufrpe/account_manager/gui/Splash.fxml"));
 		StackPane splashPane = splashLoader.load();
@@ -83,10 +81,9 @@ public class Inicio extends Application {
 				}
 			}
 		};
-
-	
 		splashService.start();
 	}
+	
 
 	private void initRootLayout() {
 
@@ -218,7 +215,36 @@ public class Inicio extends Application {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(Inicio.class.getResource("/br/ufrpe/account_manager/gui/TelaMenuPerfil.fxml"));
 			AnchorPane Login = (AnchorPane) loader.load();
+			rootLayout.setCenter(Login);
+			TelaLoginController controller = loader.getController();
+			controller.setPrincipal(this.getInstance());
 
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@FXML
+	public void menuRelatorios() {
+		try {
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(Inicio.class.getResource("/br/ufrpe/account_manager/gui/TelaMenuRelatorios.fxml"));
+			AnchorPane Login = (AnchorPane) loader.load();
+			rootLayout.setCenter(Login);
+			TelaLoginController controller = loader.getController();
+			controller.setPrincipal(this.getInstance());
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@FXML
+	public void menuRelatoriosMensal() {
+		try {
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(Inicio.class.getResource("/br/ufrpe/account_manager/gui/TelaMenuRelatoriosMensal.fxml"));
+			AnchorPane Login = (AnchorPane) loader.load();
 			rootLayout.setCenter(Login);
 			TelaLoginController controller = loader.getController();
 			controller.setPrincipal(this.getInstance());

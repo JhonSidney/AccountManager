@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 
 public class TelaMenuRelatoriosController {
 	@FXML
-	private Hyperlink TelaMenuRelatorio_HL_Relatorio;
+	private Hyperlink TelaMenuRelatorio_HL_RelatorioMensal;
 	@FXML
 	private Button TelaMenuRelatorio_BT_Logoff;
 	@FXML
@@ -76,17 +76,17 @@ public class TelaMenuRelatoriosController {
 	}
 	
 	@FXML
-	public void link_RelatorioMensal(ActionEvent event) {
+	public void relatorioMensal(ActionEvent event) {
 		Parent root;
 		Stage stage;
 		try {
 
-			if (event.getTarget() == TelaMenuRelatorio_HL_Relatorio) {
-				stage = (Stage) TelaMenuRelatorio_HL_Relatorio.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaMenuRelatorios.fxml"));
+			if (event.getTarget() == TelaMenuRelatorio_BT_Voltar) {
+				stage = (Stage) TelaMenuRelatorio_BT_Voltar.getScene().getWindow();
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaMenuRelatoriosMensal.fxml"));
 			} else {
-				stage = (Stage) TelaMenuRelatorio_HL_Relatorio.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaMenuContas.fxml"));
+				stage = (Stage) TelaMenuRelatorio_BT_Voltar.getScene().getWindow();
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaMenuRelatorios.fxml"));
 			}
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
@@ -94,9 +94,6 @@ public class TelaMenuRelatoriosController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		
 	}
 	
-
 }

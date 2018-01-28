@@ -14,13 +14,13 @@
          <image>
             <Image url="@pictures/FundoMenuPrincipal.png" />
          </image></ImageView>
-      <Label fx:id="TMenuPrincipal_LB_SejaBemVindo" layoutX="242.0" layoutY="27.0" prefHeight="36.0" prefWidth="200.0" text="Seja Bem Vindo ! " textFill="#feffff">
+      <Label fx:id="TMenuPrincipal_LB_SejaBemVindo" layoutX="242.0" layoutY="27.0" prefHeight="36.0" prefWidth="200.0" text="SEJA BEM VINDO(A)" textFill="#feffff">
          <font>
-            <Font size="25.0" />
+            <Font size="14.0" />
          </font></Label>
-      <Label fx:id="TMenuPrincipal_LB_Nome" layoutX="442.0" layoutY="27.0" prefHeight="17.0" prefWidth="415.0" text="Nome" textFill="WHITE">
+      <Label fx:id="TMenuPrincipal_LB_Nome" layoutX="373.0" layoutY="36.0" prefHeight="17.0" prefWidth="415.0" text="Nome" textFill="WHITE">
          <font>
-            <Font size="25.0" />
+            <Font size="14.0" />
          </font></Label>
       <ImageView fitHeight="25.0" fitWidth="35.0" layoutX="11.0" layoutY="136.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -47,9 +47,9 @@
             <Image url="@pictures/painel.png" />
          </image>
       </ImageView>
-      <Label layoutX="62.0" layoutY="28.0" text="Painel Inicial" textFill="#fafbfc">
+      <Label layoutX="74.0" layoutY="36.0" text="PAINEL PRINCIPAL" textFill="#fafbfc">
          <font>
-            <Font size="25.0" />
+            <Font size="14.0" />
          </font>
       </Label>
       <Hyperlink fx:id="TMenuPrincipal_HL_Contas" layoutX="52.0" layoutY="208.0" onAction="#menuContas" prefHeight="0.0" prefWidth="59.0" text="Contas" textFill="#6f9ada">

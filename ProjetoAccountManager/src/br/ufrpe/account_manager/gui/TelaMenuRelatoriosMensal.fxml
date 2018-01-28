@@ -15,35 +15,204 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="650.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrpe.account_manager.gui.TelaMenuRelatoriosController">
+<AnchorPane prefHeight="650.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrpe.account_manager.gui.TelaMenuRelatorioMensalController">
    <children>
-      <ImageView fitHeight="650.0" fitWidth="1000.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="650.0" fitWidth="1006.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@pictures/FundoMenuPrincipal3.png" />
          </image>
       </ImageView>
-      <Label layoutX="195.0" layoutY="102.0" text="Logoff" textFill="#f5eded" />
+      <Label layoutX="197.0" layoutY="102.0" text="LOGOFF" textFill="#f5eded">
+         <font>
+            <Font size="9.0" />
+         </font></Label>
       <ImageView fitHeight="17.0" fitWidth="17.0" layoutX="206.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@pictures/exit.png" />
          </image>
       </ImageView>
-      <Button fx:id="TelaMenuRelatorio_BT_Logoff" layoutX="203.0" layoutY="81.0" mnemonicParsing="false" onAction="#botao_logoff" opacity="0.0" prefHeight="25.0" prefWidth="24.0" />
-      <Label layoutX="56.0" layoutY="30.0" text="Painel Contatos" textFill="#fafbfc">
+      <Button fx:id="TelaMenuRelatorioMensal_BT_Logoff" layoutX="203.0" layoutY="81.0" mnemonicParsing="false" onAction="#botao_logoff" opacity="0.0" prefHeight="25.0" prefWidth="24.0" />
+      <Label layoutX="56.0" layoutY="38.0" text="P A I N E L   C O N T A T O S" textFill="#fafbfc">
          <font>
-            <Font size="25.0" />
+            <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="538.0" layoutY="30.0" text="RELATORIO MENSAL" textFill="WHITE">
+      <Label layoutX="532.0" layoutY="35.0" text="R E L A T O R I O   D O   M Ê S" textFill="WHITE">
          <font>
-            <Font size="25.0" />
+            <Font size="17.0" />
          </font>
       </Label>
-      <Button fx:id="TelaMenuRelatorio_BT_Voltar" layoutX="589.0" layoutY="611.0" mnemonicParsing="false" onAction="#botao_voltar" prefHeight="25.0" prefWidth="113.0" text="VOLTAR" />
-      <ScrollPane layoutX="361.0" layoutY="81.0" prefHeight="488.0" prefWidth="584.0">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
-        </content>
-      </ScrollPane>
+      <TabPane layoutX="238.0" layoutY="67.0" prefHeight="540.0" prefWidth="758.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Mensal">
+               <content>
+                  <ScrollPane prefHeight="706.0" prefWidth="745.0">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="706.0" prefWidth="745.0">
+                           <children>
+                              <ImageView fitHeight="706.0" fitWidth="750.0" layoutX="-3.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@pictures/FundoRelatorioMensal.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="70.0" fitWidth="76.0" layoutX="63.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@pictures/salario.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="70.0" fitWidth="76.0" layoutX="60.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@pictures/saldo%20negativo.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="133.0" fitWidth="182.0" layoutX="133.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@pictures/fundoValor.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="133.0" fitWidth="182.0" layoutX="131.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@pictures/fundoValor.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="139.0" layoutY="37.0" text="Meu Salário">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="134.0" layoutY="125.0" text="Valor a pagar">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="RelatorioMensal_LB_MeuSalario" layoutX="173.0" layoutY="66.0" prefHeight="41.0" prefWidth="138.0" text="1000,00">
+                                 <font>
+                                    <Font name="System Bold" size="27.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="133.0" layoutY="66.0" prefHeight="41.0" prefWidth="42.0" text="R$">
+                                 <font>
+                                    <Font name="System Bold" size="27.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="134.0" layoutY="154.0" prefHeight="41.0" prefWidth="42.0" text="R$">
+                                 <font>
+                                    <Font name="System Bold" size="27.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="RelatorioMensal_LB_ValorPagar" layoutX="176.0" layoutY="154.0" prefHeight="41.0" prefWidth="134.0" text="1000,00">
+                                 <font>
+                                    <Font name="System Bold" size="27.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="70.0" fitWidth="77.0" layoutX="63.0" layoutY="213.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@pictures/dinehiro.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="133.0" fitWidth="182.0" layoutX="130.0" layoutY="213.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@pictures/fundoValor.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="139.0" layoutY="213.0" text="Gastos em dinheiro ">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="133.0" fitWidth="182.0" layoutX="492.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@pictures/fundoValor.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="70.0" fitWidth="77.0" layoutX="424.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@pictures/debito.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="498.0" layoutY="125.0" text="Gastos em débitos">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="70.0" fitWidth="77.0" layoutX="425.0" layoutY="215.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@pictures/credito.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="133.0" fitWidth="182.0" layoutX="492.0" layoutY="215.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@pictures/fundoValor.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="495.0" layoutY="215.0" text="Gastos em Créditos">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="134.0" layoutY="241.0" prefHeight="41.0" prefWidth="42.0" text="R$">
+                                 <font>
+                                    <Font name="System Bold" size="27.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="RelatorioMensal_LB_GastosDinheiro" layoutX="174.0" layoutY="241.0" prefHeight="41.0" prefWidth="138.0" text="1000,00">
+                                 <font>
+                                    <Font name="System Bold" size="27.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="497.0" layoutY="153.0" prefHeight="41.0" prefWidth="42.0" text="R$">
+                                 <font>
+                                    <Font name="System Bold" size="27.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="RelatorioMensal_LB_GastosDebitos" layoutX="539.0" layoutY="153.0" prefHeight="41.0" prefWidth="135.0" text="1000,00">
+                                 <font>
+                                    <Font name="System Bold" size="27.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="495.0" layoutY="244.0" prefHeight="41.0" prefWidth="42.0" text="R$">
+                                 <font>
+                                    <Font name="System Bold" size="27.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="RelatorioMensal_LB_GastosCreditos" layoutX="536.0" layoutY="244.0" prefHeight="41.0" prefWidth="136.0" text="1000,00">
+                                 <font>
+                                    <Font name="System Bold" size="27.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="71.0" fitWidth="195.0" layoutX="490.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@pictures/fundoValor.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="70.0" fitWidth="76.0" layoutX="422.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@pictures/saldoPositivo.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="493.0" layoutY="37.0" text="Valor a receber">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="492.0" layoutY="66.0" prefHeight="41.0" prefWidth="42.0" text="R$">
+                                 <font>
+                                    <Font name="System Bold" size="27.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="RelatorioMensal_LB_ValorReceber" layoutX="532.0" layoutY="66.0" prefHeight="41.0" prefWidth="138.0" text="1000,00">
+                                 <font>
+                                    <Font name="System Bold" size="27.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
+               </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <Button fx:id="TelaMenuRelatorioMensal_BT_Voltar" layoutX="589.0" layoutY="615.0" mnemonicParsing="false" onAction="#botao_voltar" prefHeight="25.0" prefWidth="113.0" text="VOLTAR" />
    </children>
 </AnchorPane>

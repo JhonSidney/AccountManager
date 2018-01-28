@@ -49,7 +49,26 @@ public class TelaMenuPrincipalController {
 		fachada = SistemaAccountManager.getInstance();
 		Pessoa pessoa = new Pessoa(nome, sobrenome, cpf, salario, id, email, senha, logradouro, nascimento, tel);
 		pessoa = fachada.getLogado();
-		TMenuPrincipal_LB_Nome.setText(" " + pessoa.getNome() + "  " + pessoa.getSobrenome());
+		TMenuPrincipal_LB_Nome.setText(" " + pessoa.getNome() + "  " + pessoa.getSobrenome());// maiuscula
+		dadosVazios();
+	}
+
+	@FXML
+	private void dadosVazios() throws Exception { // verifica se os dados do logado ta vazio
+		try {
+			if (fachada.getLogado().getNome().isEmpty() || fachada.getLogado().getSobrenome().isEmpty()
+					|| fachada.getLogado().getLogradouro().isEmpty()|| fachada.getLogado().getEmail().isEmpty()
+					|| fachada.getLogado().getId().isEmpty() || fachada.getLogado().getNascimento().isEmpty()
+					|| fachada.getLogado().getSalario().isEmpty() || fachada.getLogado().getTel().isEmpty()) {
+				Alert alert = new Alert(AlertType.WARNING);
+				alert.setTitle("Atenção!");
+				alert.setHeaderText("Atualize seu perfil !");
+				alert.setContentText("Acesse o  Menu Perfil e atualize seus dados");
+				alert.showAndWait();
+			}
+		} catch (Exception e) {
+			//e.printStackTrace();
+		}
 	}
 
 	@FXML
@@ -70,7 +89,7 @@ public class TelaMenuPrincipalController {
 			e.printStackTrace();
 		}
 	}
-	
+
 	@FXML
 	public void menuContatos(ActionEvent event) {
 		Parent root;
@@ -90,7 +109,7 @@ public class TelaMenuPrincipalController {
 			e.printStackTrace();
 		}
 	}
-	
+
 	@FXML
 	public void menuContas(ActionEvent event) {
 		Parent root;
@@ -110,7 +129,7 @@ public class TelaMenuPrincipalController {
 			e.printStackTrace();
 		}
 	}
-	
+
 	@FXML
 	public void menuRelatorio(ActionEvent event) {
 		Parent root;
@@ -129,7 +148,7 @@ public class TelaMenuPrincipalController {
 			e.printStackTrace();
 		}
 	}
-	
+
 	@FXML
 	public void botao_logoff(ActionEvent event) {
 		Parent root;
@@ -140,7 +159,7 @@ public class TelaMenuPrincipalController {
 			alerts.setHeaderText(null);
 			alerts.setContentText("Logoff com Sucesso ! ");
 			alerts.showAndWait();
-			
+
 			if (event.getTarget() == TMenuPrincipal_BT_logoff) {
 				stage = (Stage) TMenuPrincipal_BT_logoff.getScene().getWindow();
 				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaLogin.fxml"));

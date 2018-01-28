@@ -49,8 +49,8 @@ public class TelaRegistroController {
 			try {
 				String nome,sobrenome,cpf, senha;
 				
-				nome = TRegistro_TF_Nome.getText();
-				sobrenome = TRegistro_TF_Sobrenome.getText();
+				nome = TRegistro_TF_Nome.getText().toUpperCase();
+				sobrenome = TRegistro_TF_Sobrenome.getText().toUpperCase();
 				cpf = TRegistro_TF_CPF.getText();
 				senha = TRegistro_PF_Senha.getText();
 				
