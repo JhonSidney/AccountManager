@@ -1,5 +1,6 @@
 package br.ufrpe.account_manager.gui;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import org.w3c.dom.events.Event;
@@ -49,27 +50,11 @@ public class TelaMenuPrincipalController {
 		fachada = SistemaAccountManager.getInstance();
 		Pessoa pessoa = new Pessoa(nome, sobrenome, cpf, salario, id, email, senha, logradouro, nascimento, tel);
 		pessoa = fachada.getLogado();
-		TMenuPrincipal_LB_Nome.setText(" " + pessoa.getNome() + "  " + pessoa.getSobrenome());// maiuscula
-		dadosVazios();
+		TMenuPrincipal_LB_Nome.setText(" " + pessoa.getNome().toUpperCase() + "  " + pessoa.getSobrenome().toUpperCase());// maiuscula
+		
 	}
 
-	@FXML
-	private void dadosVazios() throws Exception { // verifica se os dados do logado ta vazio
-		try {
-			if (fachada.getLogado().getNome().isEmpty() || fachada.getLogado().getSobrenome().isEmpty()
-					|| fachada.getLogado().getLogradouro().isEmpty()|| fachada.getLogado().getEmail().isEmpty()
-					|| fachada.getLogado().getId().isEmpty() || fachada.getLogado().getNascimento().isEmpty()
-					|| fachada.getLogado().getSalario().isEmpty() || fachada.getLogado().getTel().isEmpty()) {
-				Alert alert = new Alert(AlertType.WARNING);
-				alert.setTitle("Atenção!");
-				alert.setHeaderText("Atualize seu perfil !");
-				alert.setContentText("Acesse o  Menu Perfil e atualize seus dados");
-				alert.showAndWait();
-			}
-		} catch (Exception e) {
-			//e.printStackTrace();
-		}
-	}
+	
 
 	@FXML
 	public void menuMeuPerfil(ActionEvent event) {

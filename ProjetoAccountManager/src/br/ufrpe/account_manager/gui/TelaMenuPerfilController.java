@@ -9,6 +9,7 @@ import java.util.ResourceBundle;
 
 import br.ufrpe.account_manager.SistemaAccountManager;
 import br.ufrpe.account_manager.exception.NegocioException;
+import br.ufrpe.account_manager.gui.mask.TextFieldFormatter;
 import br.ufrpe.account_manager.negocio.beans.Pessoa;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,7 +23,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import util.TextFieldFormatter;
 
 public class TelaMenuPerfilController implements Initializable{
 
@@ -74,7 +74,6 @@ public class TelaMenuPerfilController implements Initializable{
 		TelaMenuPerfil_TF_Telefone.setText(pessoa.getTel());
 	}
 	
-	
 	@FXML
 	public void botao_atualizar(ActionEvent event) throws Exception, NegocioException {
 		try {
@@ -98,7 +97,8 @@ public class TelaMenuPerfilController implements Initializable{
 			logradouro = TelaMenuPerfil_TF_Logradouro.getText();
 			nascimento = TelaMenuPerfil_TF_Nascimento.getText();
 			tel = TelaMenuPerfil_TF_Telefone.getText();
-			Pessoa pessoa = new Pessoa(nome.toUpperCase(), sobrenome.toUpperCase(), cpf, salario, id, email, senha, logradouro.toUpperCase(), nascimento, tel);
+			
+			Pessoa pessoa = new Pessoa(nome, sobrenome, cpf, salario, id, email, senha, logradouro, nascimento, tel);
 
 			if (event.getTarget() == TelaMenuPerfil_BT_Atualizar) {
 				if (this.fachada.getLogado().getCpf().equals(this.TelaMenuPerfil_TF_Cpf.getText()) == false) {

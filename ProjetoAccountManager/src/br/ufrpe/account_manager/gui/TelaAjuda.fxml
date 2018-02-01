@@ -31,7 +31,7 @@
             <ColorAdjust contrast="-0.35" hue="0.05" saturation="0.4" />
          </effect>
       </ImageView>
-      <TextField fx:id="TAjuda_TF_CPF" layoutX="294.0" layoutY="262.0" prefWidth="250.0" />
+      <TextField fx:id="TAjuda_TF_CPF" layoutX="295.0" layoutY="260.0" onKeyReleased="#Formatter_Ajuda_Cpf" prefHeight="25.0" prefWidth="250.0" />
       <PasswordField fx:id="TAjuda_PF_Senha" layoutX="294.0" layoutY="311.0" prefWidth="250.0" />
       <Label layoutX="295.0" layoutY="244.0" text="CPF">
          <font>

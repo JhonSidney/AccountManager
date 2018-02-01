@@ -1,19 +1,25 @@
 package br.ufrpe.account_manager.gui;
 
+import java.net.URL;
+import java.util.ResourceBundle;
+
 import br.ufrpe.account_manager.SistemaAccountManager;
+import br.ufrpe.account_manager.negocio.beans.Pessoa;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
 import javafx.stage.Stage;
 
-public class TelaMenuRelatorioMensalController {
+
+public class TelaMenuRelatorioMensalController  {
 	
 	@FXML
 	private Label RelatorioMensal_LB_ValorReceber;
@@ -31,16 +37,35 @@ public class TelaMenuRelatorioMensalController {
 	private Button TelaMenuRelatorioMensal_BT_Voltar;
 	@FXML
 	private Button TelaMenuRelatorioMensal_BT_Logoff;
+	@FXML
+	private TabPane paneRelatorioMensal;
+	@FXML
+	private Tab mensal;
+	
 	
 	SistemaAccountManager fachada;
+	String nome, sobrenome, cpf, salario, id, email, senha, logradouro, nascimento, tel;
+	private Pessoa pessoa;
+
 	
-	public void Initializable(){
+	
+	public void Initializable(URL url, ResourceBundle rb){
 		fachada = SistemaAccountManager.getInstance();
-	}
-	
+		paneRelatorioMensal.getTabs().add(mensal);
+		this.preencheDados();
+		}
 	
 	@FXML
-	public void botao_voltar(ActionEvent event) {
+	private void preencheDados() {
+		new Pessoa(nome, sobrenome, cpf, salario, id, email, senha, logradouro, nascimento, tel);
+		this.pessoa = fachada.getLogado();
+		RelatorioMensal_LB_MeuSalario.setText(" "+pessoa.getSalario());
+		
+		
+	}
+	
+	@FXML
+	public void voltar(ActionEvent event) {
 		Parent root;
 		Stage stage;
 		try {
@@ -61,7 +86,7 @@ public class TelaMenuRelatorioMensalController {
 	}
 	
 	@FXML
-	public void botao_logoff(ActionEvent event) {
+	public void logoff(ActionEvent event) {
 		Parent root;
 		Stage stage;
 		try {

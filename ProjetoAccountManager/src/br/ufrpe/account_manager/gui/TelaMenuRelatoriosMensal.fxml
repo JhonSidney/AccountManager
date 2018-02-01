@@ -31,7 +31,7 @@
             <Image url="@pictures/exit.png" />
          </image>
       </ImageView>
-      <Button fx:id="TelaMenuRelatorioMensal_BT_Logoff" layoutX="203.0" layoutY="81.0" mnemonicParsing="false" onAction="#botao_logoff" opacity="0.0" prefHeight="25.0" prefWidth="24.0" />
+      <Button fx:id="TelaMenuRelatorioMensal_BT_Logoff" layoutX="203.0" layoutY="81.0" mnemonicParsing="false" onAction="#logoff" opacity="0.0" prefHeight="25.0" prefWidth="24.0" />
       <Label layoutX="56.0" layoutY="38.0" text="P A I N E L   C O N T A T O S" textFill="#fafbfc">
          <font>
             <Font size="14.0" />
@@ -42,9 +42,9 @@
             <Font size="17.0" />
          </font>
       </Label>
-      <TabPane layoutX="238.0" layoutY="67.0" prefHeight="540.0" prefWidth="758.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane fx:id="paneRelatorioMensal" layoutX="238.0" layoutY="67.0" prefHeight="540.0" prefWidth="758.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
-          <Tab text="Mensal">
+          <Tab fx:id="mensal" text="Mensal">
                <content>
                   <ScrollPane prefHeight="706.0" prefWidth="745.0">
                     <content>
@@ -85,7 +85,7 @@
                                     <Font size="10.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="RelatorioMensal_LB_MeuSalario" layoutX="173.0" layoutY="66.0" prefHeight="41.0" prefWidth="138.0" text="1000,00">
+                              <Label fx:id="RelatorioMensal_LB_MeuSalario" layoutX="173.0" layoutY="66.0" prefHeight="41.0" prefWidth="138.0">
                                  <font>
                                     <Font name="System Bold" size="27.0" />
                                  </font>
@@ -213,6 +213,6 @@
           </Tab>
         </tabs>
       </TabPane>
-      <Button fx:id="TelaMenuRelatorioMensal_BT_Voltar" layoutX="589.0" layoutY="615.0" mnemonicParsing="false" onAction="#botao_voltar" prefHeight="25.0" prefWidth="113.0" text="VOLTAR" />
+      <Button fx:id="TelaMenuRelatorioMensal_BT_Voltar" layoutX="589.0" layoutY="615.0" mnemonicParsing="false" onAction="#voltar" prefHeight="25.0" prefWidth="113.0" text="VOLTAR" />
    </children>
 </AnchorPane>

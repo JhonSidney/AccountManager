@@ -3,6 +3,7 @@ package br.ufrpe.account_manager.gui;
 import java.io.IOException;
 
 import br.ufrpe.account_manager.SistemaAccountManager;
+import br.ufrpe.account_manager.gui.mask.TextFieldFormatter;
 import br.ufrpe.account_manager.negocio.beans.Pessoa;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -137,8 +138,17 @@ public class TelaAjudaController {
 		if(this.TAjuda_PF_Senha.getText().equals(this.TAjuda_PF_ConfirmaSenha.getText())) {
 			validar = true;
 		}
-		
 		return validar;
-		
 	}
+	
+	
+	@FXML
+	private void Formatter_Ajuda_Cpf() {
+		TextFieldFormatter mask = new TextFieldFormatter();
+		mask.setMask("###.###.###-##");
+		mask.setCaracteresValidos("0123456789");
+		mask.setTf(TAjuda_TF_CPF);
+		mask.formatter();
+	}
+	
 }

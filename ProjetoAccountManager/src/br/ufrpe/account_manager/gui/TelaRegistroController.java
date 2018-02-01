@@ -3,6 +3,7 @@ package br.ufrpe.account_manager.gui;
 import java.io.IOException;
 
 import br.ufrpe.account_manager.SistemaAccountManager;
+import br.ufrpe.account_manager.gui.mask.TextFieldFormatter;
 import br.ufrpe.account_manager.negocio.beans.Pessoa;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,7 +16,6 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
-import util.TextFieldFormatter;
 
 public class TelaRegistroController {
 

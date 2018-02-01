@@ -1,4 +1,4 @@
-package util;
+package br.ufrpe.account_manager.gui.mask;
 
 import java.text.ParseException;
 

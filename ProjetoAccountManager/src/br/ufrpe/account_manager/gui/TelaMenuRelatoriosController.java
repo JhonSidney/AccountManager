@@ -10,6 +10,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
 import javafx.stage.Stage;
 
 public class TelaMenuRelatoriosController {
@@ -19,6 +21,7 @@ public class TelaMenuRelatoriosController {
 	private Button TelaMenuRelatorio_BT_Logoff;
 	@FXML
 	private Button TelaMenuRelatorio_BT_Voltar;
+	
 	
 	SistemaAccountManager fachada;
 	
@@ -81,11 +84,11 @@ public class TelaMenuRelatoriosController {
 		Stage stage;
 		try {
 
-			if (event.getTarget() == TelaMenuRelatorio_BT_Voltar) {
-				stage = (Stage) TelaMenuRelatorio_BT_Voltar.getScene().getWindow();
+			if (event.getTarget() == TelaMenuRelatorio_HL_RelatorioMensal) {
+				stage = (Stage) TelaMenuRelatorio_HL_RelatorioMensal.getScene().getWindow();
 				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaMenuRelatoriosMensal.fxml"));
 			} else {
-				stage = (Stage) TelaMenuRelatorio_BT_Voltar.getScene().getWindow();
+				stage = (Stage) TelaMenuRelatorio_HL_RelatorioMensal.getScene().getWindow();
 				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/account_manager/gui/TelaMenuRelatorios.fxml"));
 			}
 			Scene scene = new Scene(root);

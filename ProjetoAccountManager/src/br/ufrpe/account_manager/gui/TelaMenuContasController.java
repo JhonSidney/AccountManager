@@ -9,6 +9,7 @@ import java.util.ResourceBundle;
 
 import br.ufrpe.account_manager.SistemaAccountManager;
 import br.ufrpe.account_manager.exception.NegocioException;
+import br.ufrpe.account_manager.gui.mask.TextFieldFormatter;
 import br.ufrpe.account_manager.negocio.beans.Conta;
 import br.ufrpe.account_manager.negocio.beans.Contato;
 import javafx.collections.FXCollections;
@@ -29,7 +30,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import util.TextFieldFormatter;
 
 public class TelaMenuContasController implements Initializable {
 

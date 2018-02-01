@@ -29,7 +29,7 @@
          </image>
       </ImageView>
       <Button fx:id="TelaMenuRelatorio_BT_Logoff" layoutX="203.0" layoutY="81.0" mnemonicParsing="false" onAction="#botao_logoff" opacity="0.0" prefHeight="25.0" prefWidth="24.0" />
-      <Hyperlink fx:id="TelaMenuRelatorio_HL_Relatorio" layoutX="306.0" layoutY="118.0" onAction="#relatorioMensal" prefHeight="38.0" prefWidth="220.0" text="Relatorio Mensal">
+      <Hyperlink fx:id="TelaMenuRelatorio_HL_RelatorioMensal" layoutX="306.0" layoutY="118.0" onAction="#relatorioMensal" prefHeight="38.0" prefWidth="220.0" text="Relatorio Mensal">
          <font>
             <Font size="16.0" />
          </font>

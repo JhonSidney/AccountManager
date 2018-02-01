@@ -2,6 +2,7 @@ package br.ufrpe.account_manager.gui;
 
 import br.ufrpe.account_manager.SistemaAccountManager;
 import br.ufrpe.account_manager.exception.NegocioException;
+import br.ufrpe.account_manager.gui.mask.TextFieldFormatter;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,7 +16,6 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import util.TextFieldFormatter;
 
 public class TelaLoginController {
 	private Inicio inicio; // Classe que inicia as cenas
